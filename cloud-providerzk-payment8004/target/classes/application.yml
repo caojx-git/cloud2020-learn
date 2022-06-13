@@ -1,0 +1,12 @@
+#8004 表示注册到 zookeeper 服务器的支付服务提供者端口号
+server:
+  port: 8004
+
+# 服务别名 ---- 注册 zookeeper 到注册中心名称
+spring:
+  application:
+    name: cloud-provider-payment
+  cloud:
+    zookeeper:
+      # 连接zookeeper注册中心地址
+      connect-string: localhost:2181 # 如果zookeeper是集群环境，逗号,隔开即可

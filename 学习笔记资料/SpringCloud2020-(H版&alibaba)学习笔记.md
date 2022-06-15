@@ -3048,6 +3048,10 @@ http://localhost/consumer/payment/zk
 
 # 7.Consul服务注册与发现
 
+官网：https://www.consul.io/docs/intro
+
+
+
 ## 7.1.Consul简介
 
 **是什么？**
@@ -3571,6 +3575,11 @@ CP架构
 
 
 # 8.Ribbon负载均衡服务调用
+
+**官网资料**
+
+https://github.com/Netflix/ribbon/wiki/Getting-Started
+https://github.com/Netflix/ribbon
 
 
 
@@ -4217,6 +4226,10 @@ http://localhost/consumer/payment/lb
 
 # 9.OpenFeign服务接口调用
 
+官网解释： https://cloud.spring.io/spring-cloud-static/Hoxton.SR1/reference/htmlsingle/#spring-cloud-openfeign 
+
+GitHub：https://github.com/spring-cloud/spring-cloud-openfeign
+
 
 
 ## 9.1.概述
@@ -4732,6 +4745,10 @@ http://localhost/consumer/payment/get/1
 
 
 # 10.Hystrix断路器
+
+官网资料：https://github.com/Netflix/Hystrix/wiki/How-To-Use
+
+https://github.com/Netflix/Hystrix
 
 
 
@@ -6469,17 +6486,268 @@ http://localhost:8001/payment/circuit/-31
 
 # 12.Gateway新一代网关
 
+官网：https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/
+
 
 
 ## 12.1.概述简介
 
 
 
+### **12.1.1.官网**
+
+上一代zuul 1.X：https://github.com/Netflix/zuul/wiki
+
+当前Gateway：https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/
+
+
+
+### 12.1.2.Gateway是什么？
+
+Cloud全家桶中有个很重要的组件就是网关，在1.x版本中都是采用的Zuul网关； 但在2.x版本中，zuul的升级一直跳票，SpringCloud最后自己研发了一个网关替代Zuul， 那就是SpringCloud Gateway 一句话：<font color=red> gateway是原zuul1.x版的替代 </font>
+
+<img src="img/image-20220614095746040.png" alt="image-20220614095746040" style="zoom:120%;" align=left />
+
+
+
+Gateway是在Spring生态系统之上构建的API网关服务，基于Spring 5，Spring Boot 2和 Project Reactor等技术。 
+
+Gateway旨在提供一种简单而有效的方式来对API进行路由，以及提供一些强大的过滤器功能， 例如：熔断、限流、重试等 
+
+
+
+<img src="img/image-20220614095507254.png" alt="image-20220614095507254" style="zoom:80%;" align=left />
+
+
+
+
+
+SpringCloud Gateway 是 Spring Cloud 的一个全新项目，基于 Spring 5.0+Spring Boot 2.0 和 Project Reactor 等技术开发的网关，它旨在为微服务架构提供一种简单有效的统一的 API 路由管理方式。
+
+
+
+SpringCloud Gateway 作为 Spring Cloud 生态系统中的网关，目标是替代 Zuul，在Spring Cloud 2.0以上版本中，没有对新版本的Zuul 2.0以上最新高性能版本进行集成，仍然还是使用的Zuul 1.x非Reactor模式的老版本。而为了提升网关的性能，SpringCloud Gateway是基于WebFlux框架实现的，而WebFlux框架底层则使用了高性能的Reactor模式通信框架Netty。 
+
+
+
+Spring Cloud Gateway的目标提供统一的路由方式且基于 Filter 链的方式提供了网关基本的功能，例如：安全，监控/指标，和限流。 
+
+
+
+<font color=red> 一句话概括就是：SpringCloud Gateway 使用的Webflux中的reactor-netty响应式编程组件，底层使用了Netty通讯框架。</font>
+
+<img src="img/image-20220613215747500.png" alt="image-20220613215747500" style="zoom:100%;" align=left />
+
+
+
+### 12.1.3.能干嘛？
+
+- 反向代理
+- 鉴权
+- 流量控制
+- 熔断
+- 日志监控
+- 。。。。
+
+
+
+### 12.1.4.微服务架构中网关在哪里
+
+<img src="img/image-20220613221204167.png" alt="image-20220613221204167" style="zoom:100%;" align=left />
+
+
+
+### 12.1.5.有Zuul了怎么又出来了gateway
+
+**我们为什么选择Gateway？**
+
+
+
+1. neflix不太靠谱，zuul2.0一直跳票，迟迟不发布
+
+   > 一方面因为Zuul1.0已经进入了维护阶段，而且Gateway是SpringCloud团队研发的，是亲儿子产品，值得信赖。 而且很多功能Zuul都没有用起来也非常的简单便捷。 
+   >
+   > 
+   >
+   > Gateway是基于<font color=red>异步非阻塞模型上</font> 进行开发的，性能方面不需要担心。虽然Netflix早就发布了最新的 Zuul 2.x， 但 Spring Cloud 貌似没有整合计划。而且Netflix相关组件都宣布进入维护期；不知前景如何？ 
+   >
+   > 
+   >
+   > 多方面综合考虑Gateway是很理想的网关选择。 
+
+
+
+2. SpringCloud Gateway具有如下特性
+
+   > <font color=red> 基于Spring Framework 5, Project Reactor 和 Spring Boot 2.0 进行构建； </font>
+   >
+   > 动态路由：能够匹配任何请求属性； 
+   >
+   > 可以对路由指定 Predicate（断言）和 Filter（过滤器）； 
+   >
+   > 集成Hystrix的断路器功能； 
+   >
+   > 集成 Spring Cloud 服务发现功能； 
+   >
+   > 易于编写的 Predicate（断言）和 Filter（过滤器）； 
+   >
+   > 请求限流功能； 
+   >
+   > 支持路径重写。 
+
+   
+
+3. Spring Cloud Gateway 与 Zuul的区别 
+
+   > 在SpringCloud Finchley 正式版之前，Spring Cloud 推荐的网关是 Netflix 提供的Zuul： 
+   >
+   >  
+   >
+   > 1、Zuul 1.x，是一个基于阻塞 I/ O 的 API Gateway 
+   >
+   > 
+   >
+   > 2、Zuul 1.x  基于<font color=red> Servlet 2. 5使用阻塞架构 </font>它不支持任何长连接(如 WebSocket) Zuul 的设计模式和Nginx较像，每次 I/ O 操作都是从工作线程中选择一个执行，请求线程被阻塞到工作线程完成，但是差别是Nginx 用C++ 实现，Zuul 用 Java 实现，而 JVM 本身会有第一次加载较慢的情况，使得Zuul 的性能相对较差。 
+   >
+   > 
+   >
+   > 3、Zuul 2.x理念更先进，想基于Netty非阻塞和支持长连接，但SpringCloud目前还没有整合。 Zuul 2.x的性能较 Zuul 1.x 有较大提升。在性能方面，根据官方提供的基准测试， Spring Cloud Gateway 的 RPS（每秒请求数）是Zuul 的 1. 6 倍。 
+   >
+   > 
+   >
+   > 4、Spring Cloud Gateway 建立 在 Spring Framework 5、 Project Reactor 和 Spring Boot 2 之上， 使用非阻塞 API。 
+   >
+   > 
+   >
+   > 5、Spring Cloud Gateway 还 支持 WebSocket， 并且与Spring紧密集成拥有更好的开发体验 
+
+
+
+### 12.1.6.Zuul1.x模型
+
+Springcloud中所集成的Zuul版本，采用的是Tomcat容器，使用的是传统的Servlet IO处理模型。 
+
+ 
+
+学过尚硅谷web中期课程都知道一个题目， <font color=blue>Servlet的生命周期?</font> servlet由servlet container进行生命周期管理。 
+
+container启动时构造servlet对象并调用servlet init()进行初始化； 
+
+container运行时接受请求，并为每个请求分配一个线程（一般从线程池中获取空闲线程）然后调用service()。 
+
+container关闭时调用servlet destory()销毁servlet； 
+
+ <img src="img/image-20220614100429034.png" alt="image-20220614100429034" style="zoom:100%;" align=left  />
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<font color=blue>上述模式的缺点： </font>
+
+​	servlet是一个简单的网络IO模型，当请求进入servlet container时，servlet container就会为其绑定一个线程，在 <font color=red>并发不高的场景下</font> 这种模型是适用的。但是一旦高并发(比如抽风用jemeter压)，线程数量就会上涨，而线程资源代价是昂贵的（上线文切换，内存消耗大）严重影响请求的处理时间。在一些简单业务场景下，不希望为每个request分配一个线程，只需要1个或几个线程就能应对极大并发的请求，这种业务场景下servlet模型没有优势 
+
+​	所以Zuul 1.X是<font color=red>基于servlet之上的一个阻塞式处理模型</font> ，即spring实现了处理所有request请求的一个servlet（DispatcherServlet）并由该servlet阻塞式处理处理。所以Springcloud Zuul无法摆脱servlet模型的弊端 
+
+ 
+
+### 12.1.7.GateWay模型
+
+**WebFlux是什么?**
+
+https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-new-framework
+
+<img src="img/image-20220613221817853.png" alt="image-20220613221817853" style="zoom:120%;" align=left />
+
+
+
+传统的Web框架，比如说：struts2，springmvc等都是基于Servlet API与Servlet容器基础之上运行的。 
+
+但是 
+
+<font color=red>在Servlet3.1之后有了异步非阻塞的支持 </font>。而WebFlux是一个典型非阻塞异步的框架，它的核心是基于Reactor的相关API实现的。相对于传统的web框架来说，它可以运行在诸如Netty，Undertow及支持Servlet3.1的容器上。非阻塞式+函数式编程（Spring5必须让你使用java8） 
+
+ 
+
+Spring WebFlux 是 Spring 5.0 引入的新的响应式框架，区别于 Spring MVC，它不需要依赖Servlet API，它是完全异步非阻塞的，并且基于 Reactor 来实现响应式流规范。 
+
+
+
 ## 12.2.三大核心概念
+
+**Route(路由)：**
+
+> 路由是构建网关的基本模块，它由ID，目标URI，一系列的断言和过滤器组成，如果断言为true则匹配该路由
+
+
+
+**Predicate(断言)：**
+
+> 参考的是Java8的java.util.function.Predicate，开发人员可以匹配HTTP请求中的所有内容(例如请求头或请求参数)，<font color=red>如果请求与断言相匹配则进行路由</font>
+
+
+
+**Filter(过滤)：**
+
+>  指的是Spring框架中GatewayFilter的实例，使用过滤器，可以在请求被路由前或者之后对请求进行修改。
+
+
+
+
+
+**总体流程**
+
+<img src="img/image-20220614101819470.png" alt="image-20220614101819470" style="zoom:80%;" align=left />
+
+
+
+web请求，通过一些匹配条件，定位到真正的服务节点。并在这个转发过程的前后，进行一些精细化控制。 
+
+predicate就是我们的匹配条件； 
+
+而filter，就可以理解为一个无所不能的拦截器。有了这两个元素，再加上目标uri，就可以实现一个具体的路由了 
+
+
+
+请求->gataway->predicate断言，后route路由->filter->microservice 微服务
 
 
 
 ## 12.3.Gateway工作流程
+
+https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/#gateway-how-it-works
+
+<font color=red>核心逻辑：路由转发+执行过滤器链</font>
+
+
+
+<img src="img/image-20220614095224877.png" alt="image-20220614095224877" style="zoom:80%;" align=left  />
+
+
+
+客户端向 Spring Cloud Gateway 发出请求。然后在 Gateway Handler Mapping 中找到与请求相匹配的路由，将其发送到 Gateway Web Handler。 
+
+ 
+
+Handler 再通过指定的过滤器链来将请求发送到我们实际的服务执行业务逻辑，然后返回。 
+
+过滤器之间用虚线分开是因为过滤器可能会在发送代理请求之前（“pre”）或之后（“post”）执行业务逻辑。 
+
+ 
+
+Filter在“pre”类型的过滤器可以做参数校验、权限校验、流量监控、日志输出、协议转换等， 
+
+在“post”类型的过滤器中可以做响应内容、响应头的修改，日志的输出，流量监控等有着非常重要的作用。 
 
 
 
@@ -6487,17 +6755,876 @@ http://localhost:8001/payment/circuit/-31
 
 
 
+### 12.4.1.新建cloud-gateway-gateway9527模块
+
+
+
+#### 12.4.1.1.创建cloud-gateway-gateway9527模块
+
+略
+
+
+
+#### 12.4.1.2.pom
+
+注意：gataway网关不需要 spring-boot-starter-web、
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud2020-learn</artifactId>
+        <groupId>com.atguigu.springcloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloud-gateway-gateway9527</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!--gateway-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        <!-- 服务注册中心的客户端 eureka-client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <!-- 引入自己定义的api通用包 -->
+        <dependency>
+            <groupId>com.atguigu.springcloud</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--devtools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+
+```
+
+
+
+#### 12.4.1.3.yml
+
+```yaml
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    register-with-eureka: true # 服务提供者 provider 注册进 eureka 服务列表内
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+
+```
+
+
+
+
+
+#### 12.4.1.4.业务类
+
+无
+
+#### 12.4.1.5.主启动
+
+```java
+package com.atguigu.springcloud;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+/**
+ * @author caojx created on 2022/6/14 10:41 AM
+ */
+@SpringBootApplication
+@EnableEurekaClient
+public class GateWayMain9527 {
+
+    public static void main(String[] args) {
+        SpringApplication.run(GateWayMain9527.class, args);
+    }
+}
+
+```
+
+
+
+#### 12.4.1.6.9527网关如何做路由映射那？？？
+
+cloud-provider-payment8001看看controller的访问地址
+
+http://localhost:8001/payment/get/1
+
+```json
+{"code":200,"message":"查询成功，serverPort：8001","data":{"id":1,"serial":"尚硅谷001"}}
+```
+
+
+
+http://localhost:8001/payment/lb
+
+8001 
+
+
+
+我们目前不想暴露8001端口，希望在8001外面套一层9527
+
+
+
+#### 12.4.1.7.YML新增网关配置
+
+<img src="img/image-20220614105624835.png" alt="image-20220614105624835" style="zoom:40%;" align=left />
+
+
+
+### 12.4.2.测试
+
+启动7001 eureka server
+
+启动8001 cloud-provider-payment8001
+
+启动9527网关
+
+
+
+访问说明：
+
+<img src="img/image-20220614110419414.png" alt="image-20220614110419414" style="zoom:50%;" align=left />
+
+
+
+
+
+添加网关前访问：http://localhost:8001/payment/get/1
+
+添加网关后访问（测试通过）：
+
+http://localhost:9527/payment/get/1
+
+http://localhost:9527/payment/lb
+
+
+
+### 12.4.3.YML配置说明
+
+Gateway网关路由有两种配置方式：
+
+#### 12.4.3.1.在配置文件yml中配置： 见前面的步骤
+
+
+
+#### 12.4.3.2.代码中注入RouteLocator的Bean
+
+官网案例：
+
+<img src="img/image-20220614103253879.png" alt="image-20220614103253879" style="zoom:80%;" align=left  />
+
+
+
+需求：使用java配置实现，通过9527网关访问到外网的百度新闻网址 http://news.baidu.com/guonei
+
+修改：cloud-gateway-gateway9527
+
+当访问地址 http://localhost:9527/guonei 时会自动转发到地址： http://news.baidu.com/guonei
+
+当访问地址 http://localhost:9527/guoji 时会自动转发到地址： http://news.baidu.com/guoji
+
+```java
+package com.atguigu.springcloud.config;
+
+
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * @author caojx created on 2022/6/14 10:36 PM
+ */
+@Configuration
+public class GateWayConfig {
+
+    /**
+     * 配置了一个 id 为 route-name 的路由规则，
+     * 当访问地址 http://localhost:9527/guonei 时会自动转发到地址： http://news.baidu.com/guonei
+     *
+     * @param builder
+     * @return
+     */
+    @Bean
+    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
+        RouteLocatorBuilder.Builder routes = builder.routes();
+        routes.route("path_route_atguigu", r -> r.path("/guonei").uri("http://news.baidu.com/guonei")).build();
+        return routes.build();
+    }
+
+    @Bean
+    public RouteLocator customRouteLocator2(RouteLocatorBuilder builder) {
+        RouteLocatorBuilder.Builder routes = builder.routes();
+        routes.route("path_route_atguigu2", r -> r.path("/guoji").uri("http://news.baidu.com/guoji")).build();
+        return routes.build();
+    }
+}
+```
+
+
+
+
+
+
+
 ## 12.5.通过微服务名实现动态路由
 
+默认情况下Gateway会根据注册中心注册的服务列表，以注册中心上微服务名为路径创建<font color=red>动态路由进行转发，从而实现动态路由的功能</font>
 
 
-## 12.6.Predicate的使用
+
+一个eureka7001 + 两个服务提供者8001/8002
+
+
+
+9527网关服务需要依赖
+
+```xml
+<!-- 服务注册中心的客户端 eureka-client -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+```
+
+
+
+9527网关yml
+
+需要注意的是uri的协议为<font color=red>lb</font>，表示启用Gateway的负载均衡功能，[lb://serviceName是spring](lb://serviceName是spring) cloud gateway在微服务中自动为我们创建的负载均衡uri
+
+![image-20220614113149396](img/image-20220614113149396.png)
+
+
+
+测试：http://localhost:9527/payment/lb
+
+8001/8002两个端口交替出现
+
+
+
+## 12.6.Predicate断言的使用
+
+
+
+### 12.6.1.predicate 断言是什么？
+
+重启我们的gateway9527
+
+![image-20220614114032681](img/image-20220614114032681.png)
+
+
+
+https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/#gateway-request-predicates-factories
+
+
+
+**Route Predicate Factories这个是什么东东?**
+
+<img src="img/image-20220614114232619.png" alt="image-20220614114232619" style="zoom:80%;" align=left />
+
+
+
+ Spring Cloud Gateway将路由匹配作为Spring WebFlux HandlerMapping基础架构的一部分。 
+
+Spring Cloud Gateway包括许多内置的Route Predicate工厂。所有这些Predicate都与HTTP请求的不同属性匹配。多个Route Predicate工厂可以进行组合 
+
+ 
+
+Spring Cloud Gateway 创建 Route 对象时， 使用 RoutePredicateFactory 创建 Predicate 对象，Predicate 对象可以赋值给 Route。 Spring Cloud Gateway 包含许多内置的Route Predicate Factories。 
+
+ 
+
+所有这些谓词都匹配HTTP请求的不同属性。多种谓词工厂可以组合，并通过逻辑and。 
+
+
+
+### 12.6.2.常用的Route Predicate
+
+<img src="img/image-20220614114840729.png" alt="image-20220614114840729" style="zoom:80%;" align=left />
+
+
+
+#### 12.6.2.1.After Route Predicate
+
+<img src="img/image-20220614115018292.png" alt="image-20220614115018292" style="zoom:80%;" align=left />
+
+我们的问题是：上述这个After好懂，这个时间串怎么获取？可以通过如下的代码获取
+
+
+
+```java
+import java.time.ZonedDateTime;
+
+/**
+ * @author caojx created on 2022/6/14 11:51 AM
+ */
+public class ZonedDateTimeDemo {
+
+    public static void main(String[] args) {
+        ZonedDateTime zbj = ZonedDateTime.now(); // 默认时区
+        System.out.println(zbj);
+        // ZonedDateTime zny = ZonedDateTime.now(ZoneId.of("America/New_York")); // 用指定时区获取当前时间
+        // System.out.println(zny);
+    }
+}
+
+```
+
+
+
+yml配置
+
+<img src="img/image-20220614115313893.png" alt="image-20220614115313893" style="zoom:80%;" align=left />
+
+
+
+
+
+#### 12.6.2.2.Before Route Predicate
+
+
+
+<img src="img/image-20220614115357740.png" alt="image-20220614115357740" style="zoom:80%;" align=left />
+
+
+
+yml配置
+
+<img src="img/image-20220614115422983.png" alt="image-20220614115422983" style="zoom:80%;" align=left  />
+
+
+
+
+
+#### 12.6.2.3.Between Route Predicate
+
+```yaml
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh # payment_route, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          # uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/get/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+
+        - id: payment_routh2 # payment_route2, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/lb/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+            - After=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在这个时间之后
+            #- Before=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在指定时间之前
+            - Between=2020-02-02T17:45:06.206+08:00[Asia/Shanghai],2020-03-25T18:59:06.206+08:00[Asia/Shanghai] # 断言，在时间区间
+```
+
+
+
+
+
+
+
+#### 12.6.2.4.Cookie Route Predicate
+
+<img src="img/image-20220614115559999.png" alt="image-20220614115559999" style="zoom:80%;" align=left />
+
+Cookie Route Predicate需要两个参数，一个是 Cookie name ,一个是正则表达式。
+
+路由规则会通过获取对应的 Cookie name 值和正则表达式去匹配，如果匹配上就会执行路由，如果没有匹配上则不执行 
+
+
+
+
+
+```yaml
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh # payment_route, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          # uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/get/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+
+        - id: payment_routh2 # payment_route2, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/lb/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+            - After=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在这个时间之后
+            #- Before=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在指定时间之前
+            #- Between=2020-02-02T17:45:06.206+08:00[Asia/Shanghai],2020-03-25T18:59:06.206+08:00[Asia/Shanghai] # 断言，在时间区间
+            - Cookie=username,zzyy # 断言，key,value 带cookies, curl http://localhost:9527/payment/lb --cookie "username=zzyy"
+```
+
+
+
+
+
+不带cookies访问
+
+curl http://localhost:9527/payment/lb 
+
+<img src="img/image-20220614121851995.png" alt="image-20220614121851995" style="zoom:80%;" align=left />
+
+
+
+带cookies访问
+
+curl http://localhost:9527/payment/lb --cookie "username=zzyy" 
+
+<img src="img/image-20220614121919307.png" alt="image-20220614121919307" style="zoom:80%;" align=left />
+
+#### 12.6.2.5.Header Route Predicate
+
+<img src="img/image-20220614115743875.png" alt="image-20220614115743875" style="zoom:80%;" align=left  />
+
+两个参数：一个是属性名称和一个正则表达式，这个属性值和正则表达式匹配则执行。 
+
+
+
+```yaml
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh # payment_route, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          # uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/get/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+
+        - id: payment_routh2 # payment_route2, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/lb/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+            - After=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在这个时间之后
+            #- Before=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在指定时间之前
+            #- Between=2020-02-02T17:45:06.206+08:00[Asia/Shanghai],2020-03-25T18:59:06.206+08:00[Asia/Shanghai] # 断言，在时间区间
+            #- Cookie=username,zzyy # 断言，带cookies, curl http://localhost:9527/payment/lb --cookie "username=zzyy"
+            - Header=X-Request-Id, \d+ # 断言，请求头要有 X-Request-Id 属性并且值为整数的正则表达式， curl http://localhost:9527/payment/lb -H "X-Request-Id:123"
+```
+
+
+
+请求： curl http://localhost:9527/payment/lb -H "X-Request-Id:123" 
+
+<img src="img/image-20220614122236639.png" alt="image-20220614122236639" style="zoom:80%;" align=left />
+
+
+
+#### 12.6.2.6.Host Route Predicate
+
+<img src="img/image-20220614120115533.png" alt="image-20220614120115533" style="zoom:80%;" align=left />
+
+Host Route Predicate 接收一组参数，一组匹配的域名列表，这个模板是一个 ant 分隔的模板，用.号作为分隔符。 
+
+它通过参数中的主机地址作为匹配规则。
+
+
+
+```yaml
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh # payment_route, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          # uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/get/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+
+        - id: payment_routh2 # payment_route2, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/lb/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+            - After=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在这个时间之后
+            #- Before=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在指定时间之前
+            #- Between=2020-02-02T17:45:06.206+08:00[Asia/Shanghai],2020-03-25T18:59:06.206+08:00[Asia/Shanghai] # 断言，在时间区间
+            #- Cookie=username,zzyy # 断言，带cookies, curl http://localhost:9527/payment/lb --cookie "username=zzyy"
+            #- Header=X-Request-Id, \d+ # 断言，请求头要有 X-Request-Id 属性并且值为整数的正则表达式， curl http://localhost:9527/payment/lb -H "X-Request-Id:123"
+            - Host=**.atguigu.com # 断言，需要携带Host，curl http://localhost:9527/payment/lb -H "Host: java.atguigu.com
+```
+
+
+
+正确：curl http://localhost:9527/payment/lb -H "Host: www.atguigu.com" 
+
+正确：curl http://localhost:9527/payment/lb -H "Host: java.atguigu.com" 
+
+错误： curl http://localhost:9527/payment/lb -H "Host: java.atguigu.net" 
+
+
+
+#### 12.6.2.7.Method Route Predicate
+
+<img src="img/image-20220614120130899.png" alt="image-20220614120130899" style="zoom:80%;" align=left  />
+
+```yaml
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh # payment_route, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          # uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/get/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+
+        - id: payment_routh2 # payment_route2, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/lb/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+            - After=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在这个时间之后
+            #- Before=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在指定时间之前
+            #- Between=2020-02-02T17:45:06.206+08:00[Asia/Shanghai],2020-03-25T18:59:06.206+08:00[Asia/Shanghai] # 断言，在时间区间
+            #- Cookie=username,zzyy # 断言，带cookies, curl http://localhost:9527/payment/lb --cookie "username=zzyy"
+            #- Header=X-Request-Id, \d+ # 断言，请求头要有 X-Request-Id 属性并且值为整数的正则表达式， curl http://localhost:9527/payment/lb -H "X-Request-Id:123"
+            #- Host=**.atguigu.com # 断言，需要携带Host，curl http://localhost:9527/payment/lb -H "Host: java.atguigu.com
+            - Methdod=GET # 断言，请求方式
+```
+
+
+
+#### 12.6.2.8.Path Route Predicate
+
+<img src="img/image-20220614120201251.png" alt="image-20220614120201251" style="zoom:80%;" align=left />
+
+
+
+```yaml
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh # payment_route, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          # uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/get/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+
+        - id: payment_routh2 # payment_route2, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/lb/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+            #- After=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在这个时间之后
+            #- Before=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在指定时间之前
+            #- Between=2020-02-02T17:45:06.206+08:00[Asia/Shanghai],2020-03-25T18:59:06.206+08:00[Asia/Shanghai] # 断言，在时间区间
+            #- Cookie=username,zzyy # 断言，带cookies, curl http://localhost:9527/payment/lb --cookie "username=zzyy"
+            #- Header=X-Request-Id, \d+ # 断言，请求头要有 X-Request-Id 属性并且值为整数的正则表达式， curl http://localhost:9527/payment/lb -H "X-Request-Id:123"
+            #- Host=**.atguigu.com # 断言，需要携带Host，curl http://localhost:9527/payment/lb -H "Host: java.atguigu.com
+            #- Methdod=GET # 断言，请求方式
+```
+
+
+
+#### 12.6.2.9.Query Route Predicate
+
+<img src="img/image-20220614120226101.png" alt="image-20220614120226101" style="zoom:80%;" align=left />
+
+支持传入两个参数，一个是属性名，一个为属性值，属性值可以是正则表达式。
+
+
+
+```yaml
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh # payment_route, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          # uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/get/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+
+        - id: payment_routh2 # payment_route2, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/lb/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+            #- After=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在这个时间之后
+            #- Before=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在指定时间之前
+            #- Between=2020-02-02T17:45:06.206+08:00[Asia/Shanghai],2020-03-25T18:59:06.206+08:00[Asia/Shanghai] # 断言，在时间区间
+            #- Cookie=username,zzyy # 断言，带cookies, curl http://localhost:9527/payment/lb --cookie "username=zzyy"
+            #- Header=X-Request-Id, \d+ # 断言，请求头要有 X-Request-Id 属性并且值为整数的正则表达式， curl http://localhost:9527/payment/lb -H "X-Request-Id:123"
+            #- Host=**.atguigu.com # 断言，需要携带Host，curl http://localhost:9527/payment/lb -H "Host: java.atguigu.com
+            #- Methdod=GET # 断言，请求方式
+            - Query=username, \d+ # 要有参数名 username 并且值还要正整数才能路由 
+
+```
+
+
+
+正确：http://localhost:9527/payment/lb?username=31
+
+错误：http://localhost:9527/payment/lb?username=-31
+
+
+
+
+
+### 12.6.3.小总结
+
+说白了，Predicate就是为了实现一组匹配规则，让请求过来找到对应的Route进行处理。
+
+
+
+所有配置
+
+```yaml
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh # payment_route, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          # uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/get/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+
+        - id: payment_routh2 # payment_route2, 路由的 ID ，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001 # 匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，需要注意的是uri的协议为lb，表示启用Gateway的负载均衡功能，通过微服务名实现动态路由
+          predicates:
+            - Path=/payment/lb/** # 断言，路径相匹配的进行路由，断言通过，将转发到uri指定的地址
+            #- After=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在这个时间之后
+            #- Before=2020-02-05T15:10:03.685+08:00[Asia/Shanghai] # 断言，在指定时间之前
+            #- Between=2020-02-02T17:45:06.206+08:00[Asia/Shanghai],2020-03-25T18:59:06.206+08:00[Asia/Shanghai] # 断言，在时间区间
+            #- Cookie=username,zzyy # 断言，带cookies, curl http://localhost:9527/payment/lb --cookie "username=zzyy"
+            #- Header=X-Request-Id, \d+ # 断言，请求头要有 X-Request-Id 属性并且值为整数的正则表达式， curl http://localhost:9527/payment/lb -H "X-Request-Id:123"
+            #- Host=**.atguigu.com # 断言，需要携带Host，curl http://localhost:9527/payment/lb -H "Host: java.atguigu.com
+            #- Methdod=GET # 断言，请求方式
+            - Query=username, \d+ # 要有参数名 username 并且值还要是整数才能路由
+
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    register-with-eureka: true # 服务提供者 provider 注册进 eureka 服务列表内
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+```
+
+
 
 
 
 ## 12.7.Filter的使用
 
+### 12.7.1.是什么？
 
+路由过滤器可用于修改进入的HTTP请求和返回的HTTP响应，路由过滤器只能指定路由进行使用。 
+
+Spring Cloud Gateway 内置了多种路由过滤器，他们都由GatewayFilter的工厂类来产生 
+
+<img src="img/image-20220614132733806.png" alt="image-20220614132733806" style="zoom:80%;" align=left />
+
+
+
+### 12.7.2.Spring Cloud Gateway的Filter
+
+生命周期只有2个 pre、post
+
+
+
+过滤器种类也只有2种
+
+1. **GatewayFilter**：https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/#gatewayfilter-factories
+
+   <img src="img/image-20220614133045548.png" alt="image-20220614133045548" style="zoom:80%;" align=left />
+
+
+
+2. **GlobalFilter**：https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/#global-filters
+
+<img src="img/image-20220614133146579.png" alt="image-20220614133146579" style="zoom:80%;" align=left />
+
+
+
+### 12.7.3.常用的过滤器类型
+
+这里只举例[The `AddRequestParameter` `GatewayFilter` Factory](https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/#the-addrequestparameter-gatewayfilter-factory)，其他的参考官网
+
+<img src="img/image-20220614133457075.png" alt="image-20220614133457075" style="zoom:80%;" align=left />
+
+
+
+### 12.7.4.自定义全局过滤器
+
+通过自定义过滤器，可以实现全局日志记录、统一网关鉴权等等，实现自定义过滤器，主要实现`implements GlobalFilter,Ordered` 两个接口
+
+
+
+```java
+package com.atguigu.springcloud.filter;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.gateway.filter.GatewayFilterChain;
+import org.springframework.cloud.gateway.filter.GlobalFilter;
+import org.springframework.core.Ordered;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
+import org.springframework.web.server.ServerWebExchange;
+import reactor.core.publisher.Mono;
+
+import java.util.Date;
+
+/**
+ * 自定义全局过滤器
+ *
+ * @author caojx created on 2022/6/14 1:38 PM
+ */
+@Slf4j
+@Component
+public class MyLogGateWayFilter implements GlobalFilter, Ordered {
+    @Override
+    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        log.info("time:{} 执行了自定义的全局过滤器 MyLogGateWayFilter hello", new Date());
+
+        String uname = exchange.getRequest().getQueryParams().getFirst("uname");
+        if (uname == null) {
+            log.info("**** 用户名为 null ，无法登录 ");
+            exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);
+            return exchange.getResponse().setComplete();
+        }
+        return chain.filter(exchange);
+    }
+
+    @Override
+    public int getOrder() {
+        return 0;
+    }
+}
+
+```
+
+
+
+
+
+启动服务
+
+<img src="img/image-20220614134511919.png" alt="image-20220614134511919" style="zoom:50%;" align=left />
+
+
+
+没有uname参数：http://localhost:9527/payment/lb ，返回406
+
+有uname参数	http://localhost:9527/payment/lb?uname=z3  正常转发
 
 
 
@@ -6505,9 +7632,69 @@ http://localhost:8001/payment/circuit/-31
 
 # 13.SpringCloud Config分布式配置中心
 
+官网：https://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.2.1.RELEASE/reference/html/
+
 
 
 ## 13.1.概述
+
+
+
+### 13.1.1.分布式系统面临的---配置问题
+
+  	微服务意味着要将单体应用中的业务拆分成一个个子服务，每个服务的粒度相对较小，因此系统中会出现大量的服务。<font color=blue>由于每个服务都需要必要的配置信息才能运行，所以一套集中式的、动态的配置管理设施是必不可少的。 </font>
+
+​	<font color=blue>SpringCloud提供了ConfigServer来解决这个问题，我们每一个微服务自己带着一个application.yml，上百个配置文件的管理...... ,/(ㄒoㄒ)/~~ </font>
+
+
+
+### 13.1.1.SpringCloud Config是什么？
+
+**是什么** 
+
+>  SpringCloud Config为微服务架构中的微服务提供集中化的外部配置支持，配置服务器为<font color=red>各个不同微服务应用</font> 的所有环境提供了一个 <font color=red>中心化的外部配置 </font>。 
+
+<img src="img/image-20220614141105994.png" alt="image-20220614141105994" style="zoom:80%;" align=left />
+
+
+
+ 
+
+**怎么玩** 
+
+>  SpringCloud Config分为 <font color=red>服务端和客户端两部分</font> 。 
+>
+> 
+>
+> 服务端也称为 <font color=red>分布式配置中心，它是一个独立的微服务应用</font> ，用来连接配置服务器并为客户端提供获取配置信息，加密/解密信息等访问接口 
+>
+> 
+>
+> 客户端则是通过指定的配置中心来管理应用资源，以及与业务相关的配置内容，并在启动的时候从配置中心获取和加载配置信息配置服务器默认采用git来存储配置信息，这样就有助于对环境配置进行版本管理，并且可以通过git客户端工具来方便的管理和访问配置内容。 
+
+
+
+能干嘛?
+
+> 1.集中管理配置文件
+>
+> 2.不同环境不同配置，动态化的配置更新，分环境部署比如dev/test/prod/beta/release
+>
+> 3.运行期间动态调整配置，不再需要在每个服务部署的机器上编写配置文件，服务会向配置中心统一拉取配置自己的信息
+>
+> 4.当配置发生变动时，服务不需要重启即可感知到配置的变化并应用新的配置
+>
+> 5.将配置信息以REST接口的形式暴露，post、curl访问刷新均可......
+
+
+
+推荐与GitHub整合配置
+
+> 由于SpringCloud Config默认使用Git来存储配置文件(也有其它方式,比如支持SVN和本地文件)，但最推荐的还是Git，而且使用的是http/https访问的形式
+
+
+
+
 
 
 
@@ -6515,13 +7702,556 @@ http://localhost:8001/payment/circuit/-31
 
 
 
-## 13.4.**Config客户端配置与测试**
+### 13.2.1.github仓库springcloud-config准备
+
+1. 用你自己的账号在GitHub/Gitee上新建一个名为springcloud-config的新Repository
+
+2. 由上一步获得刚新建的git地址：https://gitee.com/caojx-git/springcloud-config.git
+
+3. git clone 仓库到本地：git clone https://gitee.com/caojx-git/springcloud-config.git
+
+4. 本地仓库中新建config-dev.yml、config-test.yml、config-prod.yml文件，表示多个环境的配置文件
+
+   <img src="img/image-20220614141624454.png" alt="image-20220614141624454" style="zoom:80%;" align=left />
+
+推送到github
+   ```shell
+   git add *
+   git commit -m "init yml"
+   git push -u origin master
+   ```
+
+   
+
+### 13.2.2.新建Module模块cloud-config-center-3344它即为Cloud的配置中心模块cloudConfig Center
+
+#### 13.2.2.1.新建cloud-config-center-3344模块
+
+略
 
 
 
-## 13.5.Config客户端之动态刷新
+#### 13.2.2.2.pom
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud2020-learn</artifactId>
+        <groupId>com.atguigu.springcloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloud-config-center-3344</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+
+        <!-- config-server-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+
+        <!-- 服务注册中心的客户端 eureka-client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <!-- 引入自己定义的api通用包 -->
+        <dependency>
+            <groupId>com.atguigu.springcloud</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--devtools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+
+```
 
 
+
+#### 13.2.2.3.yml
+
+```yaml
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center #注册进Eureka服务器的微服务名
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/caojx-git/springcloud-config.git #Gitee上面的git仓库名字
+          search-paths: #搜索目录
+            - springcloud-config
+          skip-ssl-validation: true
+          # 需要配置仓库的用户名密码，否则无法拉取配置
+          username: xxx
+          password: xxx
+      label: master #读取分支
+      #启动成功后访问的路径 http://ip:3344/{label}/{application}-{profile}.yml 能访问的配置文件 就表示成功了
+
+# 服务注册到 eureka 地址
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone:  http://localhost:7001/eureka
+
+
+```
+
+
+
+#### 13.2.2.4.主启动类
+
+```java
+package com.atguigu.springcloud;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
+
+/**
+ * @author caojx created on 2022/6/14 2:33 PM
+ */
+@SpringBootApplication
+@EnableConfigServer // 配置中心服务端
+public class ConfigCenterMain3344 {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ConfigCenterMain3344.class, args);
+    }
+}
+```
+
+
+
+#### 13.2.2.4.编辑config-dev.yml的内容
+
+<img src="img/image-20220614164324897.png" alt="image-20220614164324897" style="zoom:80%;" align=left />
+
+#### 13.2.2.5.测试通过Config微服务是否可以从GitHub上获取配置内容
+
+1. windows下修改hosts文件，增加映射  `127.0.0.1 config-3344.com`
+2. 启动微服务3344，访问：http://config-3344.com:3344/master/config-dev.yml
+
+<img src="img/image-20220614164418071.png" alt="image-20220614164418071" style="zoom:80%;" align=left />
+
+
+
+#### 13.2.2.6.配置读取规则
+
+
+
+官网说明：https://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.2.1.RELEASE/reference/html/#_quick_start
+
+<img src="img/image-20220614164614879.png" alt="image-20220614164614879" style="zoom:50%;" align=left />
+
+
+
+<img src="img/image-20220614165216111.png" alt="image-20220614165216111" style="zoom:80%;" align=left />
+
+
+
+**配置读取规则小总结**
+
+/{name}-{profiles}.yml 
+
+/{label}-{name}-{profiles}.yml 
+
+
+
+label：分支(branch) 
+
+name ：服务名 
+
+profiles：环境(dev/test/prod) 
+
+
+
+到这里我们成功实现了用SpringCloud Config通过GitHub获取配置信息
+
+
+
+## 13.3.**Config客户端配置与测试**
+
+实现了客户端3355访问SpringCloud Config3344通过GitHub获取配置信息
+
+<img src="img/image-20220614165700957.png" alt="image-20220614165700957" style="zoom:80%;" align=left />
+
+
+
+### 13.3.1.cloud-config-client-3355 客户端
+
+#### 13.3.1.1.新建模块cloud-config-client-3355
+
+#### 13.3.1.2.pom
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud2020-learn</artifactId>
+        <groupId>com.atguigu.springcloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloud-config-client-3355</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+
+        <!-- config-client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
+        <!-- 服务注册中心的客户端 eureka-client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <!-- 引入自己定义的api通用包 -->
+        <dependency>
+            <groupId>com.atguigu.springcloud</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--devtools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+
+```
+
+
+
+#### 13.3.1.3.bootstrap.yml
+
+**bootstrap是什么？**
+
+ 
+
+applicaiton.yml是用户级的资源配置项 
+
+bootstrap.yml是系统级的，<font color=red> 优先级更加高 </font>
+
+ 
+
+Spring Cloud会创建一个“Bootstrap Context”，作为Spring应用的`Application Context`的 父上下文 。初始化的时候，`Bootstrap Context`负责从 外部源 加载配置属性并解析配置。这两个上下文共享一个从外部获取的`Environment`。 
+
+
+
+<font color=red>`Bootstrap`属性有高优先级，默认情况下，它们不会被本地配置覆盖</font>。 `Bootstrap context`和`Application Context`有着不同的约定，所以新增了一个`bootstrap.yml`文件，保证`Bootstrap Context`和`Application Context`配置的分离。 
+
+ 
+
+要将Client模块下的application.yml文件改为bootstrap.yml,这是很关键的， 
+
+因为bootstrap.yml是比application.yml先加载的。bootstrap.yml优先级高于application.yml 
+
+
+
+**bootstrap.yml配置内容**
+
+```yaml
+server:
+  port: 3355
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master # 分支名称
+      name: config # 配置文件名称
+      profile: dev # 读取后缀名称 上述 3 个综合： master 分支上 config-dev.yml 的配置文件被读取 http://config-3344.com:3344/master/config-dev.yml
+      uri: http://localhost:3344 # 配置中心地址
+
+# 服务注册到 eureka 地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+```
+
+
+
+#### 13.3.1.3.主启动
+
+```java
+package com.atguigu.springcloud;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+/**
+ * @author caojx created on 2022/6/14 5:09 PM
+ */
+@SpringBootApplication
+@EnableEurekaClient
+public class ConfigClientMain3355 {
+    public static void main(String[] args) {
+        SpringApplication.run(ConfigClientMain3355.class, args);
+    }
+}
+
+```
+
+
+
+#### 13.3.1.4.业务类
+
+```java
+package com.atguigu.springcloud.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author caojx created on 2022/6/14 5:09 PM
+ */
+@RestController
+public class ConfigClientController {
+
+    @Value("${server.port}")
+    private String serverPort;
+
+    @Value("${config.info}")
+    private String configInfo;
+
+    @GetMapping("/configInfo")
+    public String getConfigInfo() {
+        return "serverPort: " + serverPort + " \t\n\n configInfo: " + configInfo;
+    }
+}
+
+```
+
+
+
+#### 13.3.1.5.测试
+
+启动Config配置中心3344微服务并自测
+
+http://config-3344.com:3344/master/config-prod.yml
+
+```json
+config:
+  info: master branch,springcloud-config/config-prod.yml version=1
+```
+
+http://config-3344.com:3344/master/config-dev.yml
+
+```json
+config:
+  info: master branch,springcloud-config/config-dev.yml version=1
+```
+
+
+
+启动3355作为Client准备访问
+
+http://localhost:3355/configInfo
+
+serverPort: 3355 configInfo: master branch,springcloud-config/config-dev.yml version=1
+
+
+
+### 13.3.3.问题随时而来，分布式配置的动态刷新问题
+
+Linux运维修改GitHub上的配置文件内容做调整
+
+刷新3344，发现ConfigServer配置中心立刻响应
+
+刷新3355，发现ConfigClient客户端没有任何响应
+
+3355没有变化除非自己重启或者重新加载
+
+难到每次运维修改配置文件，客户端都需要重启？？噩梦
+
+
+
+## 13.4.Config客户端之动态刷新(手动)
+
+为了避免每次更新配置都要重启客户端微服务3355，我们对3355模块进行修改
+
+
+
+### **13.4.1.3355需要引入spring-boot-starter-actuator**
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+
+
+
+### 13.4.2.**修改YML，暴露监控端口**
+
+<img src="img/image-20220614173004214.png" alt="image-20220614173004214" style="zoom:40%;" align=left />
+
+
+
+### 13.4.3.**@RefreshScope业务类Controller修改**
+
+```java
+package com.atguigu.springcloud.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author caojx created on 2022/6/14 5:09 PM
+ */
+@RestController
+@RefreshScope // 实现热加载 自动获取刷新内容
+public class ConfigClientController {
+
+    @Value("${server.port}")
+    private String serverPort;
+
+    @Value("${config.info}")
+    private String configInfo;
+
+    @GetMapping("/configInfo")
+    public String getConfigInfo() {
+        return "serverPort: " + serverPort + " \t\n\n configInfo: " + configInfo;
+    }
+}
+```
+
+
+
+
+
+### 13.4.4.测试
+
+此时修改github---> 3344 ---->3355
+
+访问：http://config-3344.com:3344/master/config-dev.yml
+
+```json
+config:
+  info: master branch,springcloud-config/config-dev.yml version=3
+```
+
+
+
+访问：http://localhost:3355/configInfo
+
+serverPort: 3355 configInfo: master branch,springcloud-config/config-dev.yml version=2
+
+
+
+结果是3355依然没有改变
+
+
+
+**<font color=red>如何让3355也刷新？</font>**
+
+需要运维人员发送Post请求刷新3355，必须时POST
+
+curl -X POST "http://localhost:3355/actuator/refresh"
+
+<img src="img/image-20220614173530518.png" alt="image-20220614173530518" style="zoom:50%;" align=left />
+
+
+
+再次访问：http://localhost:3355/configInfo 配置刷新了，成功实现了客户端3355刷新到最新配置内容
+
+serverPort: 3355 configInfo: master branch,springcloud-config/config-dev.yml version=3
+
+
+
+
+
+### 13.4.5.发送post请求刷新弊端？
+
+假如有多个微服务客户端3355/3366/3377。。
+
+每个微服务都要执行一次post请求，手动刷新？这样也太累了。
+
+可不可以使用广播,一次通知?? 
+
+这些springconfig做不到,需要使用springcloud Bus消息总线
 
 
 
@@ -6533,9 +8263,105 @@ http://localhost:8001/payment/circuit/-31
 
 ## 14.1.概述
 
+Spring Cloud Bus 配合 Spring Cloud Config 使用可以实现配置的自动版的动态刷新。Bus支持两种消息代理：RabbitMQ 和 Kafka
+
+
+
+**Spring Cloud Bus  是什么？**
+
+<img src="img/image-20220614174721404.png" alt="image-20220614174721404" style="zoom:100%;" align=left />
+
+1.在git配置中心更新配置
+
+2.配置中心获取到最新的配置
+
+3.只需要发送 /bus/refresh请求到任何一台机器，就可以广播到其他所有的机器拿到最新的配置
+
+
+
+**Spring Cloud Bus 能干嘛？**
+
+> Spring Cloud Bus能管理和传播分布式系统间的消息，就像一个分布式执行器，可用于广播状态更改、事件推送等，也可以当作微服务间的通信通道。
+
+<img src="img/image-20220614175114948.png" alt="image-20220614175114948" style="zoom:150%;" align=left />
+
+
+
+**为何被称为总线 ？**
+
+>  在微服务架构的系统中，通常会使用 <font color=red>轻量级的消息代理 </font>来构建一个 <font color=red>共用的消息主题 ，并让系统中所有微服务实例都连接上来</font>。由于 <font color=red>该主题中产生的消息会被所有实例监听和消费，所以称它为消息总线</font>。 在总线上的各个实例，都可以方便地广播一些需要让其他连接在该主题上的实例都知道的消息。 
+
+ 
+
+**基本原理** 
+
+> ConfigClient实例都监听MQ中同一个topic(默认是springCloudBus)。当一个服务刷新数据的时候，它会把这个信息放入到Topic中，这样其它监听同一Topic的服务就能得到通知，然后去更新自身的配置。 
+
+ 
+
+https://www.bilibili.com/video/av55976700?from=search&seid=15010075915728605208 
+
 
 
 ## 14.2.RabbitMQ环境配置
+
+官网：https://www.rabbitmq.com/#getstarted
+
+### 14.2.1 MacOS 安装RabbitMQ
+
+```shell
+#1.安装
+$ brew install rabbitmq
+
+#2.启动
+$cd /usr/local/Cellar/rabbitmq/3.7.6_1/sbin
+$ ./rabbitmq-server 
+
+  ##  ##
+  ##  ##      RabbitMQ 3.7.6. Copyright (C) 2007-2018 Pivotal Software, Inc.
+  ##########  Licensed under the MPL.  See http://www.rabbitmq.com/
+  ######  ##
+  ##########  Logs: /usr/local/var/log/rabbitmq/rabbit@localhost.log
+                    /usr/local/var/log/rabbitmq/rabbit@localhost_upgrade.log
+
+              Starting broker...
+ completed with 6 plugins.
+```
+
+访问：http://localhost:15672/  默认用户名/密码  guest/guest.
+
+### 14.2.2 CentOS7 安装RabbitMQ
+
+参考：https://www.linuxidc.com/Linux/2017-05/143765.htm
+
+1.首先需要安装erlang
+
+```shell
+$rpm -Uvh http://download.Fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
+$yum install erlang
+```
+
+2.下载安装rabbitmq
+
+```shell
+$wget https://dl.bintray.com/rabbitmq/all/rabbitmq-server/3.7.6/rabbitmq-server-3.7.6-1.el7.noarch.rpm
+$yum install rabbitmq-server-3.7.6-1.el7.noarch.rpm
+```
+
+3.启动rabbitmq
+
+```shell
+#启动服务
+$service rabbitmq-server start
+#查看服务状态
+$service rabbitmq-server status
+#停止服务
+$service rabbitmq-server stop
+```
+
+
+
+注意：Windows平台安装方式比较简单可以参见[RabbitMQ官网](http://www.rabbitmq.com/download.html ) 或自行参考其他网友的方案
 
 
 
@@ -6543,13 +8369,148 @@ http://localhost:8001/payment/circuit/-31
 
 
 
+### 14.3.1.新建cloud-config-client-3366模块
+
+为了演示广播效果，增加复杂度，再以3355为模板再制作一个3366，3366除了改一下端口，主启动类名字，其他的保持跟3355一致
+
+即我们有了3355、3366两个客户端
+
+
+
+### 14.3.2.配置刷新方案选择
+
+1）方案一：利用消息总线触发一个客户端/bus/refresh，而刷新所有客户端的配置
+
+<img src="img/image-20220614181454236.png" alt="image-20220614181454236" style="zoom:40%;" align=left />
+
+2）方案二：利用消息总线触发一个服务端ConfigServer的/bus/refresh端点，而刷新所有客户端的配置
+
+<img src="img/image-20220614181645339.png" alt="image-20220614181645339" style="zoom:40%;" align=left />
+
+
+
+我们采用图二的架构显然更加适合，图一不适合的原因如下
+
+打破了微服务的职责单一性，因为微服务本身是业务模块，它本不应该承担配置刷新的职责。
+
+破坏了微服务各节点的对等性。
+
+有一定的局限性。例如，微服务在迁移时，它的网络地址常常会发生变化，此时如果想要做到自动刷新，那就会增加更多的修改
+
+
+
+### 14.3.3.给cloud-config-center-3344配置中心服务端添加消息总线支持
+
+
+
+pom.xml
+
+```xml
+<!-- 添加消息总线 RabbitMQ 支持 -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+
+
+
+yml添加rabbitmq 相关配置 , 暴露 bus 刷新配置的端点
+
+<img src="img/image-20220614182650168.png" alt="image-20220614182650168" style="zoom:50%;" align=left />
+
+
+
+
+
+### 14.3.4.给cloud-config-client-3355、3366客户端添加消息总线支持
+
+pom.xml
+
+```xml
+<!-- 添加消息总线 RabbitMQ 支持 -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+
+
+
+yml 暴露监控端点，rabbitmq支持
+
+<img src="img/image-20220614182926701.png" alt="image-20220614182926701" style="zoom:50%;" align=left />
+
+
+
+启动服务后，可以看到springCloudBus Exchange
+
+<img src="img/image-20220614190708338.png" alt="image-20220614190708338" style="zoom:50%;" align=left />
+
+### 14.3.5.测试一次修改刷新，处处生效
+
+给git仓库中的 config-dev.yml 文件增加版本号
+
+```json
+config:
+ info: "master branch,springcloud-config/config-dev.yml version=6"
+```
+
+
+
+发送POST请求：curl -X POST "http://localhost:3344/actuator/bus-refresh"
+
+
+
+发现配置中心、2个客户端都获取到了最新的配置，一次修改，广播通知，处处生效
+
+配置中心：http://config-3344.com:3344/config-dev.yml
+
+客户端：http://localhost:3355/configInfo
+
+客户端：http://localhost:3366/configInfo
+
+
+
 ## 14.4.**SpringCloud Bus动态刷新定点通知**
 
+假如我们不想全部通知，只想定点通知，比如只通知3355，不通知3366
+
+简单一句话，指定具体某一个实例生效而不是全部 
+
+公式：http://localhost:配置中心的端口号/actuator/bus-refresh/{destination}
+
+/bus/refresh请求不再发送到具体的服务实例上，而是发给config server并通过destination参数类指定需要更新配置的服务或实例
 
 
 
+比如：curl -X POST "http://localhost:3344/actuator/bus-refresh/config-client:3355"  这样的话只会生效3355，不会生效3366
+
+
+
+## 14.5.总结
+
+![image-20220614185244833](img/image-20220614185244833.png)
 
 # 15.SpringCloud Stream 消息驱动
+
+官网：https://spring.io/projects/spring-cloud-stream#overview
+
+https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/3.0.1.RELEASE/reference/html/
+
+中文官网：https://m.wang1314.com/doc/webapp/topic/20971999.html
+
+
+
+项目开发中，我们可能会使用多种MQ消息中间件，而Spring Cloud Stream就类似jpa，屏蔽底层消息中间件的差异，让我们不再关注具体MQ，只需要操作SpringCloud Stream 就可以实现消息的发送和接收。
 
 
 
@@ -6557,7 +8518,188 @@ http://localhost:8001/payment/circuit/-31
 
 
 
+### 15.1.1.SpringCloud Stream 是什么？
+
+<font color=blue>什么是SpringCloudStream </font>
+
+SpringCloud Stream可能让我们不用关注具体消息中间件的细节，只需要用一种适配绑定的方式，自动给我们在各种MQ内切换，程序员主要操作Spring Cloud Stream即可，不需要管底层是kafka还是rabbitMq
+
+
+
+简单概括：屏蔽底层消息中间件的差异，降低切换成本，统一消息的编程模型
+
+> 官方定义 Spring Cloud Stream 是一个构建消息驱动微服务的框架。 
+>
+> 
+>
+> 应用程序通过 inputs 或者 outputs 来与 Spring Cloud Stream中binder对象交互。 
+>
+> 通过我们配置来binding(绑定) ，而 Spring Cloud Stream 的 binder对象负责与消息中间件交互。 
+>
+> 所以，我们只需要搞清楚如何与 Spring Cloud Stream 交互就可以方便使用消息驱动的方式。 
+>
+> 
+>
+> 通过使用Spring Integration来连接消息代理中间件以实现消息事件驱动。 
+>
+> Spring Cloud Stream 为一些供应商的消息中间件产品提供了个性化的自动化配置实现，引用了发布-订阅、消费组、分区的三个核心概念。 
+
+<font color=red>目前仅支持RabbitMQ、Kafka。 </font>
+
+
+
+### 15.1.2.官网
+
+官网：https://spring.io/projects/spring-cloud-stream#overview
+
+https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/3.0.1.RELEASE/reference/html/
+
+中文官网：https://m.wang1314.com/doc/webapp/topic/20971999.html
+
+
+
+ Spring Cloud Stream是用于构建与共享消息传递系统连接的高度可伸缩的事件驱动微服务框架，该框架提供了一个灵活的编程模型，它建立在已经建立和熟悉的Spring熟语和最佳实践上，包括支持持久化的发布/订阅、消费组以及消息分区这三个核心概念 
+
+<img src="img/image-20220614211705786.png" alt="image-20220614211705786" style="zoom:60%;" align=left />
+
+### 15.2.3.设计思想
+
+#### 15.2.3.1.先了解一下标准MQ
+
+没事SpringCloud Stream 时，使用标准的MQ是这样的：
+
+- Message：生产者/消费者之间靠<font color=red>消息</font>媒介传递信息内容
+
+- 消息通道MessageChannel：消息必须走特定的<font color=red>通道</font>
+
+- 消息通道里的消息如何被消费呢，谁负责收发<font color=red>处理</font>：消息通道MessageChannel的子接口SubscribableChannel，由MessageHandler消息处理器所订阅
+
+<img src="img/image-20220614205314456.png" alt="image-20220614205314456" style="zoom:120%;" align=left />
+
+
+
+#### 15.2.3.2.为什么用为什么用Cloud Stream
+
+比方说我们用到了RabbitMQ和Kafka，由于这两个消息中间件的架构上的不同， 像RabbitMQ有exchange，kafka有Topic和Partitions分区， 
+
+ <img src="img/image-20220614212125355.png" alt="image-20220614212125355" style="zoom:80%;" align=left />
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+这些中间件的差异性导致我们实际项目开发给我们造成了一定的困扰，我们如果用了两个消息队列的其中一种，后面的业务需求，我想往另外一种消息队列进行迁移，这时候无疑就是一个灾难性的， <font color=red>一大堆东西都要重新推倒重新做 </font>，因为它跟我们的系统耦合了，这时候springcloud Stream给我们提供了一种解耦合的方式。 
+
+
+
+
+
+#### 15.2.3.3.stream凭什么可以统一底层差异？
+
+在没有绑定器这个概念的情况下，我们的SpringBoot应用要直接与消息中间件进行信息交互的时候， 
+
+由于各消息中间件构建的初衷不同，它们的实现细节上会有较大的差异性 
+
+通过定义绑定器作为中间层，完美地实现了<font color=red>应用程序与消息中间件细节之间的隔离 。 </font>
+
+通过向应用程序暴露统一的Channel通道，使得应用程序不需要再考虑各种不同的消息中间件实现。 
+
+
+
+**<font color=red>通过定义绑定器Binder作为中间层，实现了应用程序与消息中间件细节之间的隔离。</font>**
+
+https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/spring-cloud-stream-binder-rabbit.html#_rabbitmq_binder_overview
+
+<img src="img/image-20220614212313903.png" alt="image-20220614212313903" style="zoom:50%;" align=left />
+
+
+
+**<font color=red>Bindder</font>**
+
+在没有绑定器这个概念的情况下，我们的SpringBoot应用要直接与消息中间件进行信息交互的时候，由于各消息中间件构建的初衷不同，它们的实现细节上会有较大的差异性 ，通过定义绑定器作为中间层，完美地实现了<font color=red>应用程序与消息中间件细节之间的隔离 </font>。Stream对消息中间件的进一步封装，可以做到代码层面对中间件的无感知，甚至于动态的切换中间件(rabbitmq切换为kafka)，使得微服务开发的高度解耦，服务可以关注更多自己的业务流程 
+
+<img src="img/image-20220614210416960.png" alt="image-20220614210416960" style="zoom:140%;" align=left />
+
+**<font color=red>通过定义绑定器Binder作为中间层，实现了应用程序与消息中间件细节之间的隔离。 </font>**
+
+Binder可以生成Binding，Binding用来绑定消息容器的生产者和消费者，它有两种类型，INPUT和OUTPUT，
+
+INPUT对应于消费者，
+
+OUTPUT对应于生产者。
+
+
+
+
+
+**Stream中的消息通信方式遵循了发布-订阅模式，通过Topic主题进行广播**
+
+- 在RabbitMQ就是Exchange
+
+- 在Kakfa中就是Topic
+
+
+
+#### 15.2.3.4.Spring Cloud Stream标准流程套路
+
+消息中间件与绑定器Binder绑定，INPUT对应于消费者，OUTPUT对应于生产者。
+
+<img src="img/image-20220614212625118.png" alt="image-20220614212625118" style="zoom:80%;" align=left />
+
+
+
+
+
+- Binder：很方便的连接中间件，屏蔽差异
+
+- Channel：通道，是队列Queue的一种抽象，在消息通讯系统中就是实现存储和转发的媒介，通过Channel对队列进行配置
+- Source和Sink：简单的可理解为参照对象是Spring Cloud Stream自身，从Stream发布消息就是输出，接受消息就是输入。
+
+<img src="img/image-20220614210638128.png" alt="image-20220614210638128" style="zoom:100%;" align=left />
+
+
+
+
+
+
+
+#### 15.2.3.5.编码API和常用注解
+
+<img src="img/image-20220614212908943.png" alt="image-20220614212908943" style="zoom:80%;" align=left />
+
+
+
+
+
 ## 15.2.案例说明
+
+确保RabbitMQ环境已经OK
+
+工程中新建三个子模块
+
+- cloud-stream-rabbitmq-provider8801， 作为生产者进行发消息模块
+- cloud-stream-rabbitmq-consumer8802，作为消息接收模块
+- cloud-stream-rabbitmq-consumer8803 作为消息接收模块
 
 
 
@@ -6565,7 +8707,421 @@ http://localhost:8001/payment/circuit/-31
 
 
 
-## 15.4.消息驱动之生产者
+### 15.3.1.cloud-stream-rabbitmq-provider8801
+
+#### 15.3.1.1.新建cloud-stream-rabbitmq-provider8801模块
+
+略
+
+#### 15.3.1.2.pom
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud2020-learn</artifactId>
+        <groupId>com.atguigu.springcloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloud-stream-rabbitmq-provider8801</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+
+        <!--stream-rabbit-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+        </dependency>
+
+        <!-- 服务注册中心的客户端 eureka-client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--devtools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+
+```
+
+
+
+#### 15.3.1.3.yml
+
+```yaml
+server:
+  port: 8801
+spring:
+  application:
+    name: cloud-stream-provider
+  cloud:
+    stream:
+      binders: # 在此处配置要绑定的 rabbitmq 的服务信息；
+        defaultRabbit: # 表示定义的名称，用于于 binding 整合，defaultRabbit是我们自定义的一个名字
+          type: rabbit  # 消息组件类型
+          environment:  # 设置 rabbitmq 的相关的环境配置
+            spring:
+              ribbitmq:
+                host: localhost
+                port: 6672
+                username: guest
+                password: guest
+      bindings: # 服务的整合处理
+        output: # 这个名字是一个通道的名称，表示这个一个消息的生产者
+          destination: studyExchange # 表示要使用的Exchange名称定义，即目的通过到名字
+          content-type: application/json # 设置消息类型，本次为json，文本则设置“text/plain”
+          binder: defaultRabbit  # 设置要绑定的消息服务的具体设置
+
+eureka:
+  client: # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+```
+
+
+
+#### 15.3.1.4.主启动
+
+```java
+package com.atguigu.springcloud;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * @author caojx created on 2022/6/14 9:37 PM
+ */
+@SpringBootApplication
+public class StreamMQMain8801 {
+
+    public static void main(String[] args) {
+        SpringApplication.run(StreamMQMain8801.class, args);
+    }
+}
+```
+
+
+
+#### 15.3.1.5.业务类
+
+**发送消息接口**
+
+```java
+package com.atguigu.springcloud.service;
+
+/**
+ * 发送消息接口
+ *
+ * @author caojx created on 2022/6/14 9:38 PM
+ */
+public interface IMessageProvider {
+
+    String send();
+}
+```
+
+**发送消息接口实现**
+
+```java
+package com.atguigu.springcloud.service.impl;
+
+import com.atguigu.springcloud.service.IMessageProvider;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.messaging.Source;
+import org.springframework.integration.support.MessageBuilder;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.MessageChannel;
+
+import javax.annotation.Resource;
+import java.util.UUID;
+
+/**
+ * 发送消息接口实现类
+ *
+ * 定义消息的推送管道 将Channel和Exchanges绑定在一起
+ *
+ * @author caojx created on 2022/6/14 9:38 PM
+ */
+@Slf4j
+@EnableBinding(Source.class) // 指信道channel和exchange绑定在一起，source消息的输出，可以理解为消息的生产者
+public class IMessageProviderImpl implements IMessageProvider {
+    /**
+     * 消息发送管道/信道
+     */
+    @Resource
+    private MessageChannel output;
+
+    @Override
+    public String send() {
+        String serial = UUID.randomUUID().toString();
+        output.send(MessageBuilder.withPayload(serial).build()); // 构建一个消息并发送
+
+        log.info("*****serial: " + serial);
+        return serial;
+    }
+}
+
+```
+
+**controller**
+
+```java
+package com.atguigu.springcloud.controller;
+
+import com.atguigu.springcloud.service.IMessageProvider;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+
+/**
+ * @author caojx created on 2022/6/14 9:40 PM
+ */
+@RestController
+public class SendMessageController {
+
+    @Resource
+    private IMessageProvider messageProvider;
+
+    @GetMapping(value = "/sendMessage")
+    public String sendMessage() {
+        return messageProvider.send();
+    }
+}
+```
+
+
+
+#### 15.3.1.6.测试
+
+ 确定8801后，会在rabbitmq中创建一个Exchange，就是我们配置文件中配置的exchang：studyExhange 
+
+http://localhost:15672/#/
+
+<img src="img/image-20220614220341327.png" alt="image-20220614220341327" style="zoom:40%;" align=left />
+
+
+
+发送消息成功：http://localhost:8801/sendMessage
+
+<img src="img/image-20220615103505845.png" alt="image-20220615103505845" style="zoom:80%;" align=left />
+
+我们这里没有使用任何rabbitmq的api，springcloud stream 直接帮我们屏蔽的消息中间件底层的细节。
+
+
+
+## 15.4.消息驱动之消费者
+
+
+
+### 15.4.1.新建cloud-stream-rabbitmq-consumer8802
+
+略
+
+
+
+### 15.4.2.pom
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud2020-learn</artifactId>
+        <groupId>com.atguigu.springcloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloud-stream-rabbitmq-comsumer8802</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+
+        <!--stream-rabbit-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+        </dependency>
+
+        <!-- 服务注册中心的客户端 eureka-client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--devtools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+
+```
+
+
+
+### 15.4.3.yml
+
+```yaml
+server:
+  port: 8802
+
+spring:
+  application:
+    name: cloud-stream-consumer
+  cloud:
+    stream:
+      binders: # 在此处配置要绑定的 rabbitmq 的服务信息；
+        defaultRabbit: # 表示定义的名称，用于于 binding 整合，defaultRabbit是我们自定义的一个名字
+          type: rabbit  # 消息组件类型
+          environment:  # 设置 rabbitmq 的相关的环境配置
+            spring:
+              ribbitmq:
+                host: localhost
+                port: 6672
+                username: guest
+                password: guest
+      bindings: # 服务的整合处理
+        input: # 这个名字是一个通道的名称，input就表示,当前服务是一个消费者,需要消费消息,下面就是指定消费哪个Exchange中的消息
+          destination: studyExchange # 表示要使用的Exchange名称定义
+          content-type: application/json # 设置消息类型，本次为json，文本则设置“text/plain”
+          binder: defaultRabbit  # 设置要绑定的消息服务的具体设置
+
+eureka:
+  client: # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+```
+
+
+
+### 15.4.4.主启动类StreamMQMain8802
+
+```java
+package com.atguigu.springcloud;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * @author caojx created on 2022/6/14 9:45 PM
+ */
+@SpringBootApplication
+public class StreamMQMain8802 {
+
+    public static void main(String[] args) {
+        SpringApplication.run(StreamMQMain8802.class, args);
+    }
+}
+
+```
+
+
+
+### 15.4.5.业务类
+
+```java
+package com.atguigu.springcloud.service;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.annotation.StreamListener;
+import org.springframework.cloud.stream.messaging.Sink;
+import org.springframework.messaging.Message;
+import org.springframework.stereotype.Component;
+
+/**
+ * 接受消息
+ *
+ * @author caojx created on 2022/6/14 9:46 PM
+ */
+@Slf4j
+@Component
+@EnableBinding(Sink.class)  // 指信道channel和exchange绑定在一起，Sink消息的输入，可以理解为消息的消费者
+public class ReceiveMessageListener {
+
+    @Value("${server.port}")
+    private String serverPort;
+
+    @StreamListener(Sink.INPUT) // 这里表示监听sink的input，而input：我们在置文件中配置了绑定在一个指定Exchange上获取数据
+    public void input(Message<String> message) {
+        log.info("port:{} 接受：{}", serverPort, message.getPayload());
+    }
+}
+```
+
+
+
+### 15.4.6.测试8801发送8802接收消息
+
+http://localhost:8801/sendMessage
+
+8801成功发送消息、8802成功接收消息
 
 
 
@@ -6573,17 +9129,328 @@ http://localhost:8001/payment/circuit/-31
 
 
 
+### 15.6.1.依照8802，复制一份为8803cloud-stream-rabbitmq-consumer8803
+
+略
+
+
+
+### 15.6.2.启动相关服务
+
+- 7001 eureka服务注册中心
+- 8801 消息生产
+- 8802、8803 消息消费
+
+
+
+### 15.6.3.消息重复消费问题
+
+
+
+#### 15.6.3.1.消息重复消费问题
+
+8801发送消息 http://localhost:8801/sendMessage
+
+目前是8802/8803同时都收到了，存在重复消费问题
+
+<img src="img/image-20220615101208058.png" alt="image-20220615101208058" style="zoom:80%;" align=left />
+
+
+
+
+
+故障现象：重复消费
+
+导致原因：默认分组group是不同的，组流水号不一样，被认为不同组，可以消
+
+<img src="img/image-20220615105608222.png" alt="image-20220615105608222" style="zoom:80%;" align=left />
+
+
+
+
+
+<font color=red>我们可以通过消息分组解决消息重复消费问题</font>
+
+
+
+#### 15.6.3.2.生产实际案例
+
+比如在如下场景中，订单系统我们做集群部署，都会从RabbitMQ中获取订单信息， 
+
+那<font color=red>如果一个订单同时被两个服务获取到</font> ，那么就会造成数据错误，我们得避免这种情况。 
+
+这时 <font color=red>我们就可以使用Stream中的消息分组来解决 </font>
+
+<img src="img/image-20220615101445380.png" alt="image-20220615101445380" style="zoom:80%;" align=left />
+
+注意在Stream中处于同一个group中的多个消费者是竞争关系，就能够保证消息只会被其中一个应用消费一次。 
+
+<font color=red>不同组是可以全面消费的(重复消费)， 同一组内会发生竞争关系，只有其中一个可以消费。 </font>
+
+
+
+
+
+#### 15.6.3.3.消息分组
+
+##### **15.6.3.3.1.原理**
+
+> 微服务应用放置于同一个group中，就能够保证消息只会被其中一个应用消费一次。
+>
+> <font color=red>不同的组是可以消费的，同一个组内会发生竞争关系，只有其中一个可以消费。</font>
+
+
+
+##### 15.6.3.3.2.8802/8803都变成<font color=red>不同组，group两个不同</font> 测试
+
+**8802修改YML修改为atguiguA**
+
+<img src="img/image-20220615110326790.png" alt="image-20220615110326790" style="zoom:30%;" align=left />
+
+
+
+**8803修改YML修改为atguiguB**
+
+<img src="img/image-20220615110419279.png" alt="image-20220615110419279" style="zoom:30%;" align=left />
+
+
+
+
+
+
+
+<img src="img/image-20220615101934712.png" alt="image-20220615101934712" style="zoom:80%;" align=left />
+
+分布式微服务应用为了实现高可用和负载均衡，实际上都会部署多个实例，本例阳哥启动了两个消费微服务(8802/8803) 
+
+多数情况，生产者发送消息给某个具体微服务时只希望被消费一次，按照上面我们启动两个应用的例子，虽然它们同属一个应用， 
+
+但是这个消息出现了被重复消费两次的情况。为了解决这个问题，在Spring Cloud Stream中提供了<font color=red>消费组</font>的概念。 
+
+
+
+<font color=red>结论：不同组的情况8802、8803都收到了一样的消息，出现了重复消息</font>
+
+
+
+##### 15.6.3.3.3.8802/8803都变成<font color=red>相同组，group=atguiguA</font> 测试
+
+8802、8803的yml 分组都修改为atguiguA
+
+发送消息测试，同一个组的多个微服务实例，每次只会有一个拿到，没有出现重复消费
+
+
+
+<font color=red>结论：相同组的消费者，组内会发生竞争关系，只有其中一个可以消费。</font>
+
+
+
+### 15.6.4.消息持久化问题
+
+通过上述，解决了重复消费问题，再看看持久化
+
+1. 停止8802/8803
+2. 去除掉8802的分组group: atguiguA
+3. 8803保持分组group: atguiguA
+4. 8801先发送4条消息到rabbitmq
+5. 先启动8802，无分组属性配置，后台没有打出来消息
+
+<img src="img/image-20220615102522273.png" alt="image-20220615102522273" style="zoom:80%;" align=left />
+
+
+
+6. 再启动8803，有分组属性配置，后台打出来了MQ上的消息
+
+<img src="img/image-20220615102622300.png" alt="image-20220615102622300" style="zoom:80%;" align=left />
+
+
+
+
+
+<font color=red>结论：也就是，当我们没有配置分组时，会出现消息漏消费的问题，也会出现消息重复消息的问题， 而配置分组后，我们可以自动获取未消费的数据</font>，即强烈建议要设置消息分组
+
 
 
 # 16.SpringCloud Sleuth分布式请求链路跟踪
+
+官网：https://github.com/spring-cloud/spring-cloud-sleuth
+
+是什么：Spring Cloud Sleuth提供了一套完整的服务跟踪的解决方案，在分布式系统中提供追踪解决方案并且兼容支持了zipkin
+
+ Sleuth 管链路监控，数据收集，zipkin 负责数据展现
 
 
 
 ## 16.1.概述
 
+**为什么会出现这个技术？需要解决哪些问题？**
+
+> 在微服务框架中，一个由客户端发起的请求在后端系统中会经过多个不同的的服务节点调用来协同产生最后的请求结果，每一个前端请求都会形成一条复杂的分布式服务调用链路，链路中的任何一环出现高延时或错误都会引起整个请求最后的失败。 
+>
+> 
+>
+> 通过这种技术，我们可以知道整个请求的调用链路，每一步的耗时是多少
+
+<img src="img/image-20220615110823693.png" alt="image-20220615110823693" style="zoom:80%;" align=left />
+
+
+
+**是什么？**
+
+> 官网：https://github.com/spring-cloud/spring-cloud-sleuth
+>
+> 是什么：Spring Cloud Sleuth提供了一套完整的服务跟踪的解决方案，在分布式系统中提供追踪解决方案并且兼容支持了zipkin
+>
+> 
+>
+> Sleuth 管链路监控，数据收集，zipkin 负责数据展现
+
+
+
+
+
+**解决了什么问题？**
+
+sleuth就是用于追踪每个请求的整体链路，并以图形化的方式显示链路调用流程
+
+<img src="img/image-20220615111027201.png" alt="image-20220615111027201" style="zoom:80%;" align=left />
+
 
 
 ## 16.2.**搭建链路监控步骤**
+
+### 16.2.1.下载安装zipkin
+
+SpringCloud从F版起已不需要自己构建Zipkin Server了，只需调用jar包即可
+
+1. 下载zipkin server（课程中下载的是2.12.9版本，我们可以下载一个接近的版本）
+
+>  下载地址
+>
+>  https://repo1.maven.org/maven2/io/zipkin/zipkin-server/
+>
+> https://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipkin-server/
+
+
+
+2. 运行zipkin-server `java -jar zipkin-server-2.12.9-exec.jar`
+
+3. 运行控制台：http://localhost:9411/zipkin/  默认zipkin监听端口是9411
+
+<img src="img/image-20220615112011908.png" alt="image-20220615112011908" style="zoom:80%;" align=left />
+
+
+
+
+
+### 16.2.2.相关术语
+
+完整的调用链路： 表示一请求链路，一条链路通过Trace Id唯一标识，Span标识发起的请求信息，各span通过parent id 关联起来 
+
+<img src="img/image-20220615114055179.png" alt="image-20220615114055179" style="zoom:120%;" align=left  />
+
+
+
+
+
+Trace：类似于树结构的<font color=red>Span集合，表示一条调用链路</font>，存在唯一标识
+
+span：表示调用链路来源，通俗的理解<font color=red>span就是一次请求信息</font>
+
+
+
+一条链路通过Trace Id唯一标识，Span标识发起的请求信息，各span通过parent id 关联起来 
+
+<img src="img/image-20220615112201273.png" alt="image-20220615112201273" style="zoom:150%;" align=left />
+
+<img src="img/image-20220615112235664.png" alt="image-20220615112235664" style="zoom:80%;" align=left />
+
+
+
+
+
+## 16.3.服务提供者cloud-provider-payment8001 改造
+
+### 16.3.1.pom 引入相关依赖
+
+这个包虽然叫zipkin但是,里面包含了zpikin与sleuth
+
+```xml
+<!-- 包含了 sleuth+zipkin-->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-zipkin</artifactId>
+</dependency>
+```
+
+
+
+### 16.3.2.yml
+
+<img src="img/image-20220615113233567.png" alt="image-20220615113233567" style="zoom:40%;" align=left />
+
+### 16.3.3.业务类PaymentController
+
+新增方法
+
+```java
+    // zipkin+sleuth
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin() {
+        return "hi ,i'am paymentzipkin server fall back，welcome to atguigu，O(∩_∩)O哈哈~";
+    }
+```
+
+
+
+
+
+## 16.4.服务消费者cloud-consumer-order80 改造
+
+### 16.3.1.pom 引入相关依赖
+
+这个包虽然叫zipkin但是,里面包含了zpikin与sleuth
+
+```xml
+<!-- 包含了 sleuth+zipkin-->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-zipkin</artifactId>
+</dependency>
+```
+
+
+
+### 16.3.2.yml
+
+<img src="img/image-20220615115943514.png" alt="image-20220615115943514" style="zoom:50%;" align=left />
+
+
+
+### 16.3.3.业务类OrderController
+
+新增方法
+
+```java
+    // zipkin+sleuth
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin() {
+        String result = restTemplate.getForObject("http://localhost:8001/payment/zipkin/", String.class);
+        return result;
+    }
+```
+
+
+
+
+
+## 16.5.测试
+
+1. 依次启动eureka7001/8001/80
+
+2. 80调用8001几次测试下：http://localhost/consumer/payment/zipkin
+3. 打开浏览器访问：http://localhost:9411
+4. <img src="img/image-20220615120055720.png" alt="image-20220615120055720" style="zoom:80%;" align=left />
 
 
 
@@ -6591,21 +9458,109 @@ http://localhost:8001/payment/circuit/-31
 
 # 17.SpringCloud Alibaba入门简介
 
+官网：https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md 
+
+诞生： 2018.10.31，Spring Cloud Alibaba 正式入驻了 Spring Cloud 官方孵化器，并在 Maven 中央库发布了第一个版本。
+
+官网：https://spring.io/projects/spring-cloud-alibaba#overview
+
+Github：https://github.com/alibaba/spring-cloud-alibaba
+
+英文文档：https://spring-cloud-alibaba-group.github.io/github-pages/greenwich/spring-cloud-alibaba.html
+
+中文文档：https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md
+
 
 
 ## 17.1.**why会出现SpringCloud alibaba**
+
+为什么会出现SpringCloud alibaba： **Spring Cloud Netflix项目进入维护模式**
+
+https://spring.io/blog/2018/12/12/spring-cloud-greenwich-rc1-available-now
+
+<img src="img/image-20220615132524384.png" alt="image-20220615132524384" style="zoom:40%;" align=left  />
+
+
+
+**进入维护模式意味着，Spring Cloud Netflix 将不再开发新的组件** 
+
+我们都知道Spring Cloud 版本迭代算是比较快的，因而出现了很多重大ISSUE都还来不及Fix就又推另一个Release了。进入维护模式意思就是目前一直以后一段时间Spring Cloud Netflix提供的服务和功能就这么多了，不在开发新的组件和功能了。以后将以维护和Merge分支Full Request为主 
+
+
+
+**新组件功能将以其他替代平代替的方式实现** 
+
+<img src="img/image-20220615132715731.png" alt="image-20220615132715731" style="zoom:40%;" align=left />
 
 
 
 ## 17.2.**SpringCloud alibaba带来了什么**
 
+官网：https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md 
+
+诞生： 2018.10.31，Spring Cloud Alibaba 正式入驻了 Spring Cloud 官方孵化器，并在 Maven 中央库发布了第一个版本。
+
+
+
+**能干嘛？**
+
+- **服务限流降级**：默认支持 Servlet、Feign、RestTemplate、Dubbo 和 RocketMQ 限流降级功能的接入，可以在运行时通过控制台实时修改限流降级规则，还支持查看限流降级 Metrics 监控。 
+
+- **服务注册与发现**：适配 Spring Cloud 服务注册与发现标准，默认集成了 Ribbon 的支持。 
+
+- **分布式配置管理**：支持分布式系统中的外部化配置，配置更改时自动刷新。 
+
+- **消息驱动能力**：基于 Spring Cloud Stream 为微服务应用构建消息驱动能力。 
+
+- **阿里云对象存储**：阿里云提供的海量、安全、低成本、高可靠的云存储服务。支持在任何应用、任何时间、任何地点存储和访问任意类型的数据。 
+
+- **分布式任务调度**：提供秒级、精准、高可靠、高可用的定时（基于 Cron 表达式）任务调度服务。同时提供分布式的任务执行模型，如网格任务。网格任务支持海量子任务均匀分配到所有 Worker（schedulerx-client）上执行。  
+
+
+
+**去哪里下载**：https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md
+
+
+
+**怎么玩**？
+
+**[Sentinel](https://github.com/alibaba/Sentinel)**：把流量作为切入点，从流量控制、熔断降级、系统负载保护等多个维度保护服务的稳定性。
+
+**[Nacos](https://github.com/alibaba/Nacos)**：一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。
+
+**[RocketMQ](https://rocketmq.apache.org/)**：一款开源的分布式消息系统，基于高可用分布式集群技术，提供低延时的、高可靠的消息发布与订阅服务。
+
+**[Dubbo](https://github.com/apache/dubbo)**：Apache Dubbo™ 是一款高性能 Java RPC 框架。
+
+**[Seata](https://github.com/seata/seata)**：阿里巴巴开源产品，一个易于使用的高性能微服务分布式事务解决方案。
+
+**[Alibaba Cloud OSS](https://www.aliyun.com/product/oss)**: 阿里云对象存储服务（Object Storage Service，简称 OSS），是阿里云提供的海量、安全、低成本、高可靠的云存储服务。您可以在任何应用、任何时间、任何地点存储和访问任意类型的数据。
+
+**[Alibaba Cloud SchedulerX](https://cn.aliyun.com/aliware/schedulerx)**: 阿里中间件团队开发的一款分布式任务调度产品，提供秒级、精准、高可靠、高可用的定时（基于 Cron 表达式）任务调度服务。
+
+**[Alibaba Cloud SMS](https://www.aliyun.com/product/sms)**: 覆盖全球的短信服务，友好、高效、智能的互联化通讯能力，帮助企业迅速搭建客户触达通道。
+
+更多组件请参考 [Roadmap](https://github.com/alibaba/spring-cloud-alibaba/blob/master/Roadmap-zh.md)。
+
 
 
 ## 17.3.**SpringCloud alibaba学习资料获取**
 
+官网：https://spring.io/projects/spring-cloud-alibaba#overview
+
+> Spring Cloud Alibaba 致力于提供微服务开发的一站式解决方案。此项目包含开发分布式应用微服务的必需组件，方便开发者通过 Spring Cloud 编程模型轻松使用这些组件来开发分布式应用服务。
+>
+>  
+>
+> 依托 Spring Cloud Alibaba，您只需要添加一些注解和少量配置，就可以将 Spring Cloud 应用接入阿里微服务解决方案，通过阿里中间件来迅速搭建分布式应用系统。 
 
 
 
+Github：https://github.com/alibaba/spring-cloud-alibaba
+
+英文文档：https://spring-cloud-alibaba-group.github.io/github-pages/greenwich/spring-cloud-alibaba.html
+
+中文文档：https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md
 
 
 
@@ -6613,9 +9568,53 @@ http://localhost:8001/payment/circuit/-31
 
 # 18.SpringCloud Alibaba Nacos服务注册和配置中心
 
+官网文档：
 
+https://github.com/alibaba/Nacos
+
+https://nacos.io/zh-cn/index.html
+
+https://spring-cloud-alibaba-group.github.io/github-pages/greenwich/spring-cloud-alibaba.html#_spring_cloud_alibaba_nacos_discovery
 
 ## 18.1.Nacos简介
+
+**为什么叫Nacos**
+
+Nacos: **Dynamic Naming and Configuration Service**，前四个字母分别为Naming和Configuration的前两个字母，最后的s为Service。
+
+
+
+**Nacos是什么？**
+
+一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。
+
+Nacos就是注册中心 + 配置中心的组合，等价于 <font color=red>Nacos = Eureka+Config +Bus</font>
+
+
+
+**能干嘛？**
+
+替代Eureka做服务注册中心
+
+替代Config做服务配置中心
+
+
+
+**去哪里下？**
+
+https://github.com/alibaba/Nacos
+
+官网文档
+
+>  https://nacos.io/zh-cn/index.html
+>
+> https://spring-cloud-alibaba-group.github.io/github-pages/greenwich/spring-cloud-alibaba.html#_spring_cloud_alibaba_nacos_discovery
+
+
+
+各种注册中心的比较
+
+<img src="img/image-20220615135549927.png" alt="image-20220615135549927" style="zoom:50%;" align=left />
 
 
 
@@ -6623,13 +9622,894 @@ http://localhost:8001/payment/circuit/-31
 
 
 
+1. 准备好Java8+Maven环境
+2. 先从官网下载Nacos https://github.com/alibaba/nacos/releases 建议跟教程保持一致下载1.1.4版本 https://github.com/alibaba/nacos/releases/tag/1.1.4
+3. 解压安装包，直接运行bin目录下的startup.cmd `startup.cmd -m standalone`
+4. 命令运行成功后直接访问http://localhost:8848/nacos 默认账号密码都是nacos
+
+<img src="img/image-20220615140533734.png" alt="image-20220615140533734" style="zoom:40%;" align=left />
+
+
+
+
+
 ## 18.3.**Nacos作为服务注册中心演示**
+
+官网文档：https://spring-cloud-alibaba-group.github.io/github-pages/greenwich/spring-cloud-alibaba.html#_spring_cloud_alibaba_nacos_config
+
+
+
+### 18.3.1.**基于Nacos的服务提供者**
+
+#### 18.3.1.1.新建cloudalibaba-provider-payment9001
+
+略
+
+
+
+#### 18.3.1.2.pom
+
+父pom
+
+<img src="img/image-20220615163911152.png" alt="image-20220615163911152" style="zoom:40%;" align=left />
+
+
+
+**cloudalibaba-provider-payment9001 pom**
+
+引入spring-cloud-starter-alibaba-nacos-discovery依赖
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud2020-learn</artifactId>
+        <groupId>com.atguigu.springcloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloudalibaba-provider-payment9001</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!--SpringCloud ailibaba nacos -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--devtools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+
+
+
+
+#### 18.3.1.3.yml
+
+```yaml
+server:
+  port: 9001
+spring:
+  application:
+    name: nacos-payment-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 配置Nacos地址
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+```
+
+
+
+#### 18.3.1.4.主启动
+
+```java
+package com.atguigu.springcloud.alibaba;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+/**
+ * @author caojx created on 2022/6/15 2:16 PM
+ */
+@EnableDiscoveryClient
+@SpringBootApplication
+public class PaymentMain9001 {
+
+    public static void main(String[] args) {
+        SpringApplication.run(PaymentMain9001.class, args);
+    }
+}
+
+```
+
+
+
+#### 18.3.1.5.业务类
+
+```java
+package com.atguigu.springcloud.alibaba.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author caojx created on 2022/6/15 2:23 PM
+ */
+@RestController
+public class PaymentController {
+
+    @Value("${server.port}")
+    private String serverPort;
+
+    @GetMapping("/payment/nacos/{id}")
+    public String getPayment(@PathVariable("id") Integer id) {
+        return "nacos registry, serverPort: " + serverPort + " \t id" + id;
+    }
+}
+```
+
+
+
+#### 18.3.1.6.测试
+
+访问：http://localhost:9001/payment/nacos/1 `nacos registry, serverPort: 9001 id1`
+
+nacos 控制台：http://localhost:8848/nacos/#/serviceManagement?dataId=&group=&appName=&namespace=
+
+<img src="img/image-20220615164229875.png" alt="image-20220615164229875" style="zoom:50%;" align=left />
+
+
+
+nacos服务注册中心+服务提供者9001都OK了
+
+
+
+#### 18.3.1.7.为了演示nacos的负载均衡，参照9001新建9002
+
+新建模块cloudalibaba-provider-payment9002，复制9001相关代码，修改端口为9002，其他的跟9001保持一致
+
+
+
+
+
+#### 18.3.2.**基于Nacos的服务消费者**
+
+#### 18.3.2.1.新建cloudalibaba-consumer-nacos-order83
+
+略
+
+
+
+#### 18.3.2.2.pom
+
+引入了：spring-cloud-starter-alibaba-nacos-discovery 依赖
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud2020-learn</artifactId>
+        <groupId>com.atguigu.springcloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloudalibaba-consumer-nacos-order83</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!--SpringCloud ailibaba nacos -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--devtools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+
+
+**注意：spring-cloud-starter-alibaba-nacos-discovery 内部引入了ribbon ，nacos可以支持负载均衡**
+
+<img src="img/image-20220615165114579.png" alt="image-20220615165114579" style="zoom:50%;" align=left />
+
+#### 18.3.2.3.yml
+
+```yaml
+server:
+  port: 83
+
+spring:
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 配置Nacos地址
+
+# 消费者将要去访问的微服务名称 ( 注册成功进 nacos 的微服务提供者 )，这个配置是自定义的配置
+service-url:
+ nacos-user-service: http://nacos-payment-provider
+
+```
+
+
+
+#### 18.3.2.4.主启动
+
+```java
+package com.atguigu.springcloud.alibaba;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+/**
+ * @author caojx created on 2022/6/15 2:30 PM
+ */
+@SpringBootApplication
+@EnableDiscoveryClient
+public class OrderNacosMain83 {
+
+    public static void main(String[] args) {
+        SpringApplication.run(OrderNacosMain83.class, args);
+    }
+}
+
+```
+
+
+
+
+
+#### 18.3.2.5.业务类
+
+
+
+ApplicationContextConfig 配置 声明RestTemplate，并支持负载均衡
+
+```java
+package com.atguigu.springcloud.alibaba.config;
+
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
+
+/**
+ * @author caojx created on 2022/6/15 2:30 PM
+ */
+@Configuration
+public class ApplicationContextConfig {
+
+    @Bean
+    @LoadBalanced
+    public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+    }
+}
+```
+
+
+
+OrderNacosController.java
+
+```java
+package com.atguigu.springcloud.alibaba.controller;
+
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import javax.annotation.Resource;
+
+/**
+ * @author caojx created on 2022/6/15 2:30 PM
+ */
+@Slf4j
+@RestController
+public class OrderNacosController {
+
+    @Resource
+    private RestTemplate restTemplate;
+
+    // 读取配置的服务提供者地址
+    @Value("${service-url.nacos-user-service}")
+    private String serverURL;
+
+    @GetMapping(value = "/consumer/payment/nacos/{id}")
+    public String paymentInfo(@PathVariable("id") Long id) {
+        return restTemplate.getForObject(serverURL + "/payment/nacos/" + id, String.class);
+    }
+
+}
+```
+
+
+
+
+
+#### 18.3.2.6.测试
+
+1. 启动nacos
+
+2. 启动9001、9002
+
+3. 启动83
+
+4. nacos控制台 http://localhost:8848/nacos/#/serviceManagement?dataId=&group=&appName=&namespace=
+
+   <img src="img/image-20220615170020830.png" alt="image-20220615170020830" style="zoom:50%;" align=left />
+
+5. 访问 http://localhost:83/consumer/payment/nacos/1  结果 9001、9002 交替出现，即负载均衡
+
+
+
+### 18.3.3.**服务注册中心对比**
+
+#### 18.3.3.1.Nacos全景图所示
+
+nacos 可以跟如下这些技术整合，nacos想全景覆盖，所有支持AP和CP切换
+
+<img src="img/image-20220615165748572.png" alt="image-20220615165748572" style="zoom:50%;" align=left />
+
+
+
+#### 18.3.3.2.Nacos和CAP
+
+<img src="img/image-20220615170833569.png" alt="image-20220615170833569" style="zoom:50%;" align=left />
+
+
+
+<img src="img/image-20220615170744795.png" alt="image-20220615170744795" style="zoom:50%;" align=left />
+
+
+
+#### 18.3.3.3.Nacos 支持AP和CP模式的切换
+
+<font color=red>C是所有节点在同一时间看到的数据是一致的；而A的定义是所有的请求都会收到响应。 </font>
+
+ 
+
+<font color=blue>何时选择使用何种模式？ </font>
+
+一般来说， 
+
+推荐AP模式：
+
+>  如果不需要存储服务级别的信息且服务实例是通过nacos-client注册，并能够保持心跳上报，那么就可以选择AP模式。当前主流的服务如 Spring cloud 和 Dubbo 服务，都适用于AP模式，AP模式为了服务的可能性而减弱了一致性，因此AP模式下只支持注册临时实例。 
+
+ 
+
+推荐CP模式：
+
+>  如果需要在服务级别编辑或者存储配置信息，那么 CP 是必须，K8S服务和DNS服务则适用于CP模式。 
+>
+> CP模式下则支持注册持久化实例，此时则是以 Raft 协议为集群运行模式，该模式下注册实例之前必须先注册服务，如果服务不存在，则会返回错误。 
+
+
+
+**NACOS切换模式**
+
+`curl -X PUT '$NACOS_SERVER:8848/nacos/v1/ns/operator/switches?entry=serverMode&value=CP'` 
 
 
 
 ## 18.4.**Nacos作为服务配置中心演示**
 
+官网文档：https://spring-cloud-alibaba-group.github.io/github-pages/greenwich/spring-cloud-alibaba.html#_spring_cloud_alibaba_nacos_config
 
+
+
+以前我们使用SpringCloudConfg + SpringCloudBus 整合实现了配置中心的功能，现在我们使用nacos作为配置中心演示
+
+
+
+### 18.4.1.**Nacos作为配置中心-基础配置**
+
+
+
+#### 18.4.1.1.cloudalibaba-config-nacos-client3377 模块
+
+##### 18.4.1.1.1.新建cloudalibaba-config-nacos-client3377 模块
+
+略
+
+##### 18.4.1.1.2.pom
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud2020-learn</artifactId>
+        <groupId>com.atguigu.springcloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloudalibaba-config-nacos-client3377</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!--SpringCloud ailibaba nacos -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--devtools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+
+```
+
+
+
+##### 18.4.1.1.3.yml
+
+需要配置bootstrap.yml配置文件和application.yml配置文件
+
+>  Nacos同springcloud-config一样，在项目初始化时，要保证先从配置中心进行配置拉取， 拉取配置之后，才能保证项目的正常启动。 
+>
+> springboot中配置文件的加载是存在优先级顺序的， bootstrap优先级高于applicatio
+
+
+
+bootstrap.yml
+
+```yaml
+server:
+  port: 3377
+spring:
+  application:
+    name: nacos-config-client
+    
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848  # Nacos服务注册中心地址
+      config:
+        server-addr: localhost:8848 # Nacos服务配置中心地址
+        file-extension: yaml # 指定yaml格式的配置
+
+# ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+
+```
+
+
+
+application.yml
+
+```yaml
+spring:
+  profiles:
+    active: dev # 表示开发环境
+
+```
+
+
+
+
+
+##### 18.4.1.1.4.主启动
+
+```java
+package com.atguigu.springcloud.alibaba;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+/**
+ * @author caojx created on 2022/6/15 5:24 PM
+ */
+@SpringBootApplication
+@EnableDiscoveryClient
+public class NacosConfigClientMain3377 {
+
+    public static void main(String[] args) {
+        SpringApplication.run(NacosConfigClientMain3377.class,args);
+    }
+}
+
+```
+
+
+
+##### 18.4.1.1.5.业务类
+
+```java
+package com.atguigu.springcloud.alibaba.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author caojx created on 2022/6/15 5:24 PM
+ */
+@RestController
+@RefreshScope // 在控制器类加入 @RefreshScope 注解使当前类下的配置支持 Nacos 的动态刷新功能。
+public class ConfigClientController {
+
+    @Value("${config.info:}")
+    private String configInfo;
+
+    @GetMapping("/config/info")
+    public String getConfigInfo() {
+        return configInfo;
+    }
+}
+
+```
+
+
+
+#### 18.4.1.2.在在Nacos中添加配置信息
+
+##### 18.4.1.2.1.Nacos中的匹配规则理论
+
+Nacos中的dataid的组成格式及与SpringBoot配置文件中的匹配规则
+
+官网：https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html 
+
+<img src="img/image-20220615173104305.png" alt="image-20220615173104305" style="zoom:50%;" align=left  />
+
+<font color=red>**即dataId公式为**：</font>
+
+```yaml
+${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension} 
+```
+
+
+
+<img src="img/image-20220615174209449.png" alt="image-20220615174209449" style="zoom:40%;" align=left />
+
+
+
+##### 18.4.1.2.1.Nacos中的匹配规则实操
+
+1. nacos新增配置 nacos-config-client-dev.yaml
+
+<img src="img/image-20220615173745198.png" alt="image-20220615173745198" style="zoom:40%;" align=left />
+
+
+
+
+
+2. nacos 历史版本
+
+Nacos会记录配置文件的历史版本默认保留30天，此外还有一键回滚功能，回滚操作将会触发配置更新
+
+<img src="img/image-20220615174433377.png" alt="image-20220615174433377" style="zoom:50%;" align=left />
+
+
+
+#### 18.4.1.3.测试
+
+1. 启动前需要在nacos客户端-配置管理-配置管理栏目下有对应的yaml配置文件（nacos-config-client-dev.yaml）
+
+2. 运行cloud-config-nacos-client3377的主启动类
+
+3. 调用接口查看配置信息 http://localhost:3377/config/info  成功获得配置信息 
+
+4. 修改下Nacos中的yaml配置文件，再次调用查看配置的接口，就会发现配置已经刷新
+
+   ```json
+   config:
+    info: "config info for dev,from nacos config center. version=3"
+   ```
+
+   
+
+
+
+### 18.4.2.**Nacos作为配置中心-分类配置**
+
+
+
+#### 18.4.2.1.先来看问题
+
+**问题1：** 
+
+实际开发中，通常一个系统会准备 
+
+dev开发环境 、test测试环境 、prod生产环境。 
+
+如何保证指定环境启动时服务能正确读取到Nacos上相应环境的配置文件呢？ 
+
+ 
+
+**问题2：** 
+
+一个大型分布式微服务系统会有很多微服务子项目， 
+
+每个微服务项目又都会有相应的开发环境、测试环境、预发环境、正式环境...... 
+
+那怎么对这些微服务配置进行管理呢？ 
+
+
+
+即多服务，每个服务多环境怎么管理？
+
+
+
+#### 18.4.2.2. 看一下Nacos的图形化管理界面
+
+命名空间
+
+<img src="img/image-20220615180145101.png" alt="image-20220615180145101" style="zoom:40%;" align=left />
+
+
+
+配置管理
+
+<img src="img/image-20220615180244320.png" alt="image-20220615180244320" style="zoom:40%;" align=left  />
+
+
+
+#### 18.4.2.3.Namespace+Group+Data ID三者关系？为什么这么设计？
+
+1. **是什么** 
+
+  类似Java里面的package名和类名 
+
+  最外层的namespace是可以用于区分部署环境的，Group和DataID逻辑上区分两个目标对象。 
+
+
+
+2. **三者情况** 
+
+   <img src="img/image-20220615180548773.png" alt="image-20220615180548773" style="zoom:50%;" align=left />
+
+
+
+<font color=blue>默认情况： </font>
+
+<font color=blue>Namespace=public，Group=DEFAULT_GROUP, 默认Cluster是DEFAULT </font>
+
+ 
+
+Nacos默认的命名空间是public，Namespace主要用来实现隔离。 
+
+比方说我们现在有三个环境：开发、测试、生产环境，我们就可以创建三个Namespace，不同的Namespace之间是隔离的。 
+
+ 
+
+Group默认是DEFAULT_GROUP，Group可以把不同的微服务划分到同一个分组里面去 
+
+ 
+
+Service就是微服务；一个Service可以包含多个Cluster（集群），Nacos默认Cluster是DEFAULT，Cluster是对指定微服务的一个虚拟划分。 
+
+比方说为了容灾，将Service微服务分别部署在了杭州机房和广州机房， 
+
+这时就可以给杭州机房的Service微服务起一个集群名称（HZ）， 
+
+给广州机房的Service微服务起一个集群名称（GZ），还可以尽量让同一个机房的微服务互相调用，以提升性能。 
+
+ 
+
+最后是Instance，就是微服务的实例。 
+
+
+
+### 18.4.3.案例case-DataID方案
+
+**实现目标：指定spring.profile.active和配置文件的DataID来使不同环境下读取不同的配置**
+
+默认空间+默认分组+新建dev和test两个DataID
+
+1. 新建dev配置DataID
+
+<img src="img/image-20220615181504154.png" alt="image-20220615181504154" style="zoom:50%;" align=left />
+
+
+
+2. 新建test配置DataID
+
+<img src="img/image-20220615181427336.png" alt="image-20220615181427336" style="zoom:50%;" align=left  />
+
+
+
+3. 通过spring.profile.active属性就能进行多环境下配置文件的读取
+
+   访问：http://localhost:3377/config/info 配置是什么就加载什么
+
+<img src="img/image-20220615181612610.png" alt="image-20220615181612610" style="zoom:50%;" align=left />
+
+
+
+
+
+### 18.4.4.案例case-Group方案
+
+实现目标：通过Group实现环境区分
+
+
+
+1. 新建group  DEV_GROUP、TEST_GROUP
+
+<img src="img/image-20220615182119887.png" alt="image-20220615182119887" style="zoom:40%;" align=left  />
+
+
+
+nacos-config-client-info.yaml DEV_GROUP
+
+```yaml
+config: 
+  info: nacos-config-client-info.yaml, DEV_GROUP
+```
+
+
+
+nacos-config-client-info.yaml TEST_GROUP
+
+```yaml
+config: 
+  info: nacos-config-client-info.yaml, TEST_GROUP
+```
+
+
+
+
+
+2.在nacos图形界面控制台上面新建配置文件DataID
+
+<img src="img/image-20220615182301142.png" alt="image-20220615182301142" style="zoom:40%;" align=left  />
+
+
+
+3.调整 bootstrap+application
+
+在config下增加一条group的配置即可，可配置为DEV_GROUP或TEST_GROUP，group指定是什么就读取什么group的配置
+
+<img src="img/image-20220615182353596.png" alt="image-20220615182353596" style="zoom:50%;" align=left />
+
+
+
+### 18.4.5.案例case-Namespace方案
+
+目前：通过切换命名空间，实现环境切换
+
+
+
+1. 新建dev/test命名空间，注意命名空间id
+
+<img src="img/image-20220615183048166.png" alt="image-20220615183048166" style="zoom:50%;" align=left />
+
+2. 回到服务管理-服务列表查看，多了dev、test命名空间
+
+<img src="img/image-20220615183655586.png" alt="image-20220615183655586" style="zoom:50%;" align=left />
+
+2. 按照命名空间新建各项配置文件
+
+   <img src="img/image-20220615183820917.png" alt="image-20220615183820917" style="zoom:50%;" align=left  />
+
+3. yml
+
+   <img src="img/image-20220615182804020.png" alt="image-20220615182804020" style="zoom:50%;" align=left  />
+
+
+
+测试：http://localhost:3377/config/info  会读取对应 namespace，group、activite 配置
 
 
 
@@ -6637,23 +10517,468 @@ http://localhost:8001/payment/circuit/-31
 
 
 
+### 18.5.1.官网说明
+
+https://nacos.io/zh-cn/docs/cluster-mode-quick-start.html
+
+<img src="img/image-20220615194500647.png" alt="image-20220615194500647" style="zoom:80%;" align=left />
+
+
+
+
+
+上图翻译过来，说人话
+
+<img src="img/image-20220615194554251.png" alt="image-20220615194554251" style="zoom:100%;" align=left  />
+
+
+
+默认Nacos使用嵌入式数据库实现数据的存储。所以，如果启动多个默认配置下的Nacos节点，数据存储是存在一致性问题的。 
+
+为了解决这个问题，Nacos采用了<font color=red>集中式存储的方式来支持集群化部署，目前只支持MySQL的存储。</font>
+
+
+
+**Nacos支持三种部署模式**
+
+https://nacos.io/zh-cn/docs/deployment.html
+
+
+
+<img src="img/image-20220615194818022.png" alt="image-20220615194818022" style="zoom:80%;" align=left />
+
+
+
+### 18.5.2.Nacos 持久化配置
+
+Nacos默认自带的是嵌入式数据库derby：https://github.com/alibaba/nacos/blob/develop/config/pom.xml
+
+如果nacos需要持久化，必须使用mysql
+
+derby到mysql切换配置步骤，使用Mysql进行持久化
+
+1. nacos-server-1.1.4\nacos\conf目录下找到sql脚本 nacos-mysql.sql 并执行，执行到nacos_config数据库中
+
+2. nacos-server-1.1.4\nacos\conf目录下找到application.properties 添加mysql配置
+
+   参考：https://github.com/alibaba/nacos/blob/master/distribution/conf/application.properties
+
+   ```properties
+   spring.datasource.platform=mysql
+   
+   db.num=1
+   db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_config?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true
+   db.user=root
+   db.password=root
+   ```
+
+3. 启动Nacos，可以看到是个全新的空记录界面，以前是记录进derby
+
+
+
+<font color=red>注意：nacos-server-1.1.4 默认不支持mysql8.0 ，可以在nacos下创建plugins/mysql 目录 把mysql-connector-java-8.0.22.jar 驱动包放到这个目录下即可</font>
+
+
+
+
+
+### 18.5.3.Linux版Nacos+MySQL生产环境配置
+
+搭建：1个Nginx+3个nacos注册中心+1个mysql  nacos集群
+
+
+
+1. 下载nacos https://github.com/alibaba/nacos/releases/tag/1.1.4 解压
+
+2. 执行nacos-myql.sql sql语句，创建nacos需要的表
+
+3. 修改nacos的 application.properties，配置mysql 
+
+   参考：https://github.com/alibaba/nacos/blob/master/distribution/conf/application.properties
+
+   ```properties
+   spring.datasource.platform=mysql
+   
+   db.num=1
+   db.url.0=jdbc:mysql://127.0.0.1:3306/nacos_config?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true
+   db.user=root
+   db.password=root
+   ```
+
+4. nacos集群配置：cluster.conf.example 复制为 cluster.conf ， 请每行配置成ip:port 并配置3台nacos集器的不同服务端口号 
+
+   这个IP不能写127.0.0.1，必须是Linux命令hostname -i能够识别的IP
+
+   ```shell
+   [root@centos-linux ~]# hostname -i
+   192.168.1.7
+   ```
+
+
+
+编辑cluster.conf 
+
+```shell
+#ip:port
+192.168.1.7:3333
+192.168.1.7:4444
+192.168.1.7:5555
+```
+
+5. 编辑Nacos的启动脚本startup.sh，使它能够接受不同的启动端口（这一步更快的方式是复制3份nacos，直接修改application.properties 启动端口会更快）
+
+   <img src="img/image-20220615204527736.png" alt="image-20220615204527736" style="zoom:50%;" align=left />
+
+6. 启动3个nacos实例
+
+   ```shell
+   ./startup.sh -p 3333
+   ./startup.sh -p 4444
+   ./startup.sh -p 4444
+   
+   nacos is starting with cluster
+   nacos is starting，you can check the /Users/caojx/Downloads/nacos/logs/start.out
+   ```
+
+启动后可以正常访问
+
+http://192.168.1.7:3333/nacos/index.html
+
+http://192.168.1.7:4444/nacos/index.html
+
+http://192.168.1.7:5555/nacos/index.html
+
+
+
+6. Nginx的配置，由它作为负载均衡器，nginx.conf
+
+```conf
+upstream cluster { # nacos 服务列表
+    server 192.168.1.7:3333; 
+    server 192.168.1.7:4444; 
+    server 192.168.1.7:5555; 
+} 
+
+server {
+        listen       1111;  # nginx 监听端口
+        server_name  localhost; 
+        #charset koi8-r; 
+        #access_log  logs/host.access.log  main; 
+        location / { 
+            #root   html; 
+            #index  index.html index.htm;
+            proxy_pass http://cluster;  # 代理转发
+        } 
+.......省略 
+```
+
+5. 启动nginx `nginx -c /usr/local/etc/nginx/nginx.conf`
+
+6. 截止到此处，1个Nginx+3个nacos注册中心+1个mysql
+
+   测试通过nginx访问nacos：http://192.168.1.7:1111/nacos/#/login
+
+   新建一个配置测试
+
+   <img src="img/image-20220615211212699.png" alt="image-20220615211212699" style="zoom:50%;" align=left />
+
+   
+
+
+
+发现linux服务器的mysql插入一条记录
+
+<img src="img/image-20220615211315506.png" alt="image-20220615211315506" style="zoom:50%;" align=left  />
+
+
+
+
+
+
+
+### 18.5.4.微服务cloudalibaba-provider-payment9002启动注册进nacos集群
+
+<img src="img/image-20220615211640092.png" alt="image-20220615211640092" style="zoom:40%;" align=left  />
+
+
+发现服务成功注册到nacos集群
+
+<img src="img/image-20220615211604177.png" alt="image-20220615211604177" style="zoom:50%;" align=left />
+
+
+
+### 18.5.5.总结（我们搭建了一套nacos 集群）
+
+<img src="img/image-20220615211757118.png" alt="image-20220615211757118" style="zoom:100%;" align=left  />
+
+
+
 
 
 # 19.SpringCloud Alibaba Sentinel实现熔断与限流
+
+官网：https://github.com/alibaba/Sentinel
+
+中文官网：https://github.com/alibaba/Sentinel/wiki/%E4%BB%8B%E7%BB%8D
+
+
 
 ## 19.1.Sentinel
 
 
 
+**是什么？**
+
+<img src="img/image-20220615214313656.png" alt="image-20220615214313656" style="zoom:40%;" align=left />
+
+
+
+
+
+**去哪下载？**
+
+跟教程保持一致，先下载1.7.0版本：https://github.com/alibaba/Sentinel/releases
+
+
+
+**能干嘛？**
+
+<img src="img/image-20220615214541977.png" alt="image-20220615214541977" style="zoom:50%;" align=left />
+
+
+
+
+
+**怎么玩？**
+
+https://spring-cloud-alibaba-group.github.io/github-pages/greenwich/spring-cloud-alibaba.html#_spring_cloud_alibaba_sentinel
+
+有了sentinel 我们可以处理服务使用中的各种问题
+
+- 服务雪崩
+- 服务降级
+- 服务熔断
+- 服务限流
+
+
+
+
+
 ## 19.2.安装Sentinel控制台
+
+Sentinel 分为两个部分:
+
+- 核心库（Java 客户端）不依赖任何框架/库，能够运行于所有 Java 运行时环境，同时对 Dubbo / Spring Cloud 等框架也有较好的支持。
+- 控制台（Dashboard）基于 Spring Boot 开发，打包后可以直接运行，不需要额外的 Tomcat 等应用容器。
+
+Sentinel 社区官方网站：https://sentinelguard.io/
+
+
+
+**Sentinel控制台安装步骤：**
+
+1. 下载到sentinel-dashboard-1.7.0.jar到本地 https://github.com/alibaba/Sentinel/releases
+2. 启动java -jar sentinel-dashboard-1.7.0.jar
+3. 访问sentinel管理界面 http://localhost:8080  登录账号密码均为sentinel
 
 
 
 ## 19.3.初始化演示工程
 
+前提：
 
+启动好nacos环境 http://localhost:8848/nacos/#/login
+
+启动好sentinel：http://localhost:8080 
+
+
+
+### 19.3.1.cloudalibaba-sentinel-service8401模块
+
+#### 19.3.1.1.新建cloudalibaba-sentinel-service8401模块
+
+略
+
+#### 19.3.1.2.pom
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud2020-learn</artifactId>
+        <groupId>com.atguigu.springcloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloudalibaba-sentinel-service8401</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+
+        <!--SpringCloud ailibaba sentinel -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+
+        <!--SpringCloud ailibaba sentinel-datasource-nacos 后续做持久化用到 -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+        </dependency>
+
+        <!--SpringCloud ailibaba nacos -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--devtools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
+
+```
+
+
+
+#### 19.3.1.3.yml
+
+```yml
+server:
+  port: 8401
+
+spring:
+  application:
+    name: cloudalibaba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #Nacos 服务注册中心地址
+    sentinel:
+      transport:
+        dashboard: localhost:8080 # 配置 Sentinel dashboard 地址
+        port: 8719  # 默认 8719 端口，假如被占用会自动从 8719 开始依次 +1 扫描 , 直至找到未被占用的端口
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+```
+
+
+
+#### 19.3.1.4.主启动类
+
+```java
+package com.atguigu.springcloud.alibaba;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+/**
+ * @author caojx created on 2022/6/15 9:38 PM
+ */
+@SpringBootApplication
+@EnableDiscoveryClient
+public class MainApp8401 {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MainApp8401.class, args);
+    }
+}
+
+```
+
+
+
+#### 19.3.1.5.业务类
+
+```java
+package com.atguigu.springcloud.alibaba.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author caojx created on 2022/6/15 9:40 PM
+ */
+@RestController
+public class FlowLimitController {
+
+    @GetMapping("/testA")
+    public String testA() {
+        return "------testA";
+    }
+
+    @GetMapping("/testB")
+    public String testB() {
+        return "------testB";
+    }
+}
+
+```
+
+
+
+
+
+### 19.3.2.测试验证
+
+1. 启动8401微服务后查看sentienl控制台，空空如也，啥都没有
+
+<img src="img/image-20220615220141211.png" alt="image-20220615220141211" style="zoom:50%;" align=left  />
+
+
+
+2. Sentinel采用的懒加载说明，执行一次访问即可
+
+   访问 ：http://localhost:8401/testA
+
+   http://localhost:8401/testB
+
+   sentinel8080正在监控微服务8401
+
+<img src="img/image-20220615221455749.png" alt="image-20220615221455749" style="zoom:50%;" align=left  />
 
 ## 19.4**流控规则**
+
+
+
+
 
 
 
@@ -6661,7 +10986,15 @@ http://localhost:8001/payment/circuit/-31
 
 
 
+
+
+
+
 ## 19.6.**热点key限流**
+
+
+
+
 
 
 
@@ -6669,11 +11002,23 @@ http://localhost:8001/payment/circuit/-31
 
 
 
+
+
+
+
 ## 19.8.**@SentinelResource**
 
 
 
+
+
+
+
 ## 19.9.**服务熔断功能**
+
+
+
+
 
 
 

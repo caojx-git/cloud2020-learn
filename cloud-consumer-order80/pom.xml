@@ -17,6 +17,13 @@
     </properties>
 
     <dependencies>
+
+        <!-- 包含了 sleuth+zipkin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
         <!-- 服务注册中心的客户端 eureka-client -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

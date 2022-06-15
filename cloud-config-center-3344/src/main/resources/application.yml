@@ -1,0 +1,41 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center #注册进Eureka服务器的微服务名
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/caojx-git/springcloud-config.git #Gitee上面的git仓库名字
+          search-paths: #搜索目录
+            - springcloud-config
+          skip-ssl-validation: true
+          # 需要配置仓库的用户名密码，否则无法拉取配置
+          username: caojx_wy@163.com
+          password: Git389715062
+      label: master #读取分支
+      #启动成功后访问的路径 http://ip:3344/{label}/{application}-{profile}.yml 能访问的配置文件 就表示成功了
+
+#rabbitmq 相关配置
+rabbitmq:
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
+
+# 服务注册到 eureka 地址
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone:  http://localhost:7001/eureka
+
+# 暴露 bus 刷新配置的端点
+management:
+  endpoints: # 暴露 bus 刷新配置的端点
+    web:
+      exposure:
+        include: "bus-refresh"

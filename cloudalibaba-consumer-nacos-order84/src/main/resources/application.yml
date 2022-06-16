@@ -1,0 +1,28 @@
+server:
+  port: 84
+spring:
+  application:
+    name: nacos-order-consumer
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+    sentinel:
+      transport:
+        # 配置 Sentinel dashboard 地址
+        dashboard: localhost:8080
+        # 默认 8719 端口，假如被占用会自动从 8719 开始依次 +1 扫描 , 直至找到未被占用的端口
+        port: 8179
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# 激活 Sentinel 对 Feign 的支持
+feign:
+  sentinel:
+    enabled: true

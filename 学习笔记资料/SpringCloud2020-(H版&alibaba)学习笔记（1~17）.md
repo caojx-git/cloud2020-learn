@@ -35,19 +35,19 @@ https://gitee.com/lixiaogou/cloud2020/blob/master/%E7%AC%94%E8%AE%B0-%E5%B0%9A%E
 
 SpringCloud=<font color=red>分布式微服务架构的一站式解决方案，是多种微服务架构落地技术的集合体</font>，俗称微服务全家桶
 
-<img src="img/img-1.png" alt="image-20220527092838394" style="zoom:70%;" align=left />
+<img src="./img/img-1.png" alt="image-20220527092838394" style="zoom:70%;" align=left />
 
 
 
 **支撑SpringCloud的技术维度**
 
-<img src="img/img-2.png" alt="image-20220527092838394" style="zoom:50%;" align=left />
+<img src="./img/img-2.png" alt="image-20220527092838394" style="zoom:50%;" align=left />
 
 
 
 **SpringCloud技术栈介绍**
 
-<img src="img/img-3.png" alt="image-20220527094315520" style="zoom:50%;" align=left />  
+<img src="./img/img-3.png" alt="image-20220527094315520" style="zoom:50%;" align=left />  
 
 
 
@@ -65,7 +65,7 @@ SpringCloud=<font color=red>分布式微服务架构的一站式解决方案，�
 
 
 
-<img src="img/img-4.png" alt="image-20220527094553327" style="zoom:55%;" align=left />
+<img src="./img/img-4.png" alt="image-20220527094553327" style="zoom:55%;" align=left />
 
 
 
@@ -79,13 +79,13 @@ SpringCloud俨然己成为微服务开发的主流技术栈，在国内开发者
 
 京东促销
 
-<img src="img/img-5.png" alt="image-20220527093819264" style="zoom:60%;" align=left />
+<img src="./img/img-5.png" alt="image-20220527093819264" style="zoom:60%;" align=left />
 
 
 
 阿里
 
-<img src="img/img-6.png" alt="image-20220527094315520" style="zoom:50%;" align=left />
+<img src="./img/img-6.png" alt="image-20220527094315520" style="zoom:50%;" align=left />
 
 
 
@@ -115,13 +115,13 @@ SpringBoot 官网文档：https://docs.spring.io/spring-boot/docs/2.2.2.RELEASE/
 
 SpringCloud 官方推荐的版本关系
 
-<img src="img/image-20220528110550576.png" alt="image-20220528110550576" style="zoom:60%;" align=left />
+<img src="./img/image-20220528110550576.png" alt="image-20220528110550576" style="zoom:60%;" align=left />
 
 
 
 更详细的版本对应查看方法 https://start.spring.io/actuator/info
 
-<img src="img/image-20220528111038174.png" alt="image-20220528111038174" style="zoom:67%;" align=left />
+<img src="./img/image-20220528111038174.png" alt="image-20220528111038174" style="zoom:67%;" align=left />
 
 
 
@@ -181,7 +181,7 @@ SpringCloud 官方推荐的版本关系
 
 以前
 
-￼<img src="img/image-20220528112419101.png" alt="image-20220528112419101" style="zoom:80%;" align=left />
+￼<img src="./img/image-20220528112419101.png" alt="image-20220528112419101" style="zoom:80%;" align=left />
 
 
 
@@ -203,7 +203,7 @@ SpringCloud 官方推荐的版本关系
 
 现在，基本上每种技术维度都有新的替代方案
 
-<img src="img/image-20220528112949456.png" alt="image-20220528112949456" style="zoom:80%;" align=left />
+<img src="./img/image-20220528112949456.png" alt="image-20220528112949456" style="zoom:80%;" align=left />
 
 
 
@@ -221,11 +221,11 @@ SpringCloud 官方推荐的版本关系
 
 ### 4.1.1.新建微服务cloud整体聚合父工程
 
-<img src="img/image-20220528114239622.png" alt="image-20220528114239622" style="zoom:40%;" align=left />
+<img src="./img/image-20220528114239622.png" alt="image-20220528114239622" style="zoom:40%;" align=left />
 
 
 
-<img src="img/image-20220528114413023.png" alt="image-20220528114413023" style="zoom:40%;" align=left />
+<img src="./img/image-20220528114413023.png" alt="image-20220528114413023" style="zoom:40%;" align=left />
 
 
 
@@ -352,7 +352,7 @@ SpringCloud 官方推荐的版本关系
 
 ### 4.2.1.建module：cloud-provider-payment8001 支付微服务提供者
 
-<img src="img/image-20220604182255298.png" alt="image-20220604182255298" style="zoom:50%;" align=left />
+<img src="./img/image-20220604182255298.png" alt="image-20220604182255298" style="zoom:50%;" align=left />
 
 
 
@@ -792,7 +792,7 @@ http://localhost:8001/payment/get/1
 
  1、设置自动构建项目，步骤是： File --- Settings --- Build,Execution, --- Compiler ---勾选如下四个
 
-<img src="img/image-20220604212531652.png" alt="image-20220604212531652" style="zoom:50%;" align=left />
+<img src="./img/image-20220604212531652.png" alt="image-20220604212531652" style="zoom:50%;" align=left />
 
 
 
@@ -812,7 +812,7 @@ windows：ctrl+shift+alt+/
 
 macos：command+shft+option+/
 
-<img src="img/image-20220604212926671.png" alt="image-20220604212926671" style="zoom:80%;" align=left />
+<img src="./img/image-20220604212926671.png" alt="image-20220604212926671" style="zoom:80%;" align=left />
 
 
 
@@ -932,7 +932,7 @@ Payment.java 、CommonResult.java 略，参考前面的
 
 后续将使用restTemplate完成订单向支付微服务的调用
 
-<img src="img/image-20220609182713453.png" alt="image-20220609182713453.png" style="zoom:70%;" align=left />
+<img src="./img/image-20220609182713453.png" alt="image-20220609182713453.png" style="zoom:70%;" align=left />
 
 
 
@@ -1054,7 +1054,7 @@ curl --location --request POST 'http://localhost/consumer/payment/create' \
 
 一般运行多个springboot项目时，IDEA 会使用run dashboard 显示服务列表
 
-<img src="img/image-20220610183808657.png" alt="image-20220610183808657" style="zoom:50%;" align=left />
+<img src="./img/image-20220610183808657.png" alt="image-20220610183808657" style="zoom:50%;" align=left />
 
 
 
@@ -1072,7 +1072,7 @@ curl --location --request POST 'http://localhost/consumer/payment/create' \
 
 
 
-<img src="img/image-20220610193811649.png" alt="image-20220610193811649" style="zoom:80%;" align=left />
+<img src="./img/image-20220610193811649.png" alt="image-20220610193811649" style="zoom:80%;" align=left />
 
 
 
@@ -1088,7 +1088,7 @@ curl --location --request POST 'http://localhost/consumer/payment/create' \
 
 系统中有重复部分，我们可以把相似的部分entites提取到一个统一的模块中cloud-api-commons
 
-<img src="img/image-20220610194155325.png" alt="image-20220610194155325" style="zoom:40%;" align=left />
+<img src="./img/image-20220610194155325.png" alt="image-20220610194155325" style="zoom:40%;" align=left />
 
 
 
@@ -1152,7 +1152,7 @@ curl --location --request POST 'http://localhost/consumer/payment/create' \
 
 将entites包移动到cloud-api-commons模块中
 
-<img src="img/image-20220610195212734.png" alt="image-20220610195212734" style="zoom:50%;" align=left />
+<img src="./img/image-20220610195212734.png" alt="image-20220610195212734" style="zoom:50%;" align=left />
 
 
 
@@ -1177,7 +1177,7 @@ cloud-api-commons 执行clean install
 
 工程样图
 
-<img src="img/image-20220610195629868.png" alt="image-20220610195629868" style="zoom:40%;" align=left />
+<img src="./img/image-20220610195629868.png" alt="image-20220610195629868" style="zoom:40%;" align=left />
 
 
 
@@ -1185,7 +1185,7 @@ cloud-api-commons 执行clean install
 
 到这里我们的零基础入门已经学习完毕，后续我们将逐步整合如下技术
 
-<img src="img/image-20220528112949456.png" alt="image-20220528112949456" style="zoom:80%;" align=left />
+<img src="./img/image-20220528112949456.png" alt="image-20220528112949456" style="zoom:80%;" align=left />
 
 
 
@@ -1219,7 +1219,7 @@ cloud-api-commons 执行clean install
 
 
 
-<img src="img/image-20220610203059267.png" alt="image-20220610203059267" style="zoom:50%;" align=left />
+<img src="./img/image-20220610203059267.png" alt="image-20220610203059267" style="zoom:50%;" align=left />
 
 
 
@@ -1247,7 +1247,7 @@ Eureka包含两个组件：Eureka Server和Eureka Client
 
 创建微服务步骤：建module->改pom->写yml->主启动类->业务类
 
-<img src="img/image-20220610203755417.png" alt="image-20220610203755417" style="zoom:50%;" align=left />
+<img src="./img/image-20220610203755417.png" alt="image-20220610203755417" style="zoom:50%;" align=left />
 
 
 
@@ -1387,7 +1387,7 @@ public class EurekaMain7001 {
 
 http://localhost:7001/
 
-<img src="img/image-20220610205536827.png" alt="image-20220610205536827" style="zoom:50%;" align=left />
+<img src="./img/image-20220610205536827.png" alt="image-20220610205536827" style="zoom:50%;" align=left />
 
 
 
@@ -1489,19 +1489,19 @@ public class PaymentMain8001 {
 
 先要启动EurekaServer，然后启动cloud-provider-payment8001，访问http://localhost:7001/
 
-<img src="img/image-20220610214712297.png" alt="image-20220610214712297" style="zoom:50%;" align=left />
+<img src="./img/image-20220610214712297.png" alt="image-20220610214712297" style="zoom:50%;" align=left />
 
 
 
 微服务注册名配置说明：如下图所示注册中心的服务别名与spring.applicaiotn.name保持一致
 
-<img src="img/image-20220610214854228.png" alt="image-20220610214854228" style="zoom:100%;" align=left />
+<img src="./img/image-20220610214854228.png" alt="image-20220610214854228" style="zoom:100%;" align=left />
 
 
 
 #### 5.2.6.5.eureka自我保护机制
 
-<img src="img/image-20220611205128950.png" alt="image-20220611205128950" style="zoom:80%;" align=left />
+<img src="./img/image-20220611205128950.png" alt="image-20220611205128950" style="zoom:80%;" align=left />
 
 
 
@@ -1566,7 +1566,7 @@ eureka:
 
 http://localhost:7001/
 
-<img src="img/image-20220611182902052.png" alt="image-20220611182902052" style="zoom:50%;" align=left />
+<img src="./img/image-20220611182902052.png" alt="image-20220611182902052" style="zoom:50%;" align=left />
 
 
 
@@ -1598,7 +1598,7 @@ http://localhost/consumer/payment/get/31
 
 集群原理简单归纳就是：互相注册、相互守望，每个eureka server 都要有集群中其他兄弟的全部相关信息，即互相注册，相互守望，对外暴露出一个整体。
 
-<img src="img/image-20220611194232864.png" alt="image-20220611194232864" style="zoom:80%;" align=left />
+<img src="./img/image-20220611194232864.png" alt="image-20220611194232864" style="zoom:80%;" align=left />
 
 
 
@@ -1737,13 +1737,13 @@ public class EurekaMain7002 {
 
 http://eureka7001.com:7001/
 
-<img src="img/image-20220611200531550.png" alt="image-20220611200531550" style="zoom:50%;" align=left />
+<img src="./img/image-20220611200531550.png" alt="image-20220611200531550" style="zoom:50%;" align=left />
 
 
 
 http://eureka7002.com:7002/
 
-<img src="img/image-20220611200549815.png" alt="image-20220611200549815" style="zoom:50%;" align=left />
+<img src="./img/image-20220611200549815.png" alt="image-20220611200549815" style="zoom:50%;" align=left />
 
 
 
@@ -1819,11 +1819,11 @@ http://localhost/consumer/payment/get/1 测试ok
 
 http://eureka7001.com:7001/
 
-<img src="img/image-20220611203806004.png" alt="image-20220611203806004" style="zoom:50%;" align=left />
+<img src="./img/image-20220611203806004.png" alt="image-20220611203806004" style="zoom:50%;" align=left />
 
 http://eureka7002.com:7002/
 
-<img src="img/image-20220611203750276.png" alt="image-20220611203750276" style="zoom:50%;" align=left />
+<img src="./img/image-20220611203750276.png" alt="image-20220611203750276" style="zoom:50%;" align=left />
 
 
 
@@ -1958,7 +1958,7 @@ public class PaymentController {
 
 #### 5.2.3.6.服务注册情况
 
-<img src="img/image-20220611205607908.png" alt="image-20220611205607908" style="zoom:60%;" align=left />
+<img src="./img/image-20220611205607908.png" alt="image-20220611205607908" style="zoom:60%;" align=left />
 
 
 
@@ -1966,7 +1966,7 @@ public class PaymentController {
 
 ### 5.2.4.负载均衡
 
-<img src="img/image-20220611205726287.png" alt="image-20220611205726287" style="zoom:60%;" align=left />
+<img src="./img/image-20220611205726287.png" alt="image-20220611205726287" style="zoom:60%;" align=left />
 
 
 
@@ -2024,7 +2024,7 @@ public class OrderController {
 
 
 
-<img src="img/image-20220611210045509.png" alt="image-20220611210045509" style="zoom:60%;" align=left />
+<img src="./img/image-20220611210045509.png" alt="image-20220611210045509" style="zoom:60%;" align=left />
 
 
 
@@ -2081,7 +2081,7 @@ http://localhost/consumer/payment/get/1
 
 前面我们完成了5个微服务的构建，并注册到eureka
 
-<img src="img/image-20220611205726287.png" alt="image-20220611205726287" style="zoom:60%;" align=left />
+<img src="./img/image-20220611205726287.png" alt="image-20220611205726287" style="zoom:60%;" align=left />
 
 
 
@@ -2129,7 +2129,7 @@ eureka:
 
 #### 5.3.2.1.当前问题：没有IP提示
 
-<img src="img/image-20220611212359435.png" alt="image-20220611212359435" style="zoom:50%;" align=left />
+<img src="./img/image-20220611212359435.png" alt="image-20220611212359435" style="zoom:50%;" align=left />
 
 
 
@@ -2169,7 +2169,7 @@ eureka:
 
 可以看到显示服务ip和端口了
 
-<img src="img/image-20220611212717394.png" alt="image-20220611212717394" style="zoom:50%;" align=left />
+<img src="./img/image-20220611212717394.png" alt="image-20220611212717394" style="zoom:50%;" align=left />
 
 
 
@@ -2268,7 +2268,7 @@ public class PaymentMain8001 {
 
 
 
-<img src="img/image-20220611214233346.png" alt="image-20220611214233346" style="zoom:80%;" align=left />
+<img src="./img/image-20220611214233346.png" alt="image-20220611214233346" style="zoom:80%;" align=left />
 
 
 
@@ -2311,7 +2311,7 @@ RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED
 
 
 
-<img src="img/image-20220611214635012.png" alt="image-20220611214635012" style="zoom:80%;" align=left />
+<img src="./img/image-20220611214635012.png" alt="image-20220611214635012" style="zoom:80%;" align=left />
 
 
 
@@ -2337,7 +2337,7 @@ RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED
 
 
 
-<img src="img/image-20220611215056839.png" alt="image-20220611215056839" style="zoom:120%;" />
+<img src="./img/image-20220611215056839.png" alt="image-20220611215056839" style="zoom:120%;" />
 
 
 
@@ -2402,7 +2402,7 @@ eureka:
 
 **关闭效果**
 
-<img src="img/image-20220612101654241.png" alt="image-20220612101654241" style="zoom:80%;" align=left />
+<img src="./img/image-20220612101654241.png" alt="image-20220612101654241" style="zoom:80%;" align=left />
 
 
 
@@ -2450,7 +2450,7 @@ eureka:
 
 7001和8001都配置完成，先启动7001再启动8001
 
-<img src="img/image-20220612102555933.png" alt="image-20220612102555933" style="zoom:80%;" align=left />
+<img src="./img/image-20220612102555933.png" alt="image-20220612102555933" style="zoom:80%;" align=left />
 
 
 
@@ -2472,7 +2472,7 @@ eureka:
 
  https://github.com/Netflix/eureka/wiki
 
-<img src="img/image-20220612110317905.png" alt="image-20220612110317905" style="zoom:70%;" align=left />
+<img src="./img/image-20220612110317905.png" alt="image-20220612110317905" style="zoom:70%;" align=left />
 
 
 
@@ -2492,7 +2492,7 @@ Eureka2.0已经停止更新了，1.0版本依然是活跃的可用项目，推�
 
 ## 6.2.SpringCloud整合Zookeeper代替Eureka
 
-<img src="img/image-20220612110558223.png" alt="image-20220612110558223" style="zoom:70%;" align=left />
+<img src="./img/image-20220612110558223.png" alt="image-20220612110558223" style="zoom:70%;" align=left />
 
 
 
@@ -2694,13 +2694,13 @@ public class PaymentController {
 
 发现启动失败了，提示zookeeper-3.5.3，我们自己本地安装的是3.4.9
 
-<img src="img/image-20220612114334437.png" alt="image-20220612114334437" style="zoom:80%;" align=left  />
+<img src="./img/image-20220612114334437.png" alt="image-20220612114334437" style="zoom:80%;" align=left  />
 
 **2.原因？**
 
 出现了jar冲突，spring-cloud-starter-zookeeper-discovery 内部引入了3.5.3 版本的zookeeper
 
-<img src="img/image-20220612114704779.png" alt="image-20220612114704779" style="zoom:40%;" align=left />
+<img src="./img/image-20220612114704779.png" alt="image-20220612114704779" style="zoom:40%;" align=left />
 
 
 
@@ -2746,7 +2746,7 @@ public class PaymentController {
 
 微服务名称与zookeeper中的一致
 
-<img src="img/image-20220612115250547.png" alt="image-20220612115250547" style="zoom:30%;" align=left />
+<img src="./img/image-20220612115250547.png" alt="image-20220612115250547" style="zoom:30%;" align=left />
 
 
 
@@ -2835,7 +2835,7 @@ json格式
 
 zookeeper节点是临时节点，服务停掉，直接踢出服务节点，比eureka更加干脆
 
-<img src="img/image-20220612115703339.png" alt="image-20220612115703339" style="zoom:50%;" align=left />
+<img src="./img/image-20220612115703339.png" alt="image-20220612115703339" style="zoom:50%;" align=left />
 
 
 
@@ -3058,7 +3058,7 @@ http://localhost/consumer/payment/zk
 
 https://www.consul.io/docs/intro
 
-<img src="img/image-20220612164902965.png" alt="image-20220612164902965" style="zoom:40%;" align=left />
+<img src="./img/image-20220612164902965.png" alt="image-20220612164902965" style="zoom:40%;" align=left />
 
 
 
@@ -3074,7 +3074,7 @@ Consul 是一套开源的分布式服务发现和配置管理系统，由 HashiC
 
 Spring Cloud Consul 具有如下特性： 
 
-<img src="img/image-20220612165122852.png" alt="image-20220612165122852" style="zoom:50%;" align=left />
+<img src="./img/image-20220612165122852.png" alt="image-20220612165122852" style="zoom:50%;" align=left />
 
 
 
@@ -3110,7 +3110,7 @@ Consule中文教程：https://www.springcloud.cc/spring-cloud-consul.html
 
 下载完成后只有一个consul 可执行文件，硬盘路径下双击运行，查看版本号信息
 
-<img src="img/image-20220612171202731.png" alt="image-20220612171202731" style="zoom:50%;" align=left />
+<img src="./img/image-20220612171202731.png" alt="image-20220612171202731" style="zoom:50%;" align=left />
 
 
 
@@ -3126,7 +3126,7 @@ Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use p
 
 通过以下地址可以访问Consul的首页：http://localhost:8500
 
-<img src="img/image-20220612170449063.png" alt="image-20220612170449063" style="zoom:80%;" align=left />
+<img src="./img/image-20220612170449063.png" alt="image-20220612170449063" style="zoom:80%;" align=left />
 
 
 
@@ -3290,7 +3290,7 @@ springcloud with consul: 8006 7ebac7bd-1526-448b-b16a-09713b8b3646
 
 http://localhost:8500/ui/dc1/services
 
-<img src="img/image-20220612173509745.png" alt="image-20220612173509745" style="zoom:40%;" align=left />
+<img src="./img/image-20220612173509745.png" alt="image-20220612173509745" style="zoom:40%;" align=left />
 
 
 
@@ -3490,7 +3490,7 @@ public class OrderConsulController {
 
 http://localhost:8500/ui/dc1/services
 
-<img src="img/image-20220612174042926.png" alt="image-20220612174042926" style="zoom:35%;" align=left />
+<img src="./img/image-20220612174042926.png" alt="image-20220612174042926" style="zoom:35%;" align=left />
 
 
 
@@ -3542,7 +3542,7 @@ CP - 满足一致性，分区容忍必的系统，通常性能不是特别高。
 
 AP - 满足可用性，分区容忍性的系统，通常可能对一致性要求低一些。 
 
-<img src="img/image-20220612175322547.png" alt="image-20220612175322547" style="zoom:80%;" align=left />
+<img src="./img/image-20220612175322547.png" alt="image-20220612175322547" style="zoom:80%;" align=left />
 
 
 
@@ -3556,7 +3556,7 @@ AP架构
 
 <font color=red>结论：违背了一致性C的要求，只满足可用性和分区容错，即AP </font>
 
-<img src="img/image-20220612175900824.png" alt="image-20220612175900824" style="zoom:80%;" align=left />
+<img src="./img/image-20220612175900824.png" alt="image-20220612175900824" style="zoom:80%;" align=left />
 
 
 
@@ -3570,7 +3570,7 @@ CP架构
 
 <font color=red>结论：违背了可用性A的要求，只满足一致性和分区容错，即CP</font> 
 
-<img src="img/image-20220612180256948.png" alt="image-20220612180256948" style="zoom:80%;"  align=left />
+<img src="./img/image-20220612180256948.png" alt="image-20220612180256948" style="zoom:80%;"  align=left />
 
 
 
@@ -3610,7 +3610,7 @@ https://github.com/Netflix/ribbon
 
 Ribbon目前也进入维护模式
 
-<img src="img/image-20220612183706931.png" alt="image-20220612183706931" style="zoom:80%;" align=left />
+<img src="./img/image-20220612183706931.png" alt="image-20220612183706931" style="zoom:80%;" align=left />
 
 但是ribbon 目前负载均衡、eureka 在生产环境大规模部署使用，一时半会还替代不掉，即目前主流的还是使用 ribbon
 
@@ -3620,7 +3620,7 @@ Ribbon目前也进入维护模式
 
 未来，Spring Cloud想使用Spring Cloud LoadBalancer替代Ribbon
 
-<img src="img/image-20220612184925077.png" alt="image-20220612184925077" style="zoom:50%;" align=left />
+<img src="./img/image-20220612184925077.png" alt="image-20220612184925077" style="zoom:50%;" align=left />
 
 
 
@@ -3684,7 +3684,7 @@ Ribbon在工作时分成两步
 
 其中Ribbon提供了多种策略：比如轮询、随机和根据响应时间加权。 
 
-<img src="img/image-20220612185830042.png" alt="image-20220612185830042" style="zoom:150%;" align=left />
+<img src="./img/image-20220612185830042.png" alt="image-20220612185830042" style="zoom:150%;" align=left />
 
 ### 8.2.2.pom.xml
 
@@ -3701,7 +3701,7 @@ Ribbon在工作时分成两步
 
 证明如下：  <font color=red>可以看到spring-cloud-starter-netflix-eureka-client 确实引入了Ribbon </font>
 
-<img src="img/image-20220612190055171.png" alt="image-20220612190055171" style="zoom:50%;"  align=left />
+<img src="./img/image-20220612190055171.png" alt="image-20220612190055171" style="zoom:50%;"  align=left />
 
 
 
@@ -3709,7 +3709,7 @@ Ribbon在工作时分成两步
 
 官网：https://docs.spring.io/spring-framework/docs/5.2.2.RELEASE/javadoc-api/org/springframework/web/client/RestTemplate.html
 
-<img src="img/image-20220612205114136.png" alt="image-20220612205114136" style="zoom:80%;" align=left />
+<img src="./img/image-20220612205114136.png" alt="image-20220612205114136" style="zoom:80%;" align=left />
 
 
 
@@ -3717,19 +3717,19 @@ Ribbon在工作时分成两步
 
 getForObject：返回对象为响应体中数据转化成的对象，基本上可以理解为Json 
 
-<img src="img/image-20220612205212120.png" alt="image-20220612205212120" style="zoom:80%;" align=left />
+<img src="./img/image-20220612205212120.png" alt="image-20220612205212120" style="zoom:80%;" align=left />
 
 
 
 getForEntity：返回对象为ResponseEntity对象，包含了响应中的一些重要信息，比如响应头、响应状态码、响应体等 
 
-<img src="img/image-20220612205233380.png" alt="image-20220612205233380" style="zoom:80%;" align=left  />
+<img src="./img/image-20220612205233380.png" alt="image-20220612205233380" style="zoom:80%;" align=left  />
 
 
 
 **postForObject/postForEntity**
 
-<img src="img/image-20220612205525382.png" alt="image-20220612205525382" style="zoom:90%;" align=left   />
+<img src="./img/image-20220612205525382.png" alt="image-20220612205525382" style="zoom:90%;" align=left   />
 
 
 
@@ -3824,7 +3824,7 @@ public interface IRule{
 
 
 
-<img src="img/image-20220612210132403.png" alt="image-20220612210132403" style="zoom:90%;" align=left />
+<img src="./img/image-20220612210132403.png" alt="image-20220612210132403" style="zoom:90%;" align=left />
 
 
 
@@ -3852,7 +3852,7 @@ public interface IRule{
 
 <font color=blue>这个自定义配置类不能放在@ComponentScan所扫描的当前包下以及子包下， 否则我们自定义的这个配置类就会被所有的Ribbon客户端所共享，达不到特殊化定制的目的了。 </font>
 
-<img src="img/image-20220612210835163.png" alt="image-20220612210835163" style="zoom:100%;" align=left />
+<img src="./img/image-20220612210835163.png" alt="image-20220612210835163" style="zoom:100%;" align=left />
 
 
 
@@ -3860,13 +3860,13 @@ public interface IRule{
 
 该package不能被@ComponentScan所扫描到
 
-<img src="img/image-20220612211146514.png" alt="image-20220612211146514" style="zoom:50%;" align=left  />
+<img src="./img/image-20220612211146514.png" alt="image-20220612211146514" style="zoom:50%;" align=left  />
 
 
 
 @SpringBootApplication注解中有@ComponenetScan 会自动扫描主启动类包以及子包下的配置类，myrule不能定义在@ComponenetScan可以扫描的包中 
 
-<img src="img/image-20220612211602673.png" alt="image-20220612211602673" style="zoom:50%;" align=left />
+<img src="./img/image-20220612211602673.png" alt="image-20220612211602673" style="zoom:50%;" align=left />
 
 #### 8.3.2.3.上面包下新建MySelfRule规则类
 
@@ -3941,7 +3941,7 @@ http://localhost/consumer/payment/get/1
 
 ### 8.4.1.原理
 
-<img src="img/image-20220612212831868.png" alt="image-20220612212831868" style="zoom:50%;" align=left />
+<img src="./img/image-20220612212831868.png" alt="image-20220612212831868" style="zoom:50%;" align=left />
 
 负载均衡算法：rest接口第几次请求数 % 服务器集群总数量 = 实际调用服务器位置下标 ，每次服务重启动后rest接口计数从1开始。 
 
@@ -4069,7 +4069,7 @@ public class PaymentController {
 
 **1.ApplicationContextBean去掉注解@LoadBalanced**
 
-<img src="img/image-20220612215647573.png" alt="image-20220612215647573" style="zoom:100%;" align=left />
+<img src="./img/image-20220612215647573.png" alt="image-20220612215647573" style="zoom:100%;" align=left />
 
 
 
@@ -4246,7 +4246,7 @@ Feign是一个声明式的Web服务客户端，让编写Web服务客户端变得
 
 它的使用方法是<font color=red>定义一个服务接口然后在上面添加注解 </font>。Feign也支持可拔插式的编码器和解码器。Spring Cloud对Feign进行了封装，使其支持了Spring MVC标准注解和HttpMessageConverters。Feign可以与Eureka和Ribbon组合使用以支持负载均衡 
 
-<img src="img/image-20220613101053296.png" alt="image-20220613101053296" style="zoom:80%;" align=left />
+<img src="./img/image-20220613101053296.png" alt="image-20220613101053296" style="zoom:80%;" align=left />
 
 ### 9.1.2.能干嘛？
 
@@ -4262,13 +4262,13 @@ Feign是一个声明式的Web服务客户端，让编写Web服务客户端变得
 
 >  利用Ribbon维护了Payment的服务列表信息，并且通过轮询实现了客户端的负载均衡。而与Ribbon不同的是，  <font color=red>通过feign只需要定义服务绑定接口且以声明式的方法 </font>，优雅而简单的实现了服务调用 
 
-<img src="img/image-20220613104426847.png" alt="image-20220613104426847" style="zoom:50%;" align=left />
+<img src="./img/image-20220613104426847.png" alt="image-20220613104426847" style="zoom:50%;" align=left />
 
 ### 9.1.3.Feign和OpenFeign两者区别
 
 Feign已经停止维护了，现在直接使用OpenFeign即可，OpenFeign整合了前面的Feign
 
-<img src="img/image-20220613101725653.png" alt="image-20220613101725653" style="zoom:100%;" align=left  />
+<img src="./img/image-20220613101725653.png" alt="image-20220613101725653" style="zoom:100%;" align=left  />
 
 
 
@@ -4278,7 +4278,7 @@ Feign已经停止维护了，现在直接使用OpenFeign即可，OpenFeign整合
 
 前面我们使用ribbon+restTemplate完成了微服务之间的调用，现在我们使用OpenFeign来实现
 
-<img src="img/image-20220613102503811.png" alt="image-20220613102503811" style="zoom:80%;" align=left />
+<img src="./img/image-20220613102503811.png" alt="image-20220613102503811" style="zoom:80%;" align=left />
 
 
 
@@ -4376,7 +4376,7 @@ eureka:
 
 ### 9.2.4.主启动
 
-<img src="img/image-20220613104226042.png" alt="image-20220613104226042" style="zoom:80%;" align=left />
+<img src="./img/image-20220613104226042.png" alt="image-20220613104226042" style="zoom:80%;" align=left />
 
 
 
@@ -4434,7 +4434,7 @@ public interface PaymentFeignService {
 
 
 
-<img src="img/image-20220613104827574.png" alt="image-20220613104827574" style="zoom:80%;" align=left />
+<img src="./img/image-20220613104827574.png" alt="image-20220613104827574" style="zoom:80%;" align=left />
 
 
 
@@ -4637,7 +4637,7 @@ public class OrderFeignController {
 
 OpenFeign默认等待1秒钟，超过后报错
 
-<img src="img/image-20220613110250041.png" alt="image-20220613110250041" style="zoom:80%;" align=left />
+<img src="./img/image-20220613110250041.png" alt="image-20220613110250041" style="zoom:80%;" align=left />
 
 
 
@@ -4649,13 +4649,13 @@ OpenFeign默认等待1秒钟，超过后报错
 
 为了避免这样的情况，有时候我们需要设置Feign客户端的超时控制。 
 
-<img src="img/image-20220613110452342.png" alt="image-20220613110452342" style="zoom:80%;" align=left />
+<img src="./img/image-20220613110452342.png" alt="image-20220613110452342" style="zoom:80%;" align=left />
 
 
 
 测试：http://localhost/consumer/payment/feign/timeout 可以正常处理请求
 
-<img src="img/image-20220613111515483.png" alt="image-20220613111515483" style="zoom:80%;" align=left />
+<img src="./img/image-20220613111515483.png" alt="image-20220613111515483" style="zoom:80%;" align=left />
 
 
 
@@ -4758,7 +4758,7 @@ https://github.com/Netflix/Hystrix
 
 <font color=red>复杂分布式体系结构中的应用程序有数十个依赖关系，每个依赖关系在某些时候将不可避免地失败。</font>
 
-<img src="img/image-20220613161831081.png" alt="image-20220613161831081" style="zoom:80%;" align=left /> 
+<img src="./img/image-20220613161831081.png" alt="image-20220613161831081" style="zoom:80%;" align=left /> 
 
 
 
@@ -4825,7 +4825,7 @@ https://github.com/Netflix/Hystrix
 
 被动修复bugs，不再接受合并请求，不再发布新版本
 
-<img src="img/image-20220613115953100.png" alt="image-20220613115953100" style="zoom:50%;" align=left />
+<img src="./img/image-20220613115953100.png" alt="image-20220613115953100" style="zoom:50%;" align=left />
 
 
 
@@ -5103,13 +5103,13 @@ http://localhost:8001/payment/hystrix/ok/1
 
 下图所示：循环100次，每秒200个线程=20000
 
-<img src="img/image-20220613164943065.png" alt="image-20220613164943065" style="zoom:40%;" align=left />
+<img src="./img/image-20220613164943065.png" alt="image-20220613164943065" style="zoom:40%;" align=left />
 
 
 
 添加HTTP请求，http://localhost:8001/payment/hystrix/timeout/1
 
-<img src="img/image-20220613170008741.png" alt="image-20220613170008741" style="zoom:40%;" align=left />
+<img src="./img/image-20220613170008741.png" alt="image-20220613170008741" style="zoom:40%;" align=left />
 
 
 
@@ -5354,7 +5354,7 @@ public class OrderHystrixController {
 
 要么消费端报超时错误
 
-<img src="img/image-20220613171321302.png" alt="image-20220613171321302" style="zoom:80%;" align=left  />
+<img src="./img/image-20220613171321302.png" alt="image-20220613171321302" style="zoom:80%;" align=left  />
 
 
 
@@ -5390,7 +5390,7 @@ public class OrderHystrixController {
 
 ### 10.3.4.Hystrix服务降级(fallback)
 
-<img src="img/image-20220613184425791.png" alt="image-20220613184425791" style="zoom:100%;" align=left />
+<img src="./img/image-20220613184425791.png" alt="image-20220613184425791" style="zoom:100%;" align=left />
 
 
 
@@ -5501,7 +5501,7 @@ public class PaymentHystrixMain8001 {
 
 http://localhost:8001/payment/hystrix/timeout/1
 
-<img src="img/image-20220613175010359.png" alt="image-20220613175010359" style="zoom:80%;" align=left  />  
+<img src="./img/image-20220613175010359.png" alt="image-20220613175010359" style="zoom:80%;" align=left  />  
 
 
 
@@ -5554,7 +5554,7 @@ http://localhost:8001/payment/hystrix/timeout/1
 
 **测试结论**
 
-<img src="img/image-20220613175444919.png" alt="image-20220613175444919" style="zoom:80%;" align=left />
+<img src="./img/image-20220613175444919.png" alt="image-20220613175444919" style="zoom:80%;" align=left />
 
 
 
@@ -5679,7 +5679,7 @@ public class OrderHystrixController {
 
 注意：8001的业务方法调整为5秒超时，所以80调用的时候，8001不会降级
 
-<img src="img/image-20220613181229137.png" alt="image-20220613181229137" style="zoom:50%;" align=left />
+<img src="./img/image-20220613181229137.png" alt="image-20220613181229137" style="zoom:50%;" align=left />
 
 
 
@@ -5713,7 +5713,7 @@ public class OrderHystrixController {
 
 使用@DefaultProperties(defaultFallback = "")配置全局默认的降级处理方法
 
-<img src="img/image-20220613182419199.png" alt="image-20220613182419199" style="zoom:60%;" align=left  />
+<img src="./img/image-20220613182419199.png" alt="image-20220613182419199" style="zoom:60%;" align=left  />
 
 
 
@@ -5747,7 +5747,7 @@ public class OrderHystrixController {
 
 在来看看我们目前的业务类PaymentController，业务逻辑与降级方法混合在一块 ，每个业务方法都要提供一个
 
-<img src="img/image-20220613183045648.png" alt="image-20220613183045648" style="zoom:80%;" align=left />
+<img src="./img/image-20220613183045648.png" alt="image-20220613183045648" style="zoom:80%;" align=left />
 
 
 
@@ -5786,7 +5786,7 @@ public class PaymentFallbackService implements PaymentHystrixService {
 
 **yml**
 
-<img src="img/image-20220613183600392.png" alt="image-20220613183600392" style="zoom:100%;" align=left  />
+<img src="./img/image-20220613183600392.png" alt="image-20220613183600392" style="zoom:100%;" align=left  />
 
 
 
@@ -5845,7 +5845,7 @@ PaymentHystrixMain8001启动
 
 ### 10.3.5.Hystrix服务熔断(break)
 
-<img src="img/image-20220613184505407.png" alt="image-20220613184505407" style="zoom:1000%;" align=left />
+<img src="./img/image-20220613184505407.png" alt="image-20220613184505407" style="zoom:1000%;" align=left />
 
 
 
@@ -5867,7 +5867,7 @@ PaymentHystrixMain8001启动
 
 大神论文：https://martinfowler.com/bliki/CircuitBreaker.html
 
-<img src="img/image-20220613185009607.png" alt="image-20220613185009607" style="zoom:80%;" align=left />
+<img src="./img/image-20220613185009607.png" alt="image-20220613185009607" style="zoom:80%;" align=left />
 
 
 
@@ -5932,7 +5932,7 @@ PaymentHystrixMain8001启动
 
 **为什么配置这些参数？**
 
-<img src="img/image-20220613185835695.png" alt="image-20220613185835695" style="zoom:80%;" align=left />
+<img src="./img/image-20220613185835695.png" alt="image-20220613185835695" style="zoom:80%;" align=left />
 
 
 
@@ -5978,7 +5978,7 @@ hystrix-PaymentService-2 id 不能负数或超时或自身错误，请稍后再�
 
 ##### **10.3.5.4.1.大神结论**
 
-<img src="img/image-20220613185009607.png" alt="image-20220613185009607" style="zoom:80%;" align=left />
+<img src="./img/image-20220613185009607.png" alt="image-20220613185009607" style="zoom:80%;" align=left />
 
 ##### 10.3.5.4.2.**熔断类型**
 
@@ -5994,7 +5994,7 @@ hystrix-PaymentService-2 id 不能负数或超时或自身错误，请稍后再�
 
 ##### **10.3.5.4.3官网断路器流程图**
 
-<img src="img/image-20220613200110916.png" alt="image-20220613200110916" style="zoom:100%;" align=left />
+<img src="./img/image-20220613200110916.png" alt="image-20220613200110916" style="zoom:100%;" align=left />
 
 
 
@@ -6002,7 +6002,7 @@ hystrix-PaymentService-2 id 不能负数或超时或自身错误，请稍后再�
 
 ##### 10.3.5.4.4.官网步骤
 
-<img src="img/image-20220613185835695.png" alt="image-20220613185835695" style="zoom:80%;" align=left />
+<img src="./img/image-20220613185835695.png" alt="image-20220613185835695" style="zoom:80%;" align=left />
 
 
 
@@ -6010,7 +6010,7 @@ hystrix-PaymentService-2 id 不能负数或超时或自身错误，请稍后再�
 
 ##### 10.3.5.4.5**断路器在什么情况下开始起作用**
 
-<img src="img/image-20220613200256811.png" alt="image-20220613200256811" style="zoom:80%;" align=left />
+<img src="./img/image-20220613200256811.png" alt="image-20220613200256811" style="zoom:80%;" align=left />
 
 涉及到断路器的三个重要参数： <font color=blue>快照时间窗、请求总数阀值、错误百分比阀值。 </font>
 
@@ -6150,7 +6150,7 @@ hystrix-PaymentService-2 id 不能负数或超时或自身错误，请稍后再�
 
 ### 10.3.6.Hystrix服务限流(flowlimit)
 
-<img src="img/image-20220613184531729.png" alt="image-20220613184531729" style="zoom:100%;" align=left />
+<img src="./img/image-20220613184531729.png" alt="image-20220613184531729" style="zoom:100%;" align=left />
 
 
 
@@ -6166,7 +6166,7 @@ https://github.com/Netflix/Hystrix/wiki/How-it-Works
 
 Hystrix工作流程
 
-<img src="img/image-20220613202816196.png" alt="image-20220613202816196" style="zoom:80%;"  align=left />
+<img src="./img/image-20220613202816196.png" alt="image-20220613202816196" style="zoom:80%;"  align=left />
 
 **官网图例**
 
@@ -6318,7 +6318,7 @@ public class HystrixDashboardMain9001 {
 
 http://localhost:9001/hystrix
 
-<img src="img/image-20220613205816923.png" alt="image-20220613205816923" style="zoom:80%;" align=left />
+<img src="./img/image-20220613205816923.png" alt="image-20220613205816923" style="zoom:80%;" align=left />
 
 
 
@@ -6388,7 +6388,7 @@ public class PaymentHystrixMain8001 {
 
 启动1个eureka或者3个eureka集群均可
 
-<img src="img/image-20220613211657632.png" alt="image-20220613211657632" style="zoom:80%;" align=left />
+<img src="./img/image-20220613211657632.png" alt="image-20220613211657632" style="zoom:80%;" align=left />
 
 
 
@@ -6396,7 +6396,7 @@ public class PaymentHystrixMain8001 {
 
 http://localhost:8001/hystrix.stream
 
-<img src="img/image-20220613211853654.png" alt="image-20220613211853654" style="zoom:80%;" align=left />
+<img src="./img/image-20220613211853654.png" alt="image-20220613211853654" style="zoom:80%;" align=left />
 
 
 
@@ -6420,13 +6420,13 @@ http://localhost:8001/payment/circuit/-31
 
 监控结果成功：
 
-<img src="img/image-20220613212111216.png" alt="image-20220613212111216" style="zoom:80%;" align=left />
+<img src="./img/image-20220613212111216.png" alt="image-20220613212111216" style="zoom:80%;" align=left />
 
 
 
 监控结果失败
 
-<img src="img/image-20220613212200792.png" alt="image-20220613212200792" style="zoom:80%;" align=left />
+<img src="./img/image-20220613212200792.png" alt="image-20220613212200792" style="zoom:80%;" align=left />
 
 
 
@@ -6436,13 +6436,13 @@ http://localhost:8001/payment/circuit/-31
 
 每种故障对应一种颜色
 
-<img src="img/image-20220613212519282.png" alt="image-20220613212519282" style="zoom:80%;" align=left />
+<img src="./img/image-20220613212519282.png" alt="image-20220613212519282" style="zoom:80%;" align=left />
 
 
 
 **1圈**
 
-<img src="img/image-20220613212714686.png" alt="image-20220613212714686" style="zoom:50%;" align=left />
+<img src="./img/image-20220613212714686.png" alt="image-20220613212714686" style="zoom:50%;" align=left />
 
 实心圆：共有两种含义。它通过颜色的变化代表了实例的健康程度，它的健康度从绿色<黄色<橙色<红色递减。 
 
@@ -6452,7 +6452,7 @@ http://localhost:8001/payment/circuit/-31
 
 **1线**
 
-<img src="img/image-20220613212800020.png" alt="image-20220613212800020" style="zoom:80%;" align=left />
+<img src="./img/image-20220613212800020.png" alt="image-20220613212800020" style="zoom:80%;" align=left />
 
 曲线：用来记录2分钟内流量的相对变化，可以通过它来观察到流量的上升和下降趋势。
 
@@ -6462,11 +6462,11 @@ http://localhost:8001/payment/circuit/-31
 
 整个图说明：
 
-<img src="img/image-20220613212914646.png" alt="image-20220613212914646" style="zoom:80%;" align=left />
+<img src="./img/image-20220613212914646.png" alt="image-20220613212914646" style="zoom:80%;" align=left />
 
 
 
-<img src="img/image-20220613212950646.png" alt="image-20220613212950646" style="zoom:150%;" align=left />
+<img src="./img/image-20220613212950646.png" alt="image-20220613212950646" style="zoom:150%;" align=left />
 
 
 
@@ -6506,7 +6506,7 @@ http://localhost:8001/payment/circuit/-31
 
 Cloud全家桶中有个很重要的组件就是网关，在1.x版本中都是采用的Zuul网关； 但在2.x版本中，zuul的升级一直跳票，SpringCloud最后自己研发了一个网关替代Zuul， 那就是SpringCloud Gateway 一句话：<font color=red> gateway是原zuul1.x版的替代 </font>
 
-<img src="img/image-20220614095746040.png" alt="image-20220614095746040" style="zoom:120%;" align=left />
+<img src="./img/image-20220614095746040.png" alt="image-20220614095746040" style="zoom:120%;" align=left />
 
 
 
@@ -6516,7 +6516,7 @@ Gateway旨在提供一种简单而有效的方式来对API进行路由，以及�
 
 
 
-<img src="img/image-20220614095507254.png" alt="image-20220614095507254" style="zoom:80%;" align=left />
+<img src="./img/image-20220614095507254.png" alt="image-20220614095507254" style="zoom:80%;" align=left />
 
 
 
@@ -6536,7 +6536,7 @@ Spring Cloud Gateway的目标提供统一的路由方式且基于 Filter 链的�
 
 <font color=red> 一句话概括就是：SpringCloud Gateway 使用的Webflux中的reactor-netty响应式编程组件，底层使用了Netty通讯框架。</font>
 
-<img src="img/image-20220613215747500.png" alt="image-20220613215747500" style="zoom:100%;" align=left />
+<img src="./img/image-20220613215747500.png" alt="image-20220613215747500" style="zoom:100%;" align=left />
 
 
 
@@ -6553,7 +6553,7 @@ Spring Cloud Gateway的目标提供统一的路由方式且基于 Filter 链的�
 
 ### 12.1.4.微服务架构中网关在哪里
 
-<img src="img/image-20220613221204167.png" alt="image-20220613221204167" style="zoom:100%;" align=left />
+<img src="./img/image-20220613221204167.png" alt="image-20220613221204167" style="zoom:100%;" align=left />
 
 
 
@@ -6637,7 +6637,7 @@ container运行时接受请求，并为每个请求分配一个线程（一般�
 
 container关闭时调用servlet destory()销毁servlet； 
 
- <img src="img/image-20220614100429034.png" alt="image-20220614100429034" style="zoom:100%;" align=left  />
+ <img src="./img/image-20220614100429034.png" alt="image-20220614100429034" style="zoom:100%;" align=left  />
 
  
 
@@ -6667,7 +6667,7 @@ container关闭时调用servlet destory()销毁servlet；
 
 https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-new-framework
 
-<img src="img/image-20220613221817853.png" alt="image-20220613221817853" style="zoom:120%;" align=left />
+<img src="./img/image-20220613221817853.png" alt="image-20220613221817853" style="zoom:120%;" align=left />
 
 
 
@@ -6707,7 +6707,7 @@ Spring WebFlux 是 Spring 5.0 引入的新的响应式框架，区别于 Spring 
 
 **总体流程**
 
-<img src="img/image-20220614101819470.png" alt="image-20220614101819470" style="zoom:80%;" align=left />
+<img src="./img/image-20220614101819470.png" alt="image-20220614101819470" style="zoom:80%;" align=left />
 
 
 
@@ -6731,7 +6731,7 @@ https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/r
 
 
 
-<img src="img/image-20220614095224877.png" alt="image-20220614095224877" style="zoom:80%;" align=left  />
+<img src="./img/image-20220614095224877.png" alt="image-20220614095224877" style="zoom:80%;" align=left  />
 
 
 
@@ -6909,7 +6909,7 @@ http://localhost:8001/payment/lb
 
 #### 12.4.1.7.YML新增网关配置
 
-<img src="img/image-20220614105624835.png" alt="image-20220614105624835" style="zoom:40%;" align=left />
+<img src="./img/image-20220614105624835.png" alt="image-20220614105624835" style="zoom:40%;" align=left />
 
 
 
@@ -6925,7 +6925,7 @@ http://localhost:8001/payment/lb
 
 访问说明：
 
-<img src="img/image-20220614110419414.png" alt="image-20220614110419414" style="zoom:50%;" align=left />
+<img src="./img/image-20220614110419414.png" alt="image-20220614110419414" style="zoom:50%;" align=left />
 
 
 
@@ -6953,7 +6953,7 @@ Gateway网关路由有两种配置方式：
 
 官网案例：
 
-<img src="img/image-20220614103253879.png" alt="image-20220614103253879" style="zoom:80%;" align=left  />
+<img src="./img/image-20220614103253879.png" alt="image-20220614103253879" style="zoom:80%;" align=left  />
 
 
 
@@ -7063,7 +7063,7 @@ https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/r
 
 **Route Predicate Factories这个是什么东东?**
 
-<img src="img/image-20220614114232619.png" alt="image-20220614114232619" style="zoom:80%;" align=left />
+<img src="./img/image-20220614114232619.png" alt="image-20220614114232619" style="zoom:80%;" align=left />
 
 
 
@@ -7083,13 +7083,13 @@ Spring Cloud Gateway 创建 Route 对象时， 使用 RoutePredicateFactory 创�
 
 ### 12.6.2.常用的Route Predicate
 
-<img src="img/image-20220614114840729.png" alt="image-20220614114840729" style="zoom:80%;" align=left />
+<img src="./img/image-20220614114840729.png" alt="image-20220614114840729" style="zoom:80%;" align=left />
 
 
 
 #### 12.6.2.1.After Route Predicate
 
-<img src="img/image-20220614115018292.png" alt="image-20220614115018292" style="zoom:80%;" align=left />
+<img src="./img/image-20220614115018292.png" alt="image-20220614115018292" style="zoom:80%;" align=left />
 
 我们的问题是：上述这个After好懂，这个时间串怎么获取？可以通过如下的代码获取
 
@@ -7117,7 +7117,7 @@ public class ZonedDateTimeDemo {
 
 yml配置
 
-<img src="img/image-20220614115313893.png" alt="image-20220614115313893" style="zoom:80%;" align=left />
+<img src="./img/image-20220614115313893.png" alt="image-20220614115313893" style="zoom:80%;" align=left />
 
 
 
@@ -7127,13 +7127,13 @@ yml配置
 
 
 
-<img src="img/image-20220614115357740.png" alt="image-20220614115357740" style="zoom:80%;" align=left />
+<img src="./img/image-20220614115357740.png" alt="image-20220614115357740" style="zoom:80%;" align=left />
 
 
 
 yml配置
 
-<img src="img/image-20220614115422983.png" alt="image-20220614115422983" style="zoom:80%;" align=left  />
+<img src="./img/image-20220614115422983.png" alt="image-20220614115422983" style="zoom:80%;" align=left  />
 
 
 
@@ -7178,7 +7178,7 @@ spring:
 
 #### 12.6.2.4.Cookie Route Predicate
 
-<img src="img/image-20220614115559999.png" alt="image-20220614115559999" style="zoom:80%;" align=left />
+<img src="./img/image-20220614115559999.png" alt="image-20220614115559999" style="zoom:80%;" align=left />
 
 Cookie Route Predicate需要两个参数，一个是 Cookie name ,一个是正则表达式。
 
@@ -7226,7 +7226,7 @@ spring:
 
 curl http://localhost:9527/payment/lb 
 
-<img src="img/image-20220614121851995.png" alt="image-20220614121851995" style="zoom:80%;" align=left />
+<img src="./img/image-20220614121851995.png" alt="image-20220614121851995" style="zoom:80%;" align=left />
 
 
 
@@ -7234,11 +7234,11 @@ curl http://localhost:9527/payment/lb
 
 curl http://localhost:9527/payment/lb --cookie "username=zzyy" 
 
-<img src="img/image-20220614121919307.png" alt="image-20220614121919307" style="zoom:80%;" align=left />
+<img src="./img/image-20220614121919307.png" alt="image-20220614121919307" style="zoom:80%;" align=left />
 
 #### 12.6.2.5.Header Route Predicate
 
-<img src="img/image-20220614115743875.png" alt="image-20220614115743875" style="zoom:80%;" align=left  />
+<img src="./img/image-20220614115743875.png" alt="image-20220614115743875" style="zoom:80%;" align=left  />
 
 两个参数：一个是属性名称和一个正则表达式，这个属性值和正则表达式匹配则执行。 
 
@@ -7279,13 +7279,13 @@ spring:
 
 请求： curl http://localhost:9527/payment/lb -H "X-Request-Id:123" 
 
-<img src="img/image-20220614122236639.png" alt="image-20220614122236639" style="zoom:80%;" align=left />
+<img src="./img/image-20220614122236639.png" alt="image-20220614122236639" style="zoom:80%;" align=left />
 
 
 
 #### 12.6.2.6.Host Route Predicate
 
-<img src="img/image-20220614120115533.png" alt="image-20220614120115533" style="zoom:80%;" align=left />
+<img src="./img/image-20220614120115533.png" alt="image-20220614120115533" style="zoom:80%;" align=left />
 
 Host Route Predicate 接收一组参数，一组匹配的域名列表，这个模板是一个 ant 分隔的模板，用.号作为分隔符。 
 
@@ -7337,7 +7337,7 @@ spring:
 
 #### 12.6.2.7.Method Route Predicate
 
-<img src="img/image-20220614120130899.png" alt="image-20220614120130899" style="zoom:80%;" align=left  />
+<img src="./img/image-20220614120130899.png" alt="image-20220614120130899" style="zoom:80%;" align=left  />
 
 ```yaml
 server:
@@ -7376,7 +7376,7 @@ spring:
 
 #### 12.6.2.8.Path Route Predicate
 
-<img src="img/image-20220614120201251.png" alt="image-20220614120201251" style="zoom:80%;" align=left />
+<img src="./img/image-20220614120201251.png" alt="image-20220614120201251" style="zoom:80%;" align=left />
 
 
 
@@ -7417,7 +7417,7 @@ spring:
 
 #### 12.6.2.9.Query Route Predicate
 
-<img src="img/image-20220614120226101.png" alt="image-20220614120226101" style="zoom:80%;" align=left />
+<img src="./img/image-20220614120226101.png" alt="image-20220614120226101" style="zoom:80%;" align=left />
 
 支持传入两个参数，一个是属性名，一个为属性值，属性值可以是正则表达式。
 
@@ -7531,7 +7531,7 @@ eureka:
 
 Spring Cloud Gateway 内置了多种路由过滤器，他们都由GatewayFilter的工厂类来产生 
 
-<img src="img/image-20220614132733806.png" alt="image-20220614132733806" style="zoom:80%;" align=left />
+<img src="./img/image-20220614132733806.png" alt="image-20220614132733806" style="zoom:80%;" align=left />
 
 
 
@@ -7545,13 +7545,13 @@ Spring Cloud Gateway 内置了多种路由过滤器，他们都由GatewayFilter�
 
 1. **GatewayFilter**：https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/#gatewayfilter-factories
 
-   <img src="img/image-20220614133045548.png" alt="image-20220614133045548" style="zoom:80%;" align=left />
+   <img src="./img/image-20220614133045548.png" alt="image-20220614133045548" style="zoom:80%;" align=left />
 
 
 
 2. **GlobalFilter**：https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/#global-filters
 
-<img src="img/image-20220614133146579.png" alt="image-20220614133146579" style="zoom:80%;" align=left />
+<img src="./img/image-20220614133146579.png" alt="image-20220614133146579" style="zoom:80%;" align=left />
 
 
 
@@ -7559,7 +7559,7 @@ Spring Cloud Gateway 内置了多种路由过滤器，他们都由GatewayFilter�
 
 这里只举例[The `AddRequestParameter` `GatewayFilter` Factory](https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/#the-addrequestparameter-gatewayfilter-factory)，其他的参考官网
 
-<img src="img/image-20220614133457075.png" alt="image-20220614133457075" style="zoom:80%;" align=left />
+<img src="./img/image-20220614133457075.png" alt="image-20220614133457075" style="zoom:80%;" align=left />
 
 
 
@@ -7618,7 +7618,7 @@ public class MyLogGateWayFilter implements GlobalFilter, Ordered {
 
 启动服务
 
-<img src="img/image-20220614134511919.png" alt="image-20220614134511919" style="zoom:50%;" align=left />
+<img src="./img/image-20220614134511919.png" alt="image-20220614134511919" style="zoom:50%;" align=left />
 
 
 
@@ -7654,7 +7654,7 @@ public class MyLogGateWayFilter implements GlobalFilter, Ordered {
 
 >  SpringCloud Config为微服务架构中的微服务提供集中化的外部配置支持，配置服务器为<font color=red>各个不同微服务应用</font> 的所有环境提供了一个 <font color=red>中心化的外部配置 </font>。 
 
-<img src="img/image-20220614141105994.png" alt="image-20220614141105994" style="zoom:80%;" align=left />
+<img src="./img/image-20220614141105994.png" alt="image-20220614141105994" style="zoom:80%;" align=left />
 
 
 
@@ -7712,7 +7712,7 @@ public class MyLogGateWayFilter implements GlobalFilter, Ordered {
 
 4. 本地仓库中新建config-dev.yml、config-test.yml、config-prod.yml文件，表示多个环境的配置文件
 
-   <img src="img/image-20220614141624454.png" alt="image-20220614141624454" style="zoom:80%;" align=left />
+   <img src="./img/image-20220614141624454.png" alt="image-20220614141624454" style="zoom:80%;" align=left />
 
 推送到github
    ```shell
@@ -7867,14 +7867,14 @@ public class ConfigCenterMain3344 {
 
 #### 13.2.2.4.编辑config-dev.yml的内容
 
-<img src="img/image-20220614164324897.png" alt="image-20220614164324897" style="zoom:80%;" align=left />
+<img src="./img/image-20220614164324897.png" alt="image-20220614164324897" style="zoom:80%;" align=left />
 
 #### 13.2.2.5.测试通过Config微服务是否可以从GitHub上获取配置内容
 
 1. windows下修改hosts文件，增加映射  `127.0.0.1 config-3344.com`
 2. 启动微服务3344，访问：http://config-3344.com:3344/master/config-dev.yml
 
-<img src="img/image-20220614164418071.png" alt="image-20220614164418071" style="zoom:80%;" align=left />
+<img src="./img/image-20220614164418071.png" alt="image-20220614164418071" style="zoom:80%;" align=left />
 
 
 
@@ -7884,11 +7884,11 @@ public class ConfigCenterMain3344 {
 
 官网说明：https://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.2.1.RELEASE/reference/html/#_quick_start
 
-<img src="img/image-20220614164614879.png" alt="image-20220614164614879" style="zoom:50%;" align=left />
+<img src="./img/image-20220614164614879.png" alt="image-20220614164614879" style="zoom:50%;" align=left />
 
 
 
-<img src="img/image-20220614165216111.png" alt="image-20220614165216111" style="zoom:80%;" align=left />
+<img src="./img/image-20220614165216111.png" alt="image-20220614165216111" style="zoom:80%;" align=left />
 
 
 
@@ -7916,7 +7916,7 @@ profiles：环境(dev/test/prod)
 
 实现了客户端3355访问SpringCloud Config3344通过GitHub获取配置信息
 
-<img src="img/image-20220614165700957.png" alt="image-20220614165700957" style="zoom:80%;" align=left />
+<img src="./img/image-20220614165700957.png" alt="image-20220614165700957" style="zoom:80%;" align=left />
 
 
 
@@ -8164,7 +8164,7 @@ Linux运维修改GitHub上的配置文件内容做调整
 
 ### 13.4.2.**修改YML，暴露监控端口**
 
-<img src="img/image-20220614173004214.png" alt="image-20220614173004214" style="zoom:40%;" align=left />
+<img src="./img/image-20220614173004214.png" alt="image-20220614173004214" style="zoom:40%;" align=left />
 
 
 
@@ -8231,7 +8231,7 @@ serverPort: 3355 configInfo: master branch,springcloud-config/config-dev.yml ver
 
 curl -X POST "http://localhost:3355/actuator/refresh"
 
-<img src="img/image-20220614173530518.png" alt="image-20220614173530518" style="zoom:50%;" align=left />
+<img src="./img/image-20220614173530518.png" alt="image-20220614173530518" style="zoom:50%;" align=left />
 
 
 
@@ -8269,7 +8269,7 @@ Spring Cloud Bus 配合 Spring Cloud Config 使用可以实现配置的自动版
 
 **Spring Cloud Bus  是什么？**
 
-<img src="img/image-20220614174721404.png" alt="image-20220614174721404" style="zoom:100%;" align=left />
+<img src="./img/image-20220614174721404.png" alt="image-20220614174721404" style="zoom:100%;" align=left />
 
 1.在git配置中心更新配置
 
@@ -8283,7 +8283,7 @@ Spring Cloud Bus 配合 Spring Cloud Config 使用可以实现配置的自动版
 
 > Spring Cloud Bus能管理和传播分布式系统间的消息，就像一个分布式执行器，可用于广播状态更改、事件推送等，也可以当作微服务间的通信通道。
 
-<img src="img/image-20220614175114948.png" alt="image-20220614175114948" style="zoom:150%;" align=left />
+<img src="./img/image-20220614175114948.png" alt="image-20220614175114948" style="zoom:150%;" align=left />
 
 
 
@@ -8381,11 +8381,11 @@ $service rabbitmq-server stop
 
 1）方案一：利用消息总线触发一个客户端/bus/refresh，而刷新所有客户端的配置
 
-<img src="img/image-20220614181454236.png" alt="image-20220614181454236" style="zoom:40%;" align=left />
+<img src="./img/image-20220614181454236.png" alt="image-20220614181454236" style="zoom:40%;" align=left />
 
 2）方案二：利用消息总线触发一个服务端ConfigServer的/bus/refresh端点，而刷新所有客户端的配置
 
-<img src="img/image-20220614181645339.png" alt="image-20220614181645339" style="zoom:40%;" align=left />
+<img src="./img/image-20220614181645339.png" alt="image-20220614181645339" style="zoom:40%;" align=left />
 
 
 
@@ -8421,7 +8421,7 @@ pom.xml
 
 yml添加rabbitmq 相关配置 , 暴露 bus 刷新配置的端点
 
-<img src="img/image-20220614182650168.png" alt="image-20220614182650168" style="zoom:50%;" align=left />
+<img src="./img/image-20220614182650168.png" alt="image-20220614182650168" style="zoom:50%;" align=left />
 
 
 
@@ -8447,13 +8447,13 @@ pom.xml
 
 yml 暴露监控端点，rabbitmq支持
 
-<img src="img/image-20220614182926701.png" alt="image-20220614182926701" style="zoom:50%;" align=left />
+<img src="./img/image-20220614182926701.png" alt="image-20220614182926701" style="zoom:50%;" align=left />
 
 
 
 启动服务后，可以看到springCloudBus Exchange
 
-<img src="img/image-20220614190708338.png" alt="image-20220614190708338" style="zoom:50%;" align=left />
+<img src="./img/image-20220614190708338.png" alt="image-20220614190708338" style="zoom:50%;" align=left />
 
 ### 14.3.5.测试一次修改刷新，处处生效
 
@@ -8560,7 +8560,7 @@ https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/3.0.1.RELEASE/re
 
  Spring Cloud Stream是用于构建与共享消息传递系统连接的高度可伸缩的事件驱动微服务框架，该框架提供了一个灵活的编程模型，它建立在已经建立和熟悉的Spring熟语和最佳实践上，包括支持持久化的发布/订阅、消费组以及消息分区这三个核心概念 
 
-<img src="img/image-20220614211705786.png" alt="image-20220614211705786" style="zoom:60%;" align=left />
+<img src="./img/image-20220614211705786.png" alt="image-20220614211705786" style="zoom:60%;" align=left />
 
 ### 15.2.3.设计思想
 
@@ -8574,7 +8574,7 @@ https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/3.0.1.RELEASE/re
 
 - 消息通道里的消息如何被消费呢，谁负责收发<font color=red>处理</font>：消息通道MessageChannel的子接口SubscribableChannel，由MessageHandler消息处理器所订阅
 
-<img src="img/image-20220614205314456.png" alt="image-20220614205314456" style="zoom:120%;" align=left />
+<img src="./img/image-20220614205314456.png" alt="image-20220614205314456" style="zoom:120%;" align=left />
 
 
 
@@ -8582,7 +8582,7 @@ https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/3.0.1.RELEASE/re
 
 比方说我们用到了RabbitMQ和Kafka，由于这两个消息中间件的架构上的不同， 像RabbitMQ有exchange，kafka有Topic和Partitions分区， 
 
- <img src="img/image-20220614212125355.png" alt="image-20220614212125355" style="zoom:80%;" align=left />
+ <img src="./img/image-20220614212125355.png" alt="image-20220614212125355" style="zoom:80%;" align=left />
 
  
 
@@ -8630,7 +8630,7 @@ https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/3.0.1.RELEASE/re
 
 https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/spring-cloud-stream-binder-rabbit.html#_rabbitmq_binder_overview
 
-<img src="img/image-20220614212313903.png" alt="image-20220614212313903" style="zoom:50%;" align=left />
+<img src="./img/image-20220614212313903.png" alt="image-20220614212313903" style="zoom:50%;" align=left />
 
 
 
@@ -8638,7 +8638,7 @@ https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/spring-cl
 
 在没有绑定器这个概念的情况下，我们的SpringBoot应用要直接与消息中间件进行信息交互的时候，由于各消息中间件构建的初衷不同，它们的实现细节上会有较大的差异性 ，通过定义绑定器作为中间层，完美地实现了<font color=red>应用程序与消息中间件细节之间的隔离 </font>。Stream对消息中间件的进一步封装，可以做到代码层面对中间件的无感知，甚至于动态的切换中间件(rabbitmq切换为kafka)，使得微服务开发的高度解耦，服务可以关注更多自己的业务流程 
 
-<img src="img/image-20220614210416960.png" alt="image-20220614210416960" style="zoom:140%;" align=left />
+<img src="./img/image-20220614210416960.png" alt="image-20220614210416960" style="zoom:140%;" align=left />
 
 **<font color=red>通过定义绑定器Binder作为中间层，实现了应用程序与消息中间件细节之间的隔离。 </font>**
 
@@ -8664,7 +8664,7 @@ OUTPUT对应于生产者。
 
 消息中间件与绑定器Binder绑定，INPUT对应于消费者，OUTPUT对应于生产者。
 
-<img src="img/image-20220614212625118.png" alt="image-20220614212625118" style="zoom:80%;" align=left />
+<img src="./img/image-20220614212625118.png" alt="image-20220614212625118" style="zoom:80%;" align=left />
 
 
 
@@ -8675,7 +8675,7 @@ OUTPUT对应于生产者。
 - Channel：通道，是队列Queue的一种抽象，在消息通讯系统中就是实现存储和转发的媒介，通过Channel对队列进行配置
 - Source和Sink：简单的可理解为参照对象是Spring Cloud Stream自身，从Stream发布消息就是输出，接受消息就是输入。
 
-<img src="img/image-20220614210638128.png" alt="image-20220614210638128" style="zoom:100%;" align=left />
+<img src="./img/image-20220614210638128.png" alt="image-20220614210638128" style="zoom:100%;" align=left />
 
 
 
@@ -8685,7 +8685,7 @@ OUTPUT对应于生产者。
 
 #### 15.2.3.5.编码API和常用注解
 
-<img src="img/image-20220614212908943.png" alt="image-20220614212908943" style="zoom:80%;" align=left />
+<img src="./img/image-20220614212908943.png" alt="image-20220614212908943" style="zoom:80%;" align=left />
 
 
 
@@ -8934,13 +8934,13 @@ public class SendMessageController {
 
 http://localhost:15672/#/
 
-<img src="img/image-20220614220341327.png" alt="image-20220614220341327" style="zoom:40%;" align=left />
+<img src="./img/image-20220614220341327.png" alt="image-20220614220341327" style="zoom:40%;" align=left />
 
 
 
 发送消息成功：http://localhost:8801/sendMessage
 
-<img src="img/image-20220615103505845.png" alt="image-20220615103505845" style="zoom:80%;" align=left />
+<img src="./img/image-20220615103505845.png" alt="image-20220615103505845" style="zoom:80%;" align=left />
 
 我们这里没有使用任何rabbitmq的api，springcloud stream 直接帮我们屏蔽的消息中间件底层的细节。
 
@@ -9153,7 +9153,7 @@ http://localhost:8801/sendMessage
 
 目前是8802/8803同时都收到了，存在重复消费问题
 
-<img src="img/image-20220615101208058.png" alt="image-20220615101208058" style="zoom:80%;" align=left />
+<img src="./img/image-20220615101208058.png" alt="image-20220615101208058" style="zoom:80%;" align=left />
 
 
 
@@ -9163,7 +9163,7 @@ http://localhost:8801/sendMessage
 
 导致原因：默认分组group是不同的，组流水号不一样，被认为不同组，可以消
 
-<img src="img/image-20220615105608222.png" alt="image-20220615105608222" style="zoom:80%;" align=left />
+<img src="./img/image-20220615105608222.png" alt="image-20220615105608222" style="zoom:80%;" align=left />
 
 
 
@@ -9181,7 +9181,7 @@ http://localhost:8801/sendMessage
 
 这时 <font color=red>我们就可以使用Stream中的消息分组来解决 </font>
 
-<img src="img/image-20220615101445380.png" alt="image-20220615101445380" style="zoom:80%;" align=left />
+<img src="./img/image-20220615101445380.png" alt="image-20220615101445380" style="zoom:80%;" align=left />
 
 注意在Stream中处于同一个group中的多个消费者是竞争关系，就能够保证消息只会被其中一个应用消费一次。 
 
@@ -9205,13 +9205,13 @@ http://localhost:8801/sendMessage
 
 **8802修改YML修改为atguiguA**
 
-<img src="img/image-20220615110326790.png" alt="image-20220615110326790" style="zoom:30%;" align=left />
+<img src="./img/image-20220615110326790.png" alt="image-20220615110326790" style="zoom:30%;" align=left />
 
 
 
 **8803修改YML修改为atguiguB**
 
-<img src="img/image-20220615110419279.png" alt="image-20220615110419279" style="zoom:30%;" align=left />
+<img src="./img/image-20220615110419279.png" alt="image-20220615110419279" style="zoom:30%;" align=left />
 
 
 
@@ -9219,7 +9219,7 @@ http://localhost:8801/sendMessage
 
 
 
-<img src="img/image-20220615101934712.png" alt="image-20220615101934712" style="zoom:80%;" align=left />
+<img src="./img/image-20220615101934712.png" alt="image-20220615101934712" style="zoom:80%;" align=left />
 
 分布式微服务应用为了实现高可用和负载均衡，实际上都会部署多个实例，本例阳哥启动了两个消费微服务(8802/8803) 
 
@@ -9255,13 +9255,13 @@ http://localhost:8801/sendMessage
 4. 8801先发送4条消息到rabbitmq
 5. 先启动8802，无分组属性配置，后台没有打出来消息
 
-<img src="img/image-20220615102522273.png" alt="image-20220615102522273" style="zoom:80%;" align=left />
+<img src="./img/image-20220615102522273.png" alt="image-20220615102522273" style="zoom:80%;" align=left />
 
 
 
 6. 再启动8803，有分组属性配置，后台打出来了MQ上的消息
 
-<img src="img/image-20220615102622300.png" alt="image-20220615102622300" style="zoom:80%;" align=left />
+<img src="./img/image-20220615102622300.png" alt="image-20220615102622300" style="zoom:80%;" align=left />
 
 
 
@@ -9291,7 +9291,7 @@ http://localhost:8801/sendMessage
 >
 > 通过这种技术，我们可以知道整个请求的调用链路，每一步的耗时是多少
 
-<img src="img/image-20220615110823693.png" alt="image-20220615110823693" style="zoom:80%;" align=left />
+<img src="./img/image-20220615110823693.png" alt="image-20220615110823693" style="zoom:80%;" align=left />
 
 
 
@@ -9313,7 +9313,7 @@ http://localhost:8801/sendMessage
 
 sleuth就是用于追踪每个请求的整体链路，并以图形化的方式显示链路调用流程
 
-<img src="img/image-20220615111027201.png" alt="image-20220615111027201" style="zoom:80%;" align=left />
+<img src="./img/image-20220615111027201.png" alt="image-20220615111027201" style="zoom:80%;" align=left />
 
 
 
@@ -9337,7 +9337,7 @@ SpringCloud从F版起已不需要自己构建Zipkin Server了，只需调用jar�
 
 3. 运行控制台：http://localhost:9411/zipkin/  默认zipkin监听端口是9411
 
-<img src="img/image-20220615112011908.png" alt="image-20220615112011908" style="zoom:80%;" align=left />
+<img src="./img/image-20220615112011908.png" alt="image-20220615112011908" style="zoom:80%;" align=left />
 
 
 
@@ -9347,7 +9347,7 @@ SpringCloud从F版起已不需要自己构建Zipkin Server了，只需调用jar�
 
 完整的调用链路： 表示一请求链路，一条链路通过Trace Id唯一标识，Span标识发起的请求信息，各span通过parent id 关联起来 
 
-<img src="img/image-20220615114055179.png" alt="image-20220615114055179" style="zoom:120%;" align=left  />
+<img src="./img/image-20220615114055179.png" alt="image-20220615114055179" style="zoom:120%;" align=left  />
 
 
 
@@ -9361,9 +9361,9 @@ span：表示调用链路来源，通俗的理解<font color=red>span就是一�
 
 一条链路通过Trace Id唯一标识，Span标识发起的请求信息，各span通过parent id 关联起来 
 
-<img src="img/image-20220615112201273.png" alt="image-20220615112201273" style="zoom:150%;" align=left />
+<img src="./img/image-20220615112201273.png" alt="image-20220615112201273" style="zoom:150%;" align=left />
 
-<img src="img/image-20220615112235664.png" alt="image-20220615112235664" style="zoom:80%;" align=left />
+<img src="./img/image-20220615112235664.png" alt="image-20220615112235664" style="zoom:80%;" align=left />
 
 
 
@@ -9387,7 +9387,7 @@ span：表示调用链路来源，通俗的理解<font color=red>span就是一�
 
 ### 16.3.2.yml
 
-<img src="img/image-20220615113233567.png" alt="image-20220615113233567" style="zoom:40%;" align=left />
+<img src="./img/image-20220615113233567.png" alt="image-20220615113233567" style="zoom:40%;" align=left />
 
 ### 16.3.3.业务类PaymentController
 
@@ -9423,7 +9423,7 @@ span：表示调用链路来源，通俗的理解<font color=red>span就是一�
 
 ### 16.3.2.yml
 
-<img src="img/image-20220615115943514.png" alt="image-20220615115943514" style="zoom:50%;" align=left />
+<img src="./img/image-20220615115943514.png" alt="image-20220615115943514" style="zoom:50%;" align=left />
 
 
 
@@ -9450,7 +9450,7 @@ span：表示调用链路来源，通俗的理解<font color=red>span就是一�
 
 2. 80调用8001几次测试下：http://localhost/consumer/payment/zipkin
 3. 打开浏览器访问：http://localhost:9411
-4. <img src="img/image-20220615120055720.png" alt="image-20220615120055720" style="zoom:80%;" align=left />
+4. <img src="./img/image-20220615120055720.png" alt="image-20220615120055720" style="zoom:80%;" align=left />
 
 
 
@@ -9478,7 +9478,7 @@ Github：https://github.com/alibaba/spring-cloud-alibaba
 
 https://spring.io/blog/2018/12/12/spring-cloud-greenwich-rc1-available-now
 
-<img src="img/image-20220615132524384.png" alt="image-20220615132524384" style="zoom:40%;" align=left  />
+<img src="./img/image-20220615132524384.png" alt="image-20220615132524384" style="zoom:40%;" align=left  />
 
 
 
@@ -9490,7 +9490,7 @@ https://spring.io/blog/2018/12/12/spring-cloud-greenwich-rc1-available-now
 
 **新组件功能将以其他替代平代替的方式实现** 
 
-<img src="img/image-20220615132715731.png" alt="image-20220615132715731" style="zoom:40%;" align=left />
+<img src="./img/image-20220615132715731.png" alt="image-20220615132715731" style="zoom:40%;" align=left />
 
 
 
@@ -9614,7 +9614,7 @@ https://github.com/alibaba/Nacos
 
 各种注册中心的比较
 
-<img src="img/image-20220615135549927.png" alt="image-20220615135549927" style="zoom:50%;" align=left />
+<img src="./img/image-20220615135549927.png" alt="image-20220615135549927" style="zoom:50%;" align=left />
 
 
 
@@ -9627,7 +9627,7 @@ https://github.com/alibaba/Nacos
 3. 解压安装包，直接运行bin目录下的startup.cmd `startup.cmd -m standalone`
 4. 命令运行成功后直接访问http://localhost:8848/nacos 默认账号密码都是nacos
 
-<img src="img/image-20220615140533734.png" alt="image-20220615140533734" style="zoom:40%;" align=left />
+<img src="./img/image-20220615140533734.png" alt="image-20220615140533734" style="zoom:40%;" align=left />
 
 
 
@@ -9651,7 +9651,7 @@ https://github.com/alibaba/Nacos
 
 父pom
 
-<img src="img/image-20220615163911152.png" alt="image-20220615163911152" style="zoom:40%;" align=left />
+<img src="./img/image-20220615163911152.png" alt="image-20220615163911152" style="zoom:40%;" align=left />
 
 
 
@@ -9800,7 +9800,7 @@ public class PaymentController {
 
 nacos 控制台：http://localhost:8848/nacos/#/serviceManagement?dataId=&group=&appName=&namespace=
 
-<img src="img/image-20220615164229875.png" alt="image-20220615164229875" style="zoom:50%;" align=left />
+<img src="./img/image-20220615164229875.png" alt="image-20220615164229875" style="zoom:50%;" align=left />
 
 
 
@@ -9887,7 +9887,7 @@ nacos服务注册中心+服务提供者9001都OK了
 
 **注意：spring-cloud-starter-alibaba-nacos-discovery 内部引入了ribbon ，nacos可以支持负载均衡**
 
-<img src="img/image-20220615165114579.png" alt="image-20220615165114579" style="zoom:50%;" align=left />
+<img src="./img/image-20220615165114579.png" alt="image-20220615165114579" style="zoom:50%;" align=left />
 
 #### 18.3.2.3.yml
 
@@ -10020,7 +10020,7 @@ public class OrderNacosController {
 
 4. nacos控制台 http://localhost:8848/nacos/#/serviceManagement?dataId=&group=&appName=&namespace=
 
-   <img src="img/image-20220615170020830.png" alt="image-20220615170020830" style="zoom:50%;" align=left />
+   <img src="./img/image-20220615170020830.png" alt="image-20220615170020830" style="zoom:50%;" align=left />
 
 5. 访问 http://localhost:83/consumer/payment/nacos/1  结果 9001、9002 交替出现，即负载均衡
 
@@ -10032,17 +10032,17 @@ public class OrderNacosController {
 
 nacos 可以跟如下这些技术整合，nacos想全景覆盖，所有支持AP和CP切换
 
-<img src="img/image-20220615165748572.png" alt="image-20220615165748572" style="zoom:50%;" align=left />
+<img src="./img/image-20220615165748572.png" alt="image-20220615165748572" style="zoom:50%;" align=left />
 
 
 
 #### 18.3.3.2.Nacos和CAP
 
-<img src="img/image-20220615170833569.png" alt="image-20220615170833569" style="zoom:50%;" align=left />
+<img src="./img/image-20220615170833569.png" alt="image-20220615170833569" style="zoom:50%;" align=left />
 
 
 
-<img src="img/image-20220615170744795.png" alt="image-20220615170744795" style="zoom:50%;" align=left />
+<img src="./img/image-20220615170744795.png" alt="image-20220615170744795" style="zoom:50%;" align=left />
 
 
 
@@ -10270,7 +10270,7 @@ Nacos中的dataid的组成格式及与SpringBoot配置文件中的匹配规则
 
 官网：https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html 
 
-<img src="img/image-20220615173104305.png" alt="image-20220615173104305" style="zoom:50%;" align=left  />
+<img src="./img/image-20220615173104305.png" alt="image-20220615173104305" style="zoom:50%;" align=left  />
 
 <font color=red>**即dataId公式为**：</font>
 
@@ -10280,7 +10280,7 @@ ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config
 
 
 
-<img src="img/image-20220615174209449.png" alt="image-20220615174209449" style="zoom:40%;" align=left />
+<img src="./img/image-20220615174209449.png" alt="image-20220615174209449" style="zoom:40%;" align=left />
 
 
 
@@ -10288,7 +10288,7 @@ ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config
 
 1. nacos新增配置 nacos-config-client-dev.yaml
 
-<img src="img/image-20220615173745198.png" alt="image-20220615173745198" style="zoom:40%;" align=left />
+<img src="./img/image-20220615173745198.png" alt="image-20220615173745198" style="zoom:40%;" align=left />
 
 
 
@@ -10298,7 +10298,7 @@ ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config
 
 Nacos会记录配置文件的历史版本默认保留30天，此外还有一键回滚功能，回滚操作将会触发配置更新
 
-<img src="img/image-20220615174433377.png" alt="image-20220615174433377" style="zoom:50%;" align=left />
+<img src="./img/image-20220615174433377.png" alt="image-20220615174433377" style="zoom:50%;" align=left />
 
 
 
@@ -10355,13 +10355,13 @@ dev开发环境 、test测试环境 、prod生产环境。
 
 命名空间
 
-<img src="img/image-20220615180145101.png" alt="image-20220615180145101" style="zoom:40%;" align=left />
+<img src="./img/image-20220615180145101.png" alt="image-20220615180145101" style="zoom:40%;" align=left />
 
 
 
 配置管理
 
-<img src="img/image-20220615180244320.png" alt="image-20220615180244320" style="zoom:40%;" align=left  />
+<img src="./img/image-20220615180244320.png" alt="image-20220615180244320" style="zoom:40%;" align=left  />
 
 
 
@@ -10377,7 +10377,7 @@ dev开发环境 、test测试环境 、prod生产环境。
 
 2. **三者情况** 
 
-   <img src="img/image-20220615180548773.png" alt="image-20220615180548773" style="zoom:50%;" align=left />
+   <img src="./img/image-20220615180548773.png" alt="image-20220615180548773" style="zoom:50%;" align=left />
 
 
 
@@ -10419,13 +10419,13 @@ Service就是微服务；一个Service可以包含多个Cluster（集群），Na
 
 1. 新建dev配置DataID
 
-<img src="img/image-20220615181504154.png" alt="image-20220615181504154" style="zoom:50%;" align=left />
+<img src="./img/image-20220615181504154.png" alt="image-20220615181504154" style="zoom:50%;" align=left />
 
 
 
 2. 新建test配置DataID
 
-<img src="img/image-20220615181427336.png" alt="image-20220615181427336" style="zoom:50%;" align=left  />
+<img src="./img/image-20220615181427336.png" alt="image-20220615181427336" style="zoom:50%;" align=left  />
 
 
 
@@ -10433,7 +10433,7 @@ Service就是微服务；一个Service可以包含多个Cluster（集群），Na
 
    访问：http://localhost:3377/config/info 配置是什么就加载什么
 
-<img src="img/image-20220615181612610.png" alt="image-20220615181612610" style="zoom:50%;" align=left />
+<img src="./img/image-20220615181612610.png" alt="image-20220615181612610" style="zoom:50%;" align=left />
 
 
 
@@ -10447,7 +10447,7 @@ Service就是微服务；一个Service可以包含多个Cluster（集群），Na
 
 1. 新建group  DEV_GROUP、TEST_GROUP
 
-<img src="img/image-20220615182119887.png" alt="image-20220615182119887" style="zoom:40%;" align=left  />
+<img src="./img/image-20220615182119887.png" alt="image-20220615182119887" style="zoom:40%;" align=left  />
 
 
 
@@ -10473,7 +10473,7 @@ config:
 
 2.在nacos图形界面控制台上面新建配置文件DataID
 
-<img src="img/image-20220615182301142.png" alt="image-20220615182301142" style="zoom:40%;" align=left  />
+<img src="./img/image-20220615182301142.png" alt="image-20220615182301142" style="zoom:40%;" align=left  />
 
 
 
@@ -10481,7 +10481,7 @@ config:
 
 在config下增加一条group的配置即可，可配置为DEV_GROUP或TEST_GROUP，group指定是什么就读取什么group的配置
 
-<img src="img/image-20220615182353596.png" alt="image-20220615182353596" style="zoom:50%;" align=left />
+<img src="./img/image-20220615182353596.png" alt="image-20220615182353596" style="zoom:50%;" align=left />
 
 
 
@@ -10493,19 +10493,19 @@ config:
 
 1. 新建dev/test命名空间，注意命名空间id
 
-<img src="img/image-20220615183048166.png" alt="image-20220615183048166" style="zoom:50%;" align=left />
+<img src="./img/image-20220615183048166.png" alt="image-20220615183048166" style="zoom:50%;" align=left />
 
 2. 回到服务管理-服务列表查看，多了dev、test命名空间
 
-<img src="img/image-20220615183655586.png" alt="image-20220615183655586" style="zoom:50%;" align=left />
+<img src="./img/image-20220615183655586.png" alt="image-20220615183655586" style="zoom:50%;" align=left />
 
 2. 按照命名空间新建各项配置文件
 
-   <img src="img/image-20220615183820917.png" alt="image-20220615183820917" style="zoom:50%;" align=left  />
+   <img src="./img/image-20220615183820917.png" alt="image-20220615183820917" style="zoom:50%;" align=left  />
 
 3. yml
 
-   <img src="img/image-20220615182804020.png" alt="image-20220615182804020" style="zoom:50%;" align=left  />
+   <img src="./img/image-20220615182804020.png" alt="image-20220615182804020" style="zoom:50%;" align=left  />
 
 
 
@@ -10521,7 +10521,7 @@ config:
 
 https://nacos.io/zh-cn/docs/cluster-mode-quick-start.html
 
-<img src="img/image-20220615194500647.png" alt="image-20220615194500647" style="zoom:80%;" align=left />
+<img src="./img/image-20220615194500647.png" alt="image-20220615194500647" style="zoom:80%;" align=left />
 
 
 
@@ -10529,7 +10529,7 @@ https://nacos.io/zh-cn/docs/cluster-mode-quick-start.html
 
 上图翻译过来，说人话
 
-<img src="img/image-20220615194554251.png" alt="image-20220615194554251" style="zoom:100%;" align=left  />
+<img src="./img/image-20220615194554251.png" alt="image-20220615194554251" style="zoom:100%;" align=left  />
 
 
 
@@ -10545,7 +10545,7 @@ https://nacos.io/zh-cn/docs/deployment.html
 
 
 
-<img src="img/image-20220615194818022.png" alt="image-20220615194818022" style="zoom:80%;" align=left />
+<img src="./img/image-20220615194818022.png" alt="image-20220615194818022" style="zoom:80%;" align=left />
 
 
 
@@ -10627,7 +10627,7 @@ derby到mysql切换配置步骤，使用Mysql进行持久化
 
 5. 编辑Nacos的启动脚本startup.sh，使它能够接受不同的启动端口（这一步更快的方式是复制3份nacos，直接修改application.properties 启动端口会更快）
 
-   <img src="img/image-20220615204527736.png" alt="image-20220615204527736" style="zoom:50%;" align=left />
+   <img src="./img/image-20220615204527736.png" alt="image-20220615204527736" style="zoom:50%;" align=left />
 
 6. 启动3个nacos实例
 
@@ -10680,7 +10680,7 @@ server {
 
    新建一个配置测试
 
-   <img src="img/image-20220615211212699.png" alt="image-20220615211212699" style="zoom:50%;" align=left />
+   <img src="./img/image-20220615211212699.png" alt="image-20220615211212699" style="zoom:50%;" align=left />
 
    
 
@@ -10688,7 +10688,7 @@ server {
 
 发现linux服务器的mysql插入一条记录
 
-<img src="img/image-20220615211315506.png" alt="image-20220615211315506" style="zoom:50%;" align=left  />
+<img src="./img/image-20220615211315506.png" alt="image-20220615211315506" style="zoom:50%;" align=left  />
 
 
 
@@ -10698,18 +10698,18 @@ server {
 
 ### 18.5.4.微服务cloudalibaba-provider-payment9002启动注册进nacos集群
 
-<img src="img/image-20220615211640092.png" alt="image-20220615211640092" style="zoom:40%;" align=left  />
+<img src="./img/image-20220615211640092.png" alt="image-20220615211640092" style="zoom:40%;" align=left  />
 
 
 发现服务成功注册到nacos集群
 
-<img src="img/image-20220615211604177.png" alt="image-20220615211604177" style="zoom:50%;" align=left />
+<img src="./img/image-20220615211604177.png" alt="image-20220615211604177" style="zoom:50%;" align=left />
 
 
 
 ### 18.5.5.总结（我们搭建了一套nacos 集群）
 
-<img src="img/image-20220615211757118.png" alt="image-20220615211757118" style="zoom:100%;" align=left  />
+<img src="./img/image-20220615211757118.png" alt="image-20220615211757118" style="zoom:100%;" align=left  />
 
 
 
@@ -10745,7 +10745,7 @@ Sentinel 就是一套阿里版的Hystrix
 
 **是什么？**
 
-<img src="img/image-20220615214313656.png" alt="image-20220615214313656" style="zoom:40%;" align=left />
+<img src="./img/image-20220615214313656.png" alt="image-20220615214313656" style="zoom:40%;" align=left />
 
 
 
@@ -10759,7 +10759,7 @@ Sentinel 就是一套阿里版的Hystrix
 
 **能干嘛？**
 
-<img src="img/image-20220615214541977.png" alt="image-20220615214541977" style="zoom:50%;" align=left />
+<img src="./img/image-20220615214541977.png" alt="image-20220615214541977" style="zoom:50%;" align=left />
 
 
 
@@ -10976,7 +10976,7 @@ public class FlowLimitController {
 
 1. 启动8401微服务后查看sentienl控制台，空空如也，啥都没有
 
-<img src="img/image-20220615220141211.png" alt="image-20220615220141211" style="zoom:50%;" align=left  />
+<img src="./img/image-20220615220141211.png" alt="image-20220615220141211" style="zoom:50%;" align=left  />
 
 
 
@@ -10988,7 +10988,7 @@ public class FlowLimitController {
 
    sentinel8080正在监控微服务8401
 
-<img src="img/image-20220615221455749.png" alt="image-20220615221455749" style="zoom:50%;" align=left  />
+<img src="./img/image-20220615221455749.png" alt="image-20220615221455749" style="zoom:50%;" align=left  />
 
 
 
@@ -11000,7 +11000,7 @@ public class FlowLimitController {
 
 
 
-<img src="img/image-20220616110415897.png" alt="image-20220616110415897" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616110415897.png" alt="image-20220616110415897" style="zoom:80%;" align=left  />
 
 
 
@@ -11053,7 +11053,7 @@ public class FlowLimitController {
 
 1. 设置效果：表示1秒钟内查询（QPS）1次就是OK，若超过次数1，就直接-快速失败，报默认错误 
 
-<img src="img/image-20220616111527635.png" alt="image-20220616111527635" style="zoom:80%;" align=left />
+<img src="./img/image-20220616111527635.png" alt="image-20220616111527635" style="zoom:80%;" align=left />
 
 
 
@@ -11071,7 +11071,7 @@ public class FlowLimitController {
 
 配置
 
-<img src="img/image-20220616113441450.png" alt="image-20220616113441450" style="zoom:80%;" align=left />
+<img src="./img/image-20220616113441450.png" alt="image-20220616113441450" style="zoom:80%;" align=left />
 
 
 
@@ -11096,7 +11096,7 @@ public class FlowLimitController {
 
 使用jemter对testA进行压测
 
-<img src="img/image-20220616114838570.png" alt="image-20220616114838570" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616114838570.png" alt="image-20220616114838570" style="zoom:80%;" align=left  />
 
 
 
@@ -11120,13 +11120,13 @@ public class FlowLimitController {
 
 1. 配置A：当关联资源/testB的qps阀值超过1时，就限流/testA的Rest访问地址，即<font color=red>当关联资源到阈值后限制配置好的资源名 </font>
 
-<img src="img/image-20220616112032842.png" alt="image-20220616112032842" style="zoom:80%;" align=left />
+<img src="./img/image-20220616112032842.png" alt="image-20220616112032842" style="zoom:80%;" align=left />
 
 
 
 2. 使用postman对testB进行大规模高并发访问
 
-<img src="img/image-20220616112437465.png" alt="image-20220616112437465" style="zoom:60%;" align=left />
+<img src="./img/image-20220616112437465.png" alt="image-20220616112437465" style="zoom:60%;" align=left />
 
 
 
@@ -11172,7 +11172,7 @@ public class FlowLimitController {
 
 官网说明：https://github.com/alibaba/Sentinel/wiki/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6
 
-<img src="img/image-20220616120037118.png" alt="image-20220616120037118" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616120037118.png" alt="image-20220616120037118" style="zoom:80%;" align=left  />
 
 
 
@@ -11182,7 +11182,7 @@ public class FlowLimitController {
 
 相关源码：com.alibaba.csp.sentinel.slots.block.flow.controller.WarmUpController
 
-<img src="img/image-20220616120206860.png" alt="image-20220616120206860" style="zoom:80%;" align=left />
+<img src="./img/image-20220616120206860.png" alt="image-20220616120206860" style="zoom:80%;" align=left />
 
 
 
@@ -11194,7 +11194,7 @@ public class FlowLimitController {
 
 该案例配置说明，阀值为10+预热时长设置5秒。系统初始化的阀值为10 / 3 约等于3，即阀值刚开始为3；然后过了5秒后阀值才慢慢升高恢复到10 
 
-<img src="img/image-20220616120301030.png" alt="image-20220616120301030" style="zoom:80%;" align=left />
+<img src="./img/image-20220616120301030.png" alt="image-20220616120301030" style="zoom:80%;" align=left />
 
 
 
@@ -11208,7 +11208,7 @@ public class FlowLimitController {
 
 官网：https://github.com/alibaba/Sentinel/wiki/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6
 
-<img src="img/image-20220616121004726.png" alt="image-20220616121004726" style="zoom:80%;" align=left />
+<img src="./img/image-20220616121004726.png" alt="image-20220616121004726" style="zoom:80%;" align=left />
 
 
 
@@ -11222,7 +11222,7 @@ public class FlowLimitController {
 
 设置含义：/testA每秒1次请求，超过的话就排队等待，等待的超时时间为20000毫秒（20秒）。 
 
-<img src="img/image-20220616121056935.png" alt="image-20220616121056935" style="zoom:80%;" align=left />
+<img src="./img/image-20220616121056935.png" alt="image-20220616121056935" style="zoom:80%;" align=left />
 
 
 
@@ -11230,7 +11230,7 @@ public class FlowLimitController {
 
 测试：请求1秒通过一个
 
-<img src="img/image-20220616121150562.png" alt="image-20220616121150562" style="zoom:80%;" align=left />
+<img src="./img/image-20220616121150562.png" alt="image-20220616121150562" style="zoom:80%;" align=left />
 
 
 
@@ -11244,7 +11244,7 @@ public class FlowLimitController {
 
 
 
-<img src="img/image-20220616124512257.png" alt="image-20220616124512257" style="zoom:90%;" align=left  />
+<img src="./img/image-20220616124512257.png" alt="image-20220616124512257" style="zoom:90%;" align=left  />
 
 
 
@@ -11306,7 +11306,7 @@ public class FlowLimitController {
 
 1. **是什么？**
 
-<img src="img/image-20220616125240132.png" alt="image-20220616125240132" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125240132.png" alt="image-20220616125240132" style="zoom:80%;" align=left />
 
 
 
@@ -11328,7 +11328,7 @@ public class FlowLimitController {
 
 3. 配置降级策略RT（如果秒级平均响应时间超过200毫秒还没处理完，在未来1秒钟的时间窗口内，断路器打开(保险丝跳闸)微服务不可用）
 
-<img src="img/image-20220616125542089.png" alt="image-20220616125542089" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125542089.png" alt="image-20220616125542089" style="zoom:80%;" align=left />
 
 
 
@@ -11336,7 +11336,7 @@ public class FlowLimitController {
 
    每秒10个请求
 
-<img src="img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
 
 
 
@@ -11358,7 +11358,7 @@ public class FlowLimitController {
 
 1. 是什么？
 
-   <img src="img/image-20220616125811277.png" alt="image-20220616125811277" style="zoom:80%;" align=left />
+   <img src="./img/image-20220616125811277.png" alt="image-20220616125811277" style="zoom:80%;" align=left />
 
 
 
@@ -11386,13 +11386,13 @@ public class FlowLimitController {
 
 3.配置（1秒钟内，如果超过20%异常，就降级）
 
-<img src="img/image-20220616125913615.png" alt="image-20220616125913615" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125913615.png" alt="image-20220616125913615" style="zoom:80%;" align=left />
 
 
 
 4.jemeter压测
 
-<img src="img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
 
 
 
@@ -11402,13 +11402,13 @@ public class FlowLimitController {
 
 先单独访问一次，必然来一次报错一次(int age = 10/0)，调一次错一次；
 
-<img src="img/image-20220616131844169.png" alt="image-20220616131844169" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616131844169.png" alt="image-20220616131844169" style="zoom:80%;" align=left  />
 
 
 
 
 
-<img src="img/image-20220616130034693.png" alt="image-20220616130034693" style="zoom:100%;" align=left />
+<img src="./img/image-20220616130034693.png" alt="image-20220616130034693" style="zoom:100%;" align=left />
 
 
 
@@ -11426,7 +11426,7 @@ public class FlowLimitController {
 
 注意：异常数是按照分钟统计的
 
-<img src="img/image-20220616130140846.png" alt="image-20220616130140846" style="zoom:80%;" align=left   />
+<img src="./img/image-20220616130140846.png" alt="image-20220616130140846" style="zoom:80%;" align=left   />
 
 
 
@@ -11447,11 +11447,11 @@ public String testE() {
 
 61秒内，超过5次异常，则进行熔断降级
 
-<img src="img/image-20220616132104700.png" alt="image-20220616132104700" style="zoom:80%;" align=left    />
+<img src="./img/image-20220616132104700.png" alt="image-20220616132104700" style="zoom:80%;" align=left    />
 
 4.jemter压测
 
-<img src="img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
 
 
 
@@ -11550,7 +11550,7 @@ public String testE() {
 
 <font color=red>下面的抓图就是第一个参数有值的话，超过指定的QPS=1，超过就限流，限流后调用 dealHandler_testHotKey支持方法。 </font>
 
-<img src="img/image-20220616161640022.png" alt="image-20220616161640022" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616161640022.png" alt="image-20220616161640022" style="zoom:80%;" align=left  />
 
 
 
@@ -11588,7 +11588,7 @@ public String testE() {
 
 热点规则配置：
 注意：热点参数的注意点，参数必须是基本类型或者String
-<img src="img/image-20220616162616289.png" alt="image-20220616162616289" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616162616289.png" alt="image-20220616162616289" style="zoom:80%;" align=left  />
 
 
 
@@ -11637,7 +11637,7 @@ http://localhost:8401/testHotKey?p1=3   qps阈值时1
 
 int age = 10/0,这个是java运行时报出的运行时异常RunTimeException，@SentinelResource不管 
 
-<img src="img/image-20220616164840429.png" alt="image-20220616164840429" style="zoom:80%;" align=left /> 
+<img src="./img/image-20220616164840429.png" alt="image-20220616164840429" style="zoom:80%;" align=left /> 
 
 
 
@@ -11676,11 +11676,11 @@ Sentinel 系统自适应限流<font color=red>从整体维度对应用入口流�
 
 ### 19.7.2.各项配置参数说明
 
-<img src="img/image-20220616165048842.png" alt="image-20220616165048842" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616165048842.png" alt="image-20220616165048842" style="zoom:80%;" align=left  />
 
 
 
-<img src="img/image-20220616165518195.png" alt="image-20220616165518195" style="zoom:80%;" align=left />
+<img src="./img/image-20220616165518195.png" alt="image-20220616165518195" style="zoom:80%;" align=left />
 
 
 
@@ -11776,13 +11776,13 @@ public class RateLimitController {
 
 表示1秒钟内查询次数大于1，就跑到我们自定义的处流，限流
 
-<img src="img/image-20220616171007544.png" alt="image-20220616171007544" style="zoom:80%;" align=left />
+<img src="./img/image-20220616171007544.png" alt="image-20220616171007544" style="zoom:80%;" align=left />
 
 
 
 2.图形配置和代码关系
 
-<img src="img/image-20220616171130836.png" alt="image-20220616171130836" style="zoom:80%;" align=left />
+<img src="./img/image-20220616171130836.png" alt="image-20220616171130836" style="zoom:80%;" align=left />
 
 
 
@@ -11841,7 +11841,7 @@ public CommonResult byUrl() {
 
 #### 19.8.2.2.流控规则配置
 
-<img src="img/image-20220616172222514.png" alt="image-20220616172222514" style="zoom:80%;" align=left />
+<img src="./img/image-20220616172222514.png" alt="image-20220616172222514" style="zoom:80%;" align=left />
 
 
 
@@ -11920,13 +11920,13 @@ public CommonResult customerBlockHandler() {
 
 #### 19.8.4.3.Sentinel控制台配置
 
-<img src="img/image-20220616182037458.png" alt="image-20220616182037458" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616182037458.png" alt="image-20220616182037458" style="zoom:80%;" align=left  />
 
 
 
 进一步说明
 
-<img src="img/image-20220616183034879.png" alt="image-20220616183034879" style="zoom:80%;" align=left />
+<img src="./img/image-20220616183034879.png" alt="image-20220616183034879" style="zoom:80%;" align=left />
 
 
 
@@ -11970,7 +11970,7 @@ public CommonResult customerBlockHandler() {
 
 
 
-<img src="img/image-20220616183820132.png" alt="image-20220616183820132" style="zoom:80%;" align=left />
+<img src="./img/image-20220616183820132.png" alt="image-20220616183820132" style="zoom:80%;" align=left />
 
 #### 19.8.5.2.Sentinel主要有三个核心Api
 
@@ -11987,7 +11987,7 @@ public CommonResult customerBlockHandler() {
 
 
 
-<img src="img/image-20220616184222389.png" alt="image-20220616184222389" style="zoom:80%;" align=left />
+<img src="./img/image-20220616184222389.png" alt="image-20220616184222389" style="zoom:80%;" align=left />
 
 
 
@@ -12001,7 +12001,7 @@ public CommonResult customerBlockHandler() {
 
 本节我们通过sentinel整合ribbon+openFeign+fallback，实现如下案例：
 
-<img src="img/image-20220616184735002.png" alt="image-20220616184735002" style="zoom:50%;" align=left />
+<img src="./img/image-20220616184735002.png" alt="image-20220616184735002" style="zoom:50%;" align=left />
 
 
 
@@ -12420,7 +12420,7 @@ public class CircleBreakerController {
 
 访问：http://localhost:84/consumer/fallback/4 给客户error页面，不友好
 
-<img src="img/image-20220616201621361.png" alt="image-20220616201621361" style="zoom:80%;" align=left />
+<img src="./img/image-20220616201621361.png" alt="image-20220616201621361" style="zoom:80%;" align=left />
 
 
 
@@ -12490,7 +12490,7 @@ blockHandler负责在sentinel里面配置的降级限流
 
 sentinel配置： 异常超过2次后，断路器打开，断电跳闸，系统被保护 
 
-<img src="img/image-20220616195936820.png" alt="image-20220616195936820" style="zoom:80%;" align=left />
+<img src="./img/image-20220616195936820.png" alt="image-20220616195936820" style="zoom:80%;" align=left />
 
 
 
@@ -12498,7 +12498,7 @@ sentinel配置： 异常超过2次后，断路器打开，断电跳闸，系统�
 
 点击一下：http://localhost:84/consumer/fallback/4
 
-<img src="img/image-20220616201621361.png" alt="image-20220616201621361" style="zoom:80%;" align=left />
+<img src="./img/image-20220616201621361.png" alt="image-20220616201621361" style="zoom:80%;" align=left />
 
 
 
@@ -12550,7 +12550,7 @@ sentinel配置： 异常超过2次后，断路器打开，断电跳闸，系统�
 
 sentinel需配置：qps 超过1，就限流
 
-<img src="img/image-20220616200112457.png" alt="image-20220616200112457" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616200112457.png" alt="image-20220616200112457" style="zoom:80%;" align=left  />
 
 
 
@@ -12650,7 +12650,7 @@ sentinel需配置：qps 超过1，就限流
 
 ##### 19.9.4.1.2.激活 *Sentinel* 对 *Feign* 的支持
 
-<img src="img/image-20220616204154395.png" alt="image-20220616204154395" style="zoom:80%;" align=left />
+<img src="./img/image-20220616204154395.png" alt="image-20220616204154395" style="zoom:80%;" align=left />
 
 
 
@@ -12817,7 +12817,7 @@ public class OrderNacosMain84 {
 
 #### 19.10.1.2.sentinel添加Nacos数据源配置
 
-<img src="img/image-20220616210933367.png" alt="image-20220616210933367" style="zoom:50%;" align=left />
+<img src="./img/image-20220616210933367.png" alt="image-20220616210933367" style="zoom:50%;" align=left />
 
 
 
@@ -12827,7 +12827,7 @@ public class OrderNacosMain84 {
 
 Data Id= spring.cloud.sentinel.datasource.ds1.nacos.dataId
 
-<img src="img/image-20220616211124501.png" alt="image-20220616211124501" style="zoom:80%;" align=left />
+<img src="./img/image-20220616211124501.png" alt="image-20220616211124501" style="zoom:80%;" align=left />
 
 
 
@@ -12873,7 +12873,7 @@ clusterMode：是否集群。
 
 2.停止8401在看sentinel，停机后，停机后发见控规肌没有了
 
-<img src="img/image-20220616211306659.png" alt="image-20220616211306659" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616211306659.png" alt="image-20220616211306659" style="zoom:80%;" align=left  />
 
 
 
@@ -12881,7 +12881,7 @@ clusterMode：是否集群。
 
 4.多次调用：http://localhost:8401/rateLimit/byUrl，重新配置出现了，持久化验证通过
 
-<img src="img/image-20220616211824704.png" alt="image-20220616211824704" style="zoom:80%;" align=left />
+<img src="./img/image-20220616211824704.png" alt="image-20220616211824704" style="zoom:80%;" align=left />
 
 
 

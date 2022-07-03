@@ -28,7 +28,7 @@ Sentinel 就是一套阿里版的Hystrix
 
 **是什么？**
 
-<img src="img/image-20220615214313656.png" alt="image-20220615214313656" style="zoom:40%;" align=left />
+<img src="./img/image-20220615214313656.png" alt="image-20220615214313656" style="zoom:40%;" align=left />
 
 
 
@@ -42,7 +42,7 @@ Sentinel 就是一套阿里版的Hystrix
 
 **能干嘛？**
 
-<img src="img/image-20220615214541977.png" alt="image-20220615214541977" style="zoom:50%;" align=left />
+<img src="./img/image-20220615214541977.png" alt="image-20220615214541977" style="zoom:50%;" align=left />
 
 
 
@@ -259,7 +259,7 @@ public class FlowLimitController {
 
 1. 启动8401微服务后查看sentienl控制台，空空如也，啥都没有
 
-<img src="img/image-20220615220141211.png" alt="image-20220615220141211" style="zoom:50%;" align=left  />
+<img src="./img/image-20220615220141211.png" alt="image-20220615220141211" style="zoom:50%;" align=left  />
 
 
 
@@ -271,7 +271,7 @@ public class FlowLimitController {
 
    sentinel8080正在监控微服务8401
 
-<img src="img/image-20220615221455749.png" alt="image-20220615221455749" style="zoom:50%;" align=left  />
+<img src="./img/image-20220615221455749.png" alt="image-20220615221455749" style="zoom:50%;" align=left  />
 
 
 
@@ -283,7 +283,7 @@ public class FlowLimitController {
 
 
 
-<img src="img/image-20220616110415897.png" alt="image-20220616110415897" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616110415897.png" alt="image-20220616110415897" style="zoom:80%;" align=left  />
 
 
 
@@ -336,7 +336,7 @@ public class FlowLimitController {
 
 1. 设置效果：表示1秒钟内查询（QPS）1次就是OK，若超过次数1，就直接-快速失败，报默认错误 
 
-<img src="img/image-20220616111527635.png" alt="image-20220616111527635" style="zoom:80%;" align=left />
+<img src="./img/image-20220616111527635.png" alt="image-20220616111527635" style="zoom:80%;" align=left />
 
 
 
@@ -354,7 +354,7 @@ public class FlowLimitController {
 
 配置
 
-<img src="img/image-20220616113441450.png" alt="image-20220616113441450" style="zoom:80%;" align=left />
+<img src="./img/image-20220616113441450.png" alt="image-20220616113441450" style="zoom:80%;" align=left />
 
 
 
@@ -379,7 +379,7 @@ public class FlowLimitController {
 
 使用jemter对testA进行压测
 
-<img src="img/image-20220616114838570.png" alt="image-20220616114838570" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616114838570.png" alt="image-20220616114838570" style="zoom:80%;" align=left  />
 
 
 
@@ -403,13 +403,13 @@ public class FlowLimitController {
 
 1. 配置A：当关联资源/testB的qps阀值超过1时，就限流/testA的Rest访问地址，即<font color=red>当关联资源到阈值后限制配置好的资源名 </font>
 
-<img src="img/image-20220616112032842.png" alt="image-20220616112032842" style="zoom:80%;" align=left />
+<img src="./img/image-20220616112032842.png" alt="image-20220616112032842" style="zoom:80%;" align=left />
 
 
 
 2. 使用postman对testB进行大规模高并发访问
 
-<img src="img/image-20220616112437465.png" alt="image-20220616112437465" style="zoom:60%;" align=left />
+<img src="./img/image-20220616112437465.png" alt="image-20220616112437465" style="zoom:60%;" align=left />
 
 
 
@@ -455,7 +455,7 @@ public class FlowLimitController {
 
 官网说明：https://github.com/alibaba/Sentinel/wiki/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6
 
-<img src="img/image-20220616120037118.png" alt="image-20220616120037118" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616120037118.png" alt="image-20220616120037118" style="zoom:80%;" align=left  />
 
 
 
@@ -465,7 +465,7 @@ public class FlowLimitController {
 
 相关源码：com.alibaba.csp.sentinel.slots.block.flow.controller.WarmUpController
 
-<img src="img/image-20220616120206860.png" alt="image-20220616120206860" style="zoom:80%;" align=left />
+<img src="./img/image-20220616120206860.png" alt="image-20220616120206860" style="zoom:80%;" align=left />
 
 
 
@@ -477,7 +477,7 @@ public class FlowLimitController {
 
 该案例配置说明，阀值为10+预热时长设置5秒。系统初始化的阀值为10 / 3 约等于3，即阀值刚开始为3；然后过了5秒后阀值才慢慢升高恢复到10 
 
-<img src="img/image-20220616120301030.png" alt="image-20220616120301030" style="zoom:80%;" align=left />
+<img src="./img/image-20220616120301030.png" alt="image-20220616120301030" style="zoom:80%;" align=left />
 
 
 
@@ -491,7 +491,7 @@ public class FlowLimitController {
 
 官网：https://github.com/alibaba/Sentinel/wiki/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6
 
-<img src="img/image-20220616121004726.png" alt="image-20220616121004726" style="zoom:80%;" align=left />
+<img src="./img/image-20220616121004726.png" alt="image-20220616121004726" style="zoom:80%;" align=left />
 
 
 
@@ -505,7 +505,7 @@ public class FlowLimitController {
 
 设置含义：/testA每秒1次请求，超过的话就排队等待，等待的超时时间为20000毫秒（20秒）。 
 
-<img src="img/image-20220616121056935.png" alt="image-20220616121056935" style="zoom:80%;" align=left />
+<img src="./img/image-20220616121056935.png" alt="image-20220616121056935" style="zoom:80%;" align=left />
 
 
 
@@ -513,7 +513,7 @@ public class FlowLimitController {
 
 测试：请求1秒通过一个
 
-<img src="img/image-20220616121150562.png" alt="image-20220616121150562" style="zoom:80%;" align=left />
+<img src="./img/image-20220616121150562.png" alt="image-20220616121150562" style="zoom:80%;" align=left />
 
 
 
@@ -527,7 +527,7 @@ public class FlowLimitController {
 
 
 
-<img src="img/image-20220616124512257.png" alt="image-20220616124512257" style="zoom:90%;" align=left  />
+<img src="./img/image-20220616124512257.png" alt="image-20220616124512257" style="zoom:90%;" align=left  />
 
 
 
@@ -589,7 +589,7 @@ public class FlowLimitController {
 
 1. **是什么？**
 
-<img src="img/image-20220616125240132.png" alt="image-20220616125240132" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125240132.png" alt="image-20220616125240132" style="zoom:80%;" align=left />
 
 
 
@@ -611,7 +611,7 @@ public class FlowLimitController {
 
 3. 配置降级策略RT（如果秒级平均响应时间超过200毫秒还没处理完，在未来1秒钟的时间窗口内，断路器打开(保险丝跳闸)微服务不可用）
 
-<img src="img/image-20220616125542089.png" alt="image-20220616125542089" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125542089.png" alt="image-20220616125542089" style="zoom:80%;" align=left />
 
 
 
@@ -619,7 +619,7 @@ public class FlowLimitController {
 
    每秒10个请求
 
-<img src="img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
 
 
 
@@ -641,7 +641,7 @@ public class FlowLimitController {
 
 1. 是什么？
 
-   <img src="img/image-20220616125811277.png" alt="image-20220616125811277" style="zoom:80%;" align=left />
+   <img src="./img/image-20220616125811277.png" alt="image-20220616125811277" style="zoom:80%;" align=left />
 
 
 
@@ -669,13 +669,13 @@ public class FlowLimitController {
 
 3.配置（1秒钟内，如果超过20%异常，就降级）
 
-<img src="img/image-20220616125913615.png" alt="image-20220616125913615" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125913615.png" alt="image-20220616125913615" style="zoom:80%;" align=left />
 
 
 
 4.jemeter压测
 
-<img src="img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
 
 
 
@@ -685,13 +685,13 @@ public class FlowLimitController {
 
 先单独访问一次，必然来一次报错一次(int age = 10/0)，调一次错一次；
 
-<img src="img/image-20220616131844169.png" alt="image-20220616131844169" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616131844169.png" alt="image-20220616131844169" style="zoom:80%;" align=left  />
 
 
 
 
 
-<img src="img/image-20220616130034693.png" alt="image-20220616130034693" style="zoom:100%;" align=left />
+<img src="./img/image-20220616130034693.png" alt="image-20220616130034693" style="zoom:100%;" align=left />
 
 
 
@@ -709,7 +709,7 @@ public class FlowLimitController {
 
 注意：异常数是按照分钟统计的
 
-<img src="img/image-20220616130140846.png" alt="image-20220616130140846" style="zoom:80%;" align=left   />
+<img src="./img/image-20220616130140846.png" alt="image-20220616130140846" style="zoom:80%;" align=left   />
 
 
 
@@ -730,11 +730,11 @@ public String testE() {
 
 61秒内，超过5次异常，则进行熔断降级
 
-<img src="img/image-20220616132104700.png" alt="image-20220616132104700" style="zoom:80%;" align=left    />
+<img src="./img/image-20220616132104700.png" alt="image-20220616132104700" style="zoom:80%;" align=left    />
 
 4.jemter压测
 
-<img src="img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
+<img src="./img/image-20220616125635817.png" alt="image-20220616125635817" style="zoom:80%;" align=left />
 
 
 
@@ -833,7 +833,7 @@ public String testE() {
 
 <font color=red>下面的抓图就是第一个参数有值的话，超过指定的QPS=1，超过就限流，限流后调用 dealHandler_testHotKey支持方法。 </font>
 
-<img src="img/image-20220616161640022.png" alt="image-20220616161640022" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616161640022.png" alt="image-20220616161640022" style="zoom:80%;" align=left  />
 
 
 
@@ -871,7 +871,7 @@ public String testE() {
 
 热点规则配置：
 注意：热点参数的注意点，参数必须是基本类型或者String
-<img src="img/image-20220616162616289.png" alt="image-20220616162616289" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616162616289.png" alt="image-20220616162616289" style="zoom:80%;" align=left  />
 
 
 
@@ -920,7 +920,7 @@ http://localhost:8401/testHotKey?p1=3   qps阈值时1
 
 int age = 10/0,这个是java运行时报出的运行时异常RunTimeException，@SentinelResource不管 
 
-<img src="img/image-20220616164840429.png" alt="image-20220616164840429" style="zoom:80%;" align=left /> 
+<img src="./img/image-20220616164840429.png" alt="image-20220616164840429" style="zoom:80%;" align=left /> 
 
 
 
@@ -959,11 +959,11 @@ Sentinel 系统自适应限流<font color=red>从整体维度对应用入口流�
 
 ### 19.7.2.各项配置参数说明
 
-<img src="img/image-20220616165048842.png" alt="image-20220616165048842" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616165048842.png" alt="image-20220616165048842" style="zoom:80%;" align=left  />
 
 
 
-<img src="img/image-20220616165518195.png" alt="image-20220616165518195" style="zoom:80%;" align=left />
+<img src="./img/image-20220616165518195.png" alt="image-20220616165518195" style="zoom:80%;" align=left />
 
 
 
@@ -1059,13 +1059,13 @@ public class RateLimitController {
 
 表示1秒钟内查询次数大于1，就跑到我们自定义的处流，限流
 
-<img src="img/image-20220616171007544.png" alt="image-20220616171007544" style="zoom:80%;" align=left />
+<img src="./img/image-20220616171007544.png" alt="image-20220616171007544" style="zoom:80%;" align=left />
 
 
 
 2.图形配置和代码关系
 
-<img src="img/image-20220616171130836.png" alt="image-20220616171130836" style="zoom:80%;" align=left />
+<img src="./img/image-20220616171130836.png" alt="image-20220616171130836" style="zoom:80%;" align=left />
 
 
 
@@ -1124,7 +1124,7 @@ public CommonResult byUrl() {
 
 #### 19.8.2.2.流控规则配置
 
-<img src="img/image-20220616172222514.png" alt="image-20220616172222514" style="zoom:80%;" align=left />
+<img src="./img/image-20220616172222514.png" alt="image-20220616172222514" style="zoom:80%;" align=left />
 
 
 
@@ -1203,13 +1203,13 @@ public CommonResult customerBlockHandler() {
 
 #### 19.8.4.3.Sentinel控制台配置
 
-<img src="img/image-20220616182037458.png" alt="image-20220616182037458" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616182037458.png" alt="image-20220616182037458" style="zoom:80%;" align=left  />
 
 
 
 进一步说明
 
-<img src="img/image-20220616183034879.png" alt="image-20220616183034879" style="zoom:80%;" align=left />
+<img src="./img/image-20220616183034879.png" alt="image-20220616183034879" style="zoom:80%;" align=left />
 
 
 
@@ -1253,7 +1253,7 @@ public CommonResult customerBlockHandler() {
 
 
 
-<img src="img/image-20220616183820132.png" alt="image-20220616183820132" style="zoom:80%;" align=left />
+<img src="./img/image-20220616183820132.png" alt="image-20220616183820132" style="zoom:80%;" align=left />
 
 #### 19.8.5.2.Sentinel主要有三个核心Api
 
@@ -1270,7 +1270,7 @@ public CommonResult customerBlockHandler() {
 
 
 
-<img src="img/image-20220616184222389.png" alt="image-20220616184222389" style="zoom:80%;" align=left />
+<img src="./img/image-20220616184222389.png" alt="image-20220616184222389" style="zoom:80%;" align=left />
 
 
 
@@ -1284,7 +1284,7 @@ public CommonResult customerBlockHandler() {
 
 本节我们通过sentinel整合ribbon+openFeign+fallback，实现如下案例：
 
-<img src="img/image-20220616184735002.png" alt="image-20220616184735002" style="zoom:50%;" align=left />
+<img src="./img/image-20220616184735002.png" alt="image-20220616184735002" style="zoom:50%;" align=left />
 
 
 
@@ -1703,7 +1703,7 @@ public class CircleBreakerController {
 
 访问：http://localhost:84/consumer/fallback/4 给客户error页面，不友好
 
-<img src="img/image-20220616201621361.png" alt="image-20220616201621361" style="zoom:80%;" align=left />
+<img src="./img/image-20220616201621361.png" alt="image-20220616201621361" style="zoom:80%;" align=left />
 
 
 
@@ -1773,7 +1773,7 @@ blockHandler负责在sentinel里面配置的降级限流
 
 sentinel配置： 异常超过2次后，断路器打开，断电跳闸，系统被保护 
 
-<img src="img/image-20220616195936820.png" alt="image-20220616195936820" style="zoom:80%;" align=left />
+<img src="./img/image-20220616195936820.png" alt="image-20220616195936820" style="zoom:80%;" align=left />
 
 
 
@@ -1781,7 +1781,7 @@ sentinel配置： 异常超过2次后，断路器打开，断电跳闸，系统�
 
 点击一下：http://localhost:84/consumer/fallback/4
 
-<img src="img/image-20220616201621361.png" alt="image-20220616201621361" style="zoom:80%;" align=left />
+<img src="./img/image-20220616201621361.png" alt="image-20220616201621361" style="zoom:80%;" align=left />
 
 
 
@@ -1833,7 +1833,7 @@ sentinel配置： 异常超过2次后，断路器打开，断电跳闸，系统�
 
 sentinel需配置：qps 超过1，就限流
 
-<img src="img/image-20220616200112457.png" alt="image-20220616200112457" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616200112457.png" alt="image-20220616200112457" style="zoom:80%;" align=left  />
 
 
 
@@ -1933,7 +1933,7 @@ sentinel需配置：qps 超过1，就限流
 
 ##### 19.9.4.1.2.激活 *Sentinel* 对 *Feign* 的支持
 
-<img src="img/image-20220616204154395.png" alt="image-20220616204154395" style="zoom:80%;" align=left />
+<img src="./img/image-20220616204154395.png" alt="image-20220616204154395" style="zoom:80%;" align=left />
 
 
 
@@ -2100,7 +2100,7 @@ public class OrderNacosMain84 {
 
 #### 19.10.1.2.sentinel添加Nacos数据源配置
 
-<img src="img/image-20220616210933367.png" alt="image-20220616210933367" style="zoom:50%;" align=left />
+<img src="./img/image-20220616210933367.png" alt="image-20220616210933367" style="zoom:50%;" align=left />
 
 
 
@@ -2110,7 +2110,7 @@ public class OrderNacosMain84 {
 
 Data Id= spring.cloud.sentinel.datasource.ds1.nacos.dataId
 
-<img src="img/image-20220616211124501.png" alt="image-20220616211124501" style="zoom:80%;" align=left />
+<img src="./img/image-20220616211124501.png" alt="image-20220616211124501" style="zoom:80%;" align=left />
 
 
 
@@ -2156,7 +2156,7 @@ clusterMode：是否集群。
 
 2.停止8401在看sentinel，停机后，停机后发见控规肌没有了
 
-<img src="img/image-20220616211306659.png" alt="image-20220616211306659" style="zoom:80%;" align=left  />
+<img src="./img/image-20220616211306659.png" alt="image-20220616211306659" style="zoom:80%;" align=left  />
 
 
 
@@ -2164,4 +2164,4 @@ clusterMode：是否集群。
 
 4.多次调用：http://localhost:8401/rateLimit/byUrl，重新配置出现了，持久化验证通过
 
-<img src="img/image-20220616211824704.png" alt="image-20220616211824704" style="zoom:80%;" align=left />
+<img src="./img/image-20220616211824704.png" alt="image-20220616211824704" style="zoom:80%;" align=left />

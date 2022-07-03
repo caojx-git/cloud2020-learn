@@ -48,7 +48,7 @@ https://github.com/alibaba/Nacos
 
 各种注册中心的比较
 
-<img src="img/image-20220615135549927.png" alt="image-20220615135549927" style="zoom:50%;" align=left />
+<img src="./img/image-20220615135549927.png" alt="image-20220615135549927" style="zoom:50%;" align=left />
 
 
 
@@ -61,7 +61,7 @@ https://github.com/alibaba/Nacos
 3. 解压安装包，直接运行bin目录下的startup.cmd `startup.cmd -m standalone`
 4. 命令运行成功后直接访问http://localhost:8848/nacos 默认账号密码都是nacos
 
-<img src="img/image-20220615140533734.png" alt="image-20220615140533734" style="zoom:40%;" align=left />
+<img src="./img/image-20220615140533734.png" alt="image-20220615140533734" style="zoom:40%;" align=left />
 
 
 
@@ -85,7 +85,7 @@ https://github.com/alibaba/Nacos
 
 父pom
 
-<img src="img/image-20220615163911152.png" alt="image-20220615163911152" style="zoom:40%;" align=left />
+<img src="./img/image-20220615163911152.png" alt="image-20220615163911152" style="zoom:40%;" align=left />
 
 
 
@@ -234,7 +234,7 @@ public class PaymentController {
 
 nacos 控制台：http://localhost:8848/nacos/#/serviceManagement?dataId=&group=&appName=&namespace=
 
-<img src="img/image-20220615164229875.png" alt="image-20220615164229875" style="zoom:50%;" align=left />
+<img src="./img/image-20220615164229875.png" alt="image-20220615164229875" style="zoom:50%;" align=left />
 
 
 
@@ -321,7 +321,7 @@ nacos服务注册中心+服务提供者9001都OK了
 
 **注意：spring-cloud-starter-alibaba-nacos-discovery 内部引入了ribbon ，nacos可以支持负载均衡**
 
-<img src="img/image-20220615165114579.png" alt="image-20220615165114579" style="zoom:50%;" align=left />
+<img src="./img/image-20220615165114579.png" alt="image-20220615165114579" style="zoom:50%;" align=left />
 
 #### 18.3.2.3.yml
 
@@ -454,7 +454,7 @@ public class OrderNacosController {
 
 4. nacos控制台 http://localhost:8848/nacos/#/serviceManagement?dataId=&group=&appName=&namespace=
 
-   <img src="img/image-20220615170020830.png" alt="image-20220615170020830" style="zoom:50%;" align=left />
+   <img src="./img/image-20220615170020830.png" alt="image-20220615170020830" style="zoom:50%;" align=left />
 
 5. 访问 http://localhost:83/consumer/payment/nacos/1  结果 9001、9002 交替出现，即负载均衡
 
@@ -466,17 +466,17 @@ public class OrderNacosController {
 
 nacos 可以跟如下这些技术整合，nacos想全景覆盖，所有支持AP和CP切换
 
-<img src="img/image-20220615165748572.png" alt="image-20220615165748572" style="zoom:50%;" align=left />
+<img src="./img/image-20220615165748572.png" alt="image-20220615165748572" style="zoom:50%;" align=left />
 
 
 
 #### 18.3.3.2.Nacos和CAP
 
-<img src="img/image-20220615170833569.png" alt="image-20220615170833569" style="zoom:50%;" align=left />
+<img src="./img/image-20220615170833569.png" alt="image-20220615170833569" style="zoom:50%;" align=left />
 
 
 
-<img src="img/image-20220615170744795.png" alt="image-20220615170744795" style="zoom:50%;" align=left />
+<img src="./img/image-20220615170744795.png" alt="image-20220615170744795" style="zoom:50%;" align=left />
 
 
 
@@ -704,7 +704,7 @@ Nacos中的dataid的组成格式及与SpringBoot配置文件中的匹配规则
 
 官网：https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html
 
-<img src="img/image-20220615173104305.png" alt="image-20220615173104305" style="zoom:50%;" align=left  />
+<img src="./img/image-20220615173104305.png" alt="image-20220615173104305" style="zoom:50%;" align=left  />
 
 <font color=red>**即dataId公式为**：</font>
 
@@ -714,7 +714,7 @@ ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config
 
 
 
-<img src="img/image-20220615174209449.png" alt="image-20220615174209449" style="zoom:40%;" align=left />
+<img src="./img/image-20220615174209449.png" alt="image-20220615174209449" style="zoom:40%;" align=left />
 
 
 
@@ -722,7 +722,7 @@ ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config
 
 1. nacos新增配置 nacos-config-client-dev.yaml
 
-<img src="img/image-20220615173745198.png" alt="image-20220615173745198" style="zoom:40%;" align=left />
+<img src="./img/image-20220615173745198.png" alt="image-20220615173745198" style="zoom:40%;" align=left />
 
 
 
@@ -732,7 +732,7 @@ ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config
 
 Nacos会记录配置文件的历史版本默认保留30天，此外还有一键回滚功能，回滚操作将会触发配置更新
 
-<img src="img/image-20220615174433377.png" alt="image-20220615174433377" style="zoom:50%;" align=left />
+<img src="./img/image-20220615174433377.png" alt="image-20220615174433377" style="zoom:50%;" align=left />
 
 
 
@@ -789,13 +789,13 @@ dev开发环境 、test测试环境 、prod生产环境。
 
 命名空间
 
-<img src="img/image-20220615180145101.png" alt="image-20220615180145101" style="zoom:40%;" align=left />
+<img src="./img/image-20220615180145101.png" alt="image-20220615180145101" style="zoom:40%;" align=left />
 
 
 
 配置管理
 
-<img src="img/image-20220615180244320.png" alt="image-20220615180244320" style="zoom:40%;" align=left  />
+<img src="./img/image-20220615180244320.png" alt="image-20220615180244320" style="zoom:40%;" align=left  />
 
 
 
@@ -811,7 +811,7 @@ dev开发环境 、test测试环境 、prod生产环境。
 
 2. **三者情况**
 
-   <img src="img/image-20220615180548773.png" alt="image-20220615180548773" style="zoom:50%;" align=left />
+   <img src="./img/image-20220615180548773.png" alt="image-20220615180548773" style="zoom:50%;" align=left />
 
 
 
@@ -853,13 +853,13 @@ Service就是微服务；一个Service可以包含多个Cluster（集群），Na
 
 1. 新建dev配置DataID
 
-<img src="img/image-20220615181504154.png" alt="image-20220615181504154" style="zoom:50%;" align=left />
+<img src="./img/image-20220615181504154.png" alt="image-20220615181504154" style="zoom:50%;" align=left />
 
 
 
 2. 新建test配置DataID
 
-<img src="img/image-20220615181427336.png" alt="image-20220615181427336" style="zoom:50%;" align=left  />
+<img src="./img/image-20220615181427336.png" alt="image-20220615181427336" style="zoom:50%;" align=left  />
 
 
 
@@ -867,7 +867,7 @@ Service就是微服务；一个Service可以包含多个Cluster（集群），Na
 
    访问：http://localhost:3377/config/info 配置是什么就加载什么
 
-<img src="img/image-20220615181612610.png" alt="image-20220615181612610" style="zoom:50%;" align=left />
+<img src="./img/image-20220615181612610.png" alt="image-20220615181612610" style="zoom:50%;" align=left />
 
 
 
@@ -881,7 +881,7 @@ Service就是微服务；一个Service可以包含多个Cluster（集群），Na
 
 1. 新建group  DEV_GROUP、TEST_GROUP
 
-<img src="img/image-20220615182119887.png" alt="image-20220615182119887" style="zoom:40%;" align=left  />
+<img src="./img/image-20220615182119887.png" alt="image-20220615182119887" style="zoom:40%;" align=left  />
 
 
 
@@ -907,7 +907,7 @@ config:
 
 2.在nacos图形界面控制台上面新建配置文件DataID
 
-<img src="img/image-20220615182301142.png" alt="image-20220615182301142" style="zoom:40%;" align=left  />
+<img src="./img/image-20220615182301142.png" alt="image-20220615182301142" style="zoom:40%;" align=left  />
 
 
 
@@ -915,7 +915,7 @@ config:
 
 在config下增加一条group的配置即可，可配置为DEV_GROUP或TEST_GROUP，group指定是什么就读取什么group的配置
 
-<img src="img/image-20220615182353596.png" alt="image-20220615182353596" style="zoom:50%;" align=left />
+<img src="./img/image-20220615182353596.png" alt="image-20220615182353596" style="zoom:50%;" align=left />
 
 
 
@@ -927,19 +927,19 @@ config:
 
 1. 新建dev/test命名空间，注意命名空间id
 
-<img src="img/image-20220615183048166.png" alt="image-20220615183048166" style="zoom:50%;" align=left />
+<img src="./img/image-20220615183048166.png" alt="image-20220615183048166" style="zoom:50%;" align=left />
 
 2. 回到服务管理-服务列表查看，多了dev、test命名空间
 
-<img src="img/image-20220615183655586.png" alt="image-20220615183655586" style="zoom:50%;" align=left />
+<img src="./img/image-20220615183655586.png" alt="image-20220615183655586" style="zoom:50%;" align=left />
 
 2. 按照命名空间新建各项配置文件
 
-   <img src="img/image-20220615183820917.png" alt="image-20220615183820917" style="zoom:50%;" align=left  />
+   <img src="./img/image-20220615183820917.png" alt="image-20220615183820917" style="zoom:50%;" align=left  />
 
 3. yml
 
-   <img src="img/image-20220615182804020.png" alt="image-20220615182804020" style="zoom:50%;" align=left  />
+   <img src="./img/image-20220615182804020.png" alt="image-20220615182804020" style="zoom:50%;" align=left  />
 
 
 
@@ -955,7 +955,7 @@ config:
 
 https://nacos.io/zh-cn/docs/cluster-mode-quick-start.html
 
-<img src="img/image-20220615194500647.png" alt="image-20220615194500647" style="zoom:80%;" align=left />
+<img src="./img/image-20220615194500647.png" alt="image-20220615194500647" style="zoom:80%;" align=left />
 
 
 
@@ -963,7 +963,7 @@ https://nacos.io/zh-cn/docs/cluster-mode-quick-start.html
 
 上图翻译过来，说人话
 
-<img src="img/image-20220615194554251.png" alt="image-20220615194554251" style="zoom:100%;" align=left  />
+<img src="./img/image-20220615194554251.png" alt="image-20220615194554251" style="zoom:100%;" align=left  />
 
 
 
@@ -979,7 +979,7 @@ https://nacos.io/zh-cn/docs/deployment.html
 
 
 
-<img src="img/image-20220615194818022.png" alt="image-20220615194818022" style="zoom:80%;" align=left />
+<img src="./img/image-20220615194818022.png" alt="image-20220615194818022" style="zoom:80%;" align=left />
 
 
 
@@ -1061,7 +1061,7 @@ derby到mysql切换配置步骤，使用Mysql进行持久化
 
 5. 编辑Nacos的启动脚本startup.sh，使它能够接受不同的启动端口（这一步更快的方式是复制3份nacos，直接修改application.properties 启动端口会更快）
 
-   <img src="img/image-20220615204527736.png" alt="image-20220615204527736" style="zoom:50%;" align=left />
+   <img src="./img/image-20220615204527736.png" alt="image-20220615204527736" style="zoom:50%;" align=left />
 
 6. 启动3个nacos实例
 
@@ -1114,7 +1114,7 @@ server {
 
    新建一个配置测试
 
-   <img src="img/image-20220615211212699.png" alt="image-20220615211212699" style="zoom:50%;" align=left />
+   <img src="./img/image-20220615211212699.png" alt="image-20220615211212699" style="zoom:50%;" align=left />
 
 
 
@@ -1122,7 +1122,7 @@ server {
 
 发现linux服务器的mysql插入一条记录
 
-<img src="img/image-20220615211315506.png" alt="image-20220615211315506" style="zoom:50%;" align=left  />
+<img src="./img/image-20220615211315506.png" alt="image-20220615211315506" style="zoom:50%;" align=left  />
 
 
 
@@ -1132,16 +1132,16 @@ server {
 
 ### 18.5.4.微服务cloudalibaba-provider-payment9002启动注册进nacos集群
 
-<img src="img/image-20220615211640092.png" alt="image-20220615211640092" style="zoom:40%;" align=left  />
+<img src="./img/image-20220615211640092.png" alt="image-20220615211640092" style="zoom:40%;" align=left  />
 
 
 发现服务成功注册到nacos集群
 
-<img src="img/image-20220615211604177.png" alt="image-20220615211604177" style="zoom:50%;" align=left />
+<img src="./img/image-20220615211604177.png" alt="image-20220615211604177" style="zoom:50%;" align=left />
 
 
 
 ### 18.5.5.总结（我们搭建了一套nacos 集群）
 
-<img src="img/image-20220615211757118.png" alt="image-20220615211757118" style="zoom:100%;" align=left  />
+<img src="./img/image-20220615211757118.png" alt="image-20220615211757118" style="zoom:100%;" align=left  />
 
